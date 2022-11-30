@@ -1,0 +1,6 @@
+@use "variables.module.scss";
+
+body {
+  background: variables.$background-color;
+  height: 100vh;
+}
