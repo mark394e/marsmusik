@@ -1,9 +1,9 @@
-import React from "react";
+import "../styles/Ticketholder.module.scss";
 
 function TicketHolder() {
   return (
     <>
-      <form>
+      <form id="ticketholderform">
         <label for="fullname">
           {" "}
           Full name

@@ -1,0 +1,9 @@
+section {
+  .extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #twoperstent > div:first-of-type {
+    grid-column: 1/2;
+  }
+}
