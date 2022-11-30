@@ -1,8 +1,14 @@
 #paymentform {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10%;
   .forms {
     display: flex;
     flex-direction: column;
+    gap: 10%;
+    label {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
