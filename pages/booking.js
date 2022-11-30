@@ -1,6 +1,7 @@
 import Tickets from "../components/Tickets";
 import PaymentForm from "../components/PaymentForm";
 import TicketHolder from "../components/TicketHolder";
+import Basket from "../components/Basket";
 
 function booking() {
   return (
@@ -10,6 +11,7 @@ function booking() {
       </Tickets>
       <TicketHolder></TicketHolder>
       <PaymentForm></PaymentForm>
+      <Basket></Basket>
     </>
   );
 }
