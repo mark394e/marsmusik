@@ -1,0 +1,8 @@
+#paymentform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .forms {
+    display: flex;
+    flex-direction: column;
+  }
+}
