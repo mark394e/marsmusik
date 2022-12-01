@@ -1,17 +1,9 @@
-import Tickets from "../components/Tickets";
-import PaymentForm from "../components/PaymentForm";
-import TicketHolder from "../components/TicketHolder";
-import Basket from "../components/Basket";
+import BookingSite from "../components/BookingSite";
 
 function booking() {
   return (
     <>
-      <Tickets>
-        <p>Subtotal: 1234,-</p>
-      </Tickets>
-      <TicketHolder></TicketHolder>
-      <PaymentForm></PaymentForm>
-      <Basket></Basket>
+      <BookingSite></BookingSite>
     </>
   );
 }
