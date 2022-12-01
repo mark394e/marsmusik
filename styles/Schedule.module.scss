@@ -1,0 +1,16 @@
+.schedule {
+  margin-left: 15%;
+  margin-right: 15%;
+  .schedule_container {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
+  }
+
+  //Her vil jeg gerne justere kolonnerne så til differentierer på devices
+  //   @media (min-width: 700px) {
+  //     .schedule_container {
+  //       grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
+  //     }
+  //   }
+}

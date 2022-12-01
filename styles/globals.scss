@@ -2,3 +2,17 @@
 @use "./PaymentForm.module.scss";
 @use "./Campingspot.module.scss";
 @use "./Extras.module.scss";
+@use "./Act.module.scss";
+@use "./Schedule.module.scss";
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  text-transform: uppercase;
+}

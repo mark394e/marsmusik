@@ -1,0 +1,79 @@
+.act_container {
+  background-color: #e04d03;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+  display: flex;
+  //   justify-content: end;
+  align-items: flex-end;
+  cursor: pointer;
+
+  h2 {
+    color: #faf1e9;
+    z-index: 2;
+    margin-left: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .detail {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // z-index: 2;
+    border-radius: 15px;
+    margin: 0.5rem;
+    height: 60%;
+    width: 5%;
+    background-color: #06f145;
+  }
+
+  .Midgard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // z-index: 2;
+    border-radius: 15px;
+    margin: 0.5rem;
+    height: 60%;
+    width: 5%;
+    background-color: #06f145;
+  }
+
+  .Jotunheim {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // z-index: 2;
+    border-radius: 15px;
+    margin: 0.5rem;
+    height: 60%;
+    width: 5%;
+    background-color: #fffd41;
+  }
+
+  .Vanaheim {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // z-index: 2;
+    border-radius: 15px;
+    margin: 0.5rem;
+    height: 60%;
+    width: 5%;
+    background-color: #41ffff;
+  }
+
+  //   article:hover {
+  //     .background_image {
+  //       opacity: 1;
+  //     }
+  //   }
+
+  //   img {
+  //     position: absolute;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+}
