@@ -4,3 +4,17 @@
 @use "./Extras.module.scss";
 @use "./Ticketholder.module.scss";
 @use "./Basket.module.scss";
+@use "./Act.module.scss";
+@use "./Schedule.module.scss";
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  text-transform: uppercase;
+}
