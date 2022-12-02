@@ -6,6 +6,8 @@ import { useState } from "react";
 function Tickets(props) {
   const [showCamping, setShowCamping] = useState(false);
 
+  const ticketAmount = props.counterREG + props.counterVIP;
+
   return (
     <>
       <TicketType
@@ -13,9 +15,12 @@ function Tickets(props) {
         setCounterREG={props.setCounterREG}
         counterREG={props.counterREG}
         counterVIP={props.counterVIP}
-        setShowCamping={setShowCamping}
       ></TicketType>
-      {props.counterVIP || props.counterREG > 0 ? <Campingspot /> : null}
+      {props.counterVIP || props.counterREG > 0
+        ? props.campingspot.map((spot) => (
+            <Campingspot data={spot} key={spot.area} ticketAmount={ticketAmount}></Campingspot>
+          ))
+        : null}
       <Extras></Extras>
     </>
   );
