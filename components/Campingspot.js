@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import "../styles/Campingspot.module.scss";
 
-function Campingspot() {
+function Campingspot(props) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const campingspot = ref.current;
+    console.log(campingspot);
+
+    if (props.data.available < props.ticketAmount) {
+      campingspot.classList.add("fullybooked");
+    } else {
+      campingspot.classList.remove("fullybooked");
+    }
+  });
+
   return (
     <>
-      <p>BOOK A CAMPINGSPOT</p>
-      <div className="campingspots">
-        <button>Helheim</button>
-        <button>Svartheim</button>
-        <button>Nilfheim</button>
-        <button>Muspelheim</button>
-        <button>Alfheim</button>
-      </div>
+      <article ref={ref} className="campingspot">
+        <p>{props.data.area}</p>
+        <p>Available: {props.data.available}</p>
+      </article>
     </>
   );
 }
