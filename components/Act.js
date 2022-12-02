@@ -1,7 +1,7 @@
 import "../styles/Act.module.scss";
 import Anchor from "./Anchor";
 function Act(props) {
-  console.log(props);
+  // console.log(props);
 
   return (
     <>
