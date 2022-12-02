@@ -13,6 +13,7 @@ function BookingSite() {
   const [showExtras, setShowExtras] = useState(false);
   const [showCamping, setShowCamping] = useState(false);
   const [showTicketHolder, setShowTicketHolder] = useState(false);
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -34,14 +35,20 @@ function BookingSite() {
         campingspot={campingspot}
         setShowCamping={setShowCamping}
         setShowTicketHolder={setShowTicketHolder}
+        setShowExtras={setShowExtras}
         showCamping={showCamping}
         showTicketHolder={showTicketHolder}
-      >
-        <p>Subtotal: 1234,-</p>
-      </Tickets>
-      <Extras></Extras>
-      <PaymentForm></PaymentForm>
-      <Basket></Basket>
+        showExtras={showExtras}
+      ></Tickets>
+      {showExtras && <Extras></Extras>}
+      {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
+      {showPaymentForm && <PaymentForm></PaymentForm>}
+      <Basket
+        setCounterVIP={setCounterVIP}
+        setCounterREG={setCounterREG}
+        counterREG={counterREG}
+        counterVIP={counterVIP}
+      ></Basket>
     </>
   );
 }
