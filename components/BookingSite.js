@@ -48,6 +48,7 @@ function BookingSite() {
         setCounterREG={setCounterREG}
         counterREG={counterREG}
         counterVIP={counterVIP}
+        campingspot={campingspot}
       ></Basket>
     </>
   );
