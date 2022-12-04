@@ -17,4 +17,16 @@ a {
 
 button {
   text-transform: uppercase;
+border: 1px solid #510926;
+border-radius: 7px;
+padding: 0.7rem;
+color: #510926;
+background-color: transparent;
+
+}
+
+button:hover{
+  cursor: pointer;
+ 
+
 }

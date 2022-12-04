@@ -10,17 +10,18 @@ function Campingspot(props) {
 
     if (props.data.available < props.ticketAmount) {
       campingspot.classList.add("fullybooked");
-    } else {
       campingspot.classList.remove("fullybooked");
     }
   });
 
   return (
     <>
-      <article ref={ref} className="campingspot">
-        <p>{props.data.area}</p>
-        <p>Available: {props.data.available}</p>
-      </article>
+      <section className="grid">
+        <article ref={ref} className="campingspot">
+          <p>{props.data.area}</p>
+          <p>Available: {props.data.available}</p>
+        </article>
+      </section>
     </>
   );
 }
