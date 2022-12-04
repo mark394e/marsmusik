@@ -20,7 +20,12 @@ function PaymentForm() {
           </label>
           <label htmlFor="zipcode">
             Zip code
-            <input type="text" inputMode="numeric" id="zipcode" name="zipcode" />
+            <input
+              type="text"
+              inputMode="numeric"
+              id="zipcode"
+              name="zipcode"
+            />
           </label>
           <label htmlFor="city">
             City
@@ -45,15 +50,33 @@ function PaymentForm() {
           </label>
           <label htmlFor="month">
             Month
-            <input type="text" inputMode="numeric" maxLength="2" id="month" name="month" />
+            <input
+              type="text"
+              inputMode="numeric"
+              maxLength="2"
+              id="month"
+              name="month"
+            />
           </label>
           <label htmlFor="year">
             Year
-            <input type="text" inputMode="numeric" maxLength="2" id="year" name="year" />
+            <input
+              type="text"
+              inputMode="numeric"
+              maxLength="2"
+              id="year"
+              name="year"
+            />
           </label>
           <label htmlFor="cvv">
             CVV
-            <input type="text" inputMode="numeric" maxLength="3" id="cvv" name="cvv" />
+            <input
+              type="text"
+              inputMode="numeric"
+              maxLength="3"
+              id="cvv"
+              name="cvv"
+            />
           </label>
         </form>
       </section>

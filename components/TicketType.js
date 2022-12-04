@@ -1,5 +1,7 @@
 import "../styles/Tickettype.module.scss";
 
+// her definere vi nogle constanter der fortæller hvad der skal ske når der klikkes på henholdsvis + eller - både i reg og vip billet
+
 function TicketType(props) {
   const increaseVIP = () => {
     props.setCounterVIP((count) => count + 1);
@@ -35,6 +37,7 @@ function TicketType(props) {
           <div className="white">4321,-</div>
         </div>
         <div className="counter">
+          {/* her tilføjer vi conter til de forkslelige onclicks - så når der trykkes på lnappen vil if sætningen blive sat igang  */}
           <button onClick={decreaseVIP} className="counter-minus">
             -
           </button>

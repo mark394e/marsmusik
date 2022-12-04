@@ -29,6 +29,7 @@ function BookingSite() {
     <>
       {" "}
       <Tickets
+        // her henter fortæller vi hvilket data de forskellige components skal hente ind så de kan bruges
         setCounterVIP={setCounterVIP}
         setCounterREG={setCounterREG}
         counterREG={counterREG}
@@ -41,6 +42,8 @@ function BookingSite() {
         showTicketHolder={showTicketHolder}
         showExtras={showExtras}
       ></Tickets>
+      {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
+      {/* hvad betyder &&?? */}
       <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
       {showExtras && (
         <button onClick={() => setShowPaymentForm(true)}>Continue</button>
