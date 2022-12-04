@@ -5,6 +5,7 @@ import PaymentForm from "../components/PaymentForm";
 import Extras from "../components/Extras";
 import Basket from "../components/Basket";
 import configData from "../config.json";
+import "../styles/BookingSite.module.scss";
 
 function BookingSite() {
   const [counterVIP, setCounterVIP] = useState(0);
@@ -40,8 +41,10 @@ function BookingSite() {
         showTicketHolder={showTicketHolder}
         showExtras={showExtras}
       ></Tickets>
-      {showExtras && <Extras></Extras>}
-      {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
+      <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
+      {showExtras && (
+        <button onClick={() => setShowPaymentForm(true)}>Continue</button>
+      )}
       {showPaymentForm && <PaymentForm></PaymentForm>}
       <Basket
         setCounterVIP={setCounterVIP}

@@ -1,9 +1,66 @@
 section {
+
+
+.extra-heading{
+      display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 2rem;
+              margin-left: 2rem;
+                margin-right: 2rem;
+          
+         
+}
   .extra {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // border: 1px solid #510926;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+
+    .border{
+        display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          border: 1px solid #510926;
+          border-radius: 20px;
+        
+    }
+
+    .red{ 
+      background-color: #510926;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+            .orange {
+              background-color: #FAE3CC;
+              color: #510926;
+              padding: 1rem;
+              border-radius: 10px;
+            }
+
+                            .white {
+                              background-color: transparent;
+                              color: #510926;
+                              padding: 1rem;
+                              border-radius: 10px;
+                            }
   }
   #twoperstent > div:first-of-type {
     grid-column: 1/2;
   }
 }
+
+.extrabox{
+border: 1px solid #510926;
+border-radius: 20px;
+    padding: 1rem;
+    max-width: 50%;
+            color: #510926;
+           
+
+}
+
+
+
