@@ -27,9 +27,11 @@ function TicketType(props) {
         <p>Ticket type</p>
         <p>Price</p>
         <p>Total</p>
+
         <div>VIP</div>
         <div>1234,-</div>
         <div>4321,-</div>
+
         <div className="counter">
           <button onClick={decreaseVIP} className="counter-minus">
             -

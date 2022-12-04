@@ -2,5 +2,14 @@ section {
   .ticket {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  
+    margin: 5rem;
+    border: 1px solid #510926;
+    border-radius: 25px;
+    padding: 2rem;
   }
+
+  
+
+  
 }
