@@ -24,14 +24,16 @@ function TicketType(props) {
   return (
     <section>
       <div className="ticket" id="vip-ticket">
-        <p>Ticket type</p>
-        <p>Price</p>
-        <p>Total</p>
-
-        <div>VIP</div>
-        <div>1234,-</div>
-        <div>4321,-</div>
-
+        <div className="extra-heading">
+          <p>Ticket type</p>
+          <p>Price</p>
+          <p>Total</p>
+        </div>
+        <div className="border">
+          <div className="red">VIP</div>
+          <div className="orange">1234,-</div>
+          <div className="white">4321,-</div>
+        </div>
         <div className="counter">
           <button onClick={decreaseVIP} className="counter-minus">
             -
@@ -43,12 +45,16 @@ function TicketType(props) {
         </div>
       </div>
       <div className="ticket" id="reg-ticket">
-        <p>Ticket type</p>
-        <p>Price</p>
-        <p>Total</p>
-        <div>REGULAR</div>
-        <div>1234,-</div>
-        <div>4321,-</div>
+        <div className="extra-heading">
+          <p>Ticket type</p>
+          <p>Price</p>
+          <p>Total</p>
+        </div>
+        <div className="border">
+          <div className="red">REGULAR</div>
+          <div className="orange">1234,-</div>
+          <div className="white">4321,-</div>
+        </div>
         <div className="counter">
           <button onClick={decreaseREG} className="counter-minus">
             -

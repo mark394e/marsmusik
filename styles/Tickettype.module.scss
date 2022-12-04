@@ -1,14 +1,46 @@
 section {
+ 
   .ticket {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+max-width: 100%;
   
-    margin: 5rem;
-    border: 1px solid #510926;
-    border-radius: 25px;
-    padding: 2rem;
+    margin: 2rem;
+
+  
   }
 
+  .extra-heading{
+    display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .border{
+    display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+          border: 1px solid #510926;
+            border-radius: 20px;
+  
+
+      .red {
+          background-color: #510926;
+          color: white;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      
+        .orange {
+          background-color: #FAE3CC;
+          color: #510926;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      
+        .white {
+          background-color: transparent;
+          color: #510926;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+  }
   
 
   
