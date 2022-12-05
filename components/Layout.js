@@ -1,4 +1,5 @@
 import Anchor from "./Anchor";
+import "../styles/Header.module.scss";
 import React from "react";
 
 //takes children meaning that it takes content from our pages
@@ -6,7 +7,7 @@ export default function Layout(props) {
   return (
     <>
       <header>
-        <nav>
+        <nav className="nav">
           <Anchor href="/">
             <div className="logo"></div>
           </Anchor>
