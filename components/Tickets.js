@@ -1,16 +1,12 @@
 import TicketType from "./TicketType";
 import Campingspot from "./Campingspot";
-import { useState } from "react";
 import TicketHolder from "./TicketHolder";
 import "../styles/Tickets.module.scss";
-import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 
 function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
   // - det skal bla. bruges til at tjekke om der er nok ledige camping spots
   const ticketAmount = props.counterREG + props.counterVIP;
-
-  console.log(props.showCamping);
   return (
     <>
       <section className="around">
@@ -23,28 +19,24 @@ function Tickets(props) {
             counterVIP={props.counterVIP}
           ></TicketType>
           {/* knap der bliver sat til true når der trykkes på den - hvorefter den vil vise campingspots */}
-          <button onClick={() => props.setShowCamping(true)}>Continue</button>
+          {!props.showCamping && (
+            <button onClick={() => props.setShowCamping(true)}>Continue</button>
+          )}
           <div className="grid">
             {/* her mapper vi ignnem camping spots for at få vist alle */}
             {/* det her skal forklares bedre !!! */}
             {props.showCamping &&
               props.campingspot.map((spot) => (
-                <Campingspot
-                  data={spot}
-                  key={spot.area}
-                  ticketAmount={ticketAmount}
-                ></Campingspot>
+                <Campingspot data={spot} key={spot.area} ticketAmount={ticketAmount}></Campingspot>
               ))}
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
-          {props.showCamping && (
-            <button onClick={() => props.setShowTicketHolder(true)}>
-              Continue
-            </button>
+          {props.showCamping && !props.showTicketHolder && (
+            <button onClick={() => props.setShowTicketHolder(true)}>Continue</button>
           )}
           {/* hvad sker der herunder ???? */}
           {props.showTicketHolder && <TicketHolder></TicketHolder>}
-          {props.showTicketHolder && (
+          {props.showTicketHolder && !props.showExtras && (
             <button onClick={() => props.setShowExtras(true)}>Continue</button>
           )}
         </div>
