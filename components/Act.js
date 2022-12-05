@@ -1,7 +1,7 @@
 import "../styles/Act.module.scss";
 import Anchor from "./Anchor";
 function Act(props) {
-  // console.log(props);
+  console.log(props.data.id);
 
   return (
     <>
@@ -9,7 +9,7 @@ function Act(props) {
       <Anchor
         band={props.pureBands}
         key={props.data.name}
-        href={"/artists/" + props.data.name.toLowerCase()}
+        href={"/bands/" + props.data.id}
       >
         <article className="act_container" key={props.data.name}>
           <h2>{props.data.name}</h2>

@@ -4,9 +4,14 @@ import React, { useState } from "react";
 import "../styles/Schedule.module.scss";
 
 function ScheduleSite(props) {
-  const [filter, setFilter] = useState("");
-  const [sort, setSort] = useState("name");
-  //   console.log(props);
+  //To states for to filtreringer
+  const [filterStage, setFilterStage] = useState("");
+  const [filterDay, setFilterDay] = useState("");
+
+  //En state for sortering
+  const [sort, setSort] = useState("");
+
+  const [sortReversed, setSortReversed] = useState("");
 
   //Istedet for at "spørge" efter hver scene og dag, indkapsler jeg disse i arrays
   //Det betyder jeg kan bruge forEach som i nedstående map
@@ -37,12 +42,11 @@ function ScheduleSite(props) {
     });
     return newBand;
   });
-  // console.log(pureBands);
 
   let filtered = pureBands;
-  const starttime = filtered.map((starting) => starting.start);
-  console.log(starttime.sort());
-  console.log(starttime.reverse());
+  // const starttime = filtered.map((starting) => starting.start);
+  // console.log(starttime.sort());
+  // console.log(starttime.reverse());
 
   filtered.sort((a, b) => {
     if (a[sort] > b[sort]) {
@@ -51,14 +55,28 @@ function ScheduleSite(props) {
     if (a[sort] < b[sort]) {
       return -1;
     }
+
     return 0;
   });
 
-  //   console.log(filtered);
-  if (filter) {
-    filtered =
-      pureBands.filter((band) => band.stage === filter) ||
-      pureBands.filter((band) => band.day === filter);
+  // filtered.sort((a, b) => {
+  //   if (a[sortReversed] > b[sortReversed]) {
+  //     return -1;
+  //   }
+  //   if (a[sortReversed] < b[sortReversed]) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
+
+  //Her filtrer vi blandt det rå data fra pureBands
+  if (filterStage) {
+    filtered = pureBands.filter((band) => band.stage === filterStage);
+  }
+
+  //Da vi vil filtrere yderligere, filtrerer vi blandt det i forvejen filtrerede
+  if (filterDay) {
+    filtered = filtered.filter((band) => band.day === filterDay);
   }
 
   return (
@@ -67,16 +85,16 @@ function ScheduleSite(props) {
       <fieldset>
         <legend>Filter by stage</legend>
         <button
-          className={filter === "" ? "active" : null}
-          onClick={() => setFilter("")}
+          className={filterStage === "" ? "active" : null}
+          onClick={() => setFilterStage("")}
         >
           All
         </button>
         {stages.map((stage) => (
           <Filterbutton
             band={pureBands}
-            setFilter={setFilter}
-            filter={filter}
+            setFilter={setFilterStage}
+            filter={filterStage}
             key={stage}
             stage={stage}
           />
@@ -84,18 +102,18 @@ function ScheduleSite(props) {
       </fieldset>
       <fieldset>
         <button
-          className={filter === "mon" ? "active" : null}
-          onClick={() => setFilter("mon")}
+          className={filterDay === "" ? "active" : null}
+          onClick={() => setFilterDay("")}
         >
-          mon
+          All
         </button>
         {days.map((day) => (
           <Filterbutton
-            className={filter === day ? "active" : null}
-            onClick={() => setFilter(day)}
+            className={filterDay === day ? "active" : null}
+            onClick={() => setFilterDay(day)}
             band={pureBands}
-            setFilter={setFilter}
-            filter={filter}
+            setFilter={setFilterDay}
+            filter={filterDay}
             key={day}
             stage={day}
           />
@@ -104,14 +122,9 @@ function ScheduleSite(props) {
       </fieldset>
       <fieldset>
         <legend>Sort</legend>
-        <select>
-          <option>Sort</option>
-          <option onClick={() => starttime.sort()}>First to last</option>
-          <option onClick={() => starttime.reverse()}>Last to first</option>
-
-          {/* <option onClick={() => setSort(starttime)}>First to last</option> */}
-          {/* <option onClick={() => setSort("age")}>Last to first</option> */}
-        </select>
+        <button onClick={() => setSort("name")}>A - Z</button>
+        <button onClick={() => setSortReversed("name")}>Z - A</button>
+        <button onClick={() => setSort("start")}>First to play</button>
       </fieldset>
       <div className="schedule_container">
         {filtered.map((band) => {
