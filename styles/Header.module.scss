@@ -1,18 +1,48 @@
 nav {
   position: fixed;
   background-color: #fdf8f0;
-  height: 20%;
-  width: 100%;
+  height: 95px;
+  width: 95%;
+  margin-left: 2rem;
   top: 0;
-  padding-left: 40px;
-  border: 1px solid red;
+  right: 0;
+  border: 1px solid rgba(111, 4, 66, 1);
   border-radius: 0px 0px 0px 50px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    border: 1px solid;
+    border-color: none none none none;
+    border-radius: 0px 0px 0px 50px;
+    width: 500px;
+  }
+
+  //planet-logo
+  .logo {
+    z-index: 1001;
+    top: 40px;
+    left: 3%;
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    background: rgb(251, 135, 49);
+    background: linear-gradient(
+      207deg,
+      rgba(251, 135, 49, 1) 0%,
+      rgba(172, 73, 100, 1) 82%,
+      rgba(111, 4, 66, 1) 100%
+    );
+  }
 }
 
 /* Position and sizing of burger button */
 .bm-burger-button {
+  cursor: pointer;
   position: fixed;
-  content: "MENU";
+  z-index: 100;
   width: 36px;
   height: 30px;
   right: 36px;
@@ -21,8 +51,8 @@ nav {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
-  content: "MENU";
+  background: rgba(111, 4, 66, 1);
+  content: "MENU" !important;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -78,20 +108,4 @@ nav {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-}
-
-//logo
-
-.logo {
-  //   fill: red;
-  height: 70px;
-  width: 70px;
-  border-radius: 50px;
-  background: rgb(251, 135, 49);
-  background: linear-gradient(
-    207deg,
-    rgba(251, 135, 49, 1) 0%,
-    rgba(172, 73, 100, 1) 82%,
-    rgba(111, 4, 66, 1) 100%
-  );
 }

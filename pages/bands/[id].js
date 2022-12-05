@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Head from "next/head";
-import Anchor from "../../components/Anchor";
+import configData from "../../config.json";
 
 export default function Artist(props) {
   console.log(props);
@@ -49,8 +47,9 @@ export default function Artist(props) {
 }
 
 export async function getStaticProps(context) {
+  console.log(context);
   const res = await fetch(
-    "https://solitary-butterfly-1534.fly.dev/bands/" + context.params.id // id fordi min fil eller id
+    `${configData.url}/bands/` + context.params.id // id fordi min fil eller id
   );
 
   // If no succes, return a 404 redirect
@@ -72,14 +71,14 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("https://solitary-butterfly-1534.fly.dev/bands/");
+  const res = await fetch(`${configData.url}/bands/`);
 
   const data = await res.json();
 
   console.log(data);
 
   const paths = data.map((entry) => {
-    return { params: { id: entry.name } }; // id i stedet for slug. skal laves til string, da browser ikke læser numre
+    return { params: { id: entry.id.toString() } }; // id i stedet for slug. skal laves til string, da browser ikke læser numre
   });
 
   return {
