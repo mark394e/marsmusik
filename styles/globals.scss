@@ -9,6 +9,7 @@
 @use "./BookingSite.module.scss";
 @use "./Tickets.module.scss";
 
+@use "./Header.module.scss";
 
 img {
   width: 100%;
@@ -20,17 +21,14 @@ a {
 
 button {
   text-transform: uppercase;
-border: 1px solid #510926;
-border-radius: 7px;
-padding: 0.7rem;
-color: #510926;
-background-color: transparent;
-max-width: fit-content;
-
+  border: 1px solid #510926;
+  border-radius: 7px;
+  padding: 0.7rem;
+  color: #510926;
+  background-color: transparent;
+  max-width: fit-content;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
- 
-
 }
