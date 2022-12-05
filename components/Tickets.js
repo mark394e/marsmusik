@@ -27,7 +27,15 @@ function Tickets(props) {
             {/* det her skal forklares bedre !!! */}
             {props.showCamping &&
               props.campingspot.map((spot) => (
-                <Campingspot data={spot} key={spot.area} ticketAmount={ticketAmount}></Campingspot>
+                <Campingspot
+                  data={spot}
+                  key={spot.area}
+                  ticketAmount={ticketAmount}
+                  setPickedCamping={props.setPickedCamping}
+                  pickedCamping={props.pickedCamping}
+                  showPickedCamping={props.showPickedCamping}
+                  setShowPickedCamping={props.setShowPickedCamping}
+                ></Campingspot>
               ))}
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}

@@ -9,9 +9,20 @@ function Basket(props) {
   const priceVIP = 1299;
   const priceREG = 799;
 
+  useEffect(() => {
+    if (props.counterVIP > 0) {
+      setShowVIPTicket(true);
+    } else if (props.counterREG > 0) {
+      setShowREGTicket(true);
+    } else {
+      setShowREGTicket(false);
+      setShowVIPTicket(false);
+    }
+  }, [props.counterVIP, props.counterREG]);
+
   return (
     <section className="basket">
-      <h3>Your cart:</h3>
+      <h3>Order</h3>
       <h4>Tickets:</h4>
       <ul>
         {showVIPTicket && (
@@ -19,16 +30,16 @@ function Basket(props) {
             {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
           biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
           for så at få en total værdi af de valgte biletter lagt sammen  */}
-            {props.counterVIP}x VIP - Price: {props.counterVIP * priceVIP}
+            {props.counterVIP}x VIP - Price: {props.counterVIP * priceVIP},-
           </li>
         )}
         {showREGTicket && (
           <li>
-            {props.counterREG}x Standard - Price: {props.counterREG * priceREG}
+            {props.counterREG}x Standard - Price: {props.counterREG * priceREG},-
           </li>
         )}
       </ul>
-      <h4>Camping: Svartheim</h4>
+      <h4>Camping: {!props.showPickedCamping ? "None" : props.pickedCamping}</h4>
       <ul>
         <li>extra product</li>
         <li>extra product</li>
