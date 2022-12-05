@@ -1,12 +1,9 @@
 .campingspot {
   background-color: #510926;
   border-radius: 25px;
-padding: 1rem;
+  padding: 1rem;
   color: antiquewhite;
-  width:50%;
-
-
-   
+  width: 50%;
 }
 
 .fullybooked {
@@ -14,12 +11,11 @@ padding: 1rem;
   color: black;
 }
 
-.grid{
-margin: 10px;
+.grid {
+  margin: 10px;
 
   display: grid;
-justify-content: center;
-gap: 0.1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-
+  justify-content: center;
+  gap: 0.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
 }

@@ -14,8 +14,7 @@ function Campingspot(props) {
     // - så skal den vise fullybooked og ellers skal den fjerne fullybooked
     if (props.data.available < props.ticketAmount) {
       campingspot.classList.add("fullybooked");
-      campingspot.classList.remove("fullybooked");
-    }
+    } else campingspot.classList.remove("fullybooked");
   });
 
   return (

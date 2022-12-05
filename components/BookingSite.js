@@ -45,17 +45,9 @@ function BookingSite() {
       {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
       {/* hvad betyder &&?? */}
       <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
-      {showExtras && (
-        <button onClick={() => setShowPaymentForm(true)}>Continue</button>
-      )}
+      {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
       {showPaymentForm && <PaymentForm></PaymentForm>}
-      <Basket
-        setCounterVIP={setCounterVIP}
-        setCounterREG={setCounterREG}
-        counterREG={counterREG}
-        counterVIP={counterVIP}
-        campingspot={campingspot}
-      ></Basket>
+      <Basket counterREG={counterREG} counterVIP={counterVIP} campingspot={campingspot}></Basket>
     </>
   );
 }
