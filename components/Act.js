@@ -9,7 +9,7 @@ function Act(props) {
       <Anchor
         band={props.pureBands}
         key={props.data.name}
-        href={"/bands/" + props.data.id.toString()}
+        href={"/bands/" + props.data.id}
       >
         <article className="act_container" key={props.data.name}>
           <h2>{props.data.name}</h2>
