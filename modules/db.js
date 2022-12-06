@@ -4,7 +4,7 @@ export function insertOrder(payload) {
 
   const url = "https://refldmafwphkcwhlzjza.supabase.co";
 
-  fetch(url + "rest/v1/Marsmusik", {
+  fetch(url + "/rest/v1/Marsmusik", {
     method: "POST",
     headers: {
       apikey:

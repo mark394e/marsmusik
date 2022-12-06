@@ -1,10 +1,32 @@
 import "../styles/PaymentForm.module.scss";
+import { insertOrder } from "../modules/db";
+import { useRef } from "react";
 
 function PaymentForm() {
+  const theForm = useRef(null);
+
+  function submit(e) {
+    e.preventDefault();
+
+    insertOrder({
+      fullname: theForm.current.elements.fullname.value,
+      email: theForm.current.elements.email.value,
+      address: theForm.current.elements.address.value,
+      zipcode: theForm.current.elements.zipcode.value,
+      city: theForm.current.elements.city.value,
+      ticketholder: [
+        {
+          fullname: "janne hjuler",
+          email: "jannehjuler@hotmail.com",
+          tickettype: "reg",
+        },
+      ],
+    });
+  }
   return (
     <>
       <section id="paymentform">
-        <form className="forms">
+        <form className="forms" onSubmit={submit} ref={theForm}>
           <label htmlFor="fullname">
             {" "}
             Full name
@@ -31,6 +53,7 @@ function PaymentForm() {
             City
             <input type="text" id="city" name="city" />
           </label>
+          <button>submit</button>
         </form>
 
         <form className="forms">
