@@ -1,6 +1,7 @@
 import TicketType from "./TicketType";
 import Campingspot from "./Campingspot";
-import TicketHolder from "./TicketHolder";
+import TicketHolderREG from "./TicketHolderREG";
+import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
 
 function Tickets(props) {
@@ -8,15 +9,12 @@ function Tickets(props) {
   // - det skal bla. bruges til at tjekke om der er nok ledige camping spots
   const ticketAmount = props.counterREG + props.counterVIP;
 
-  const ticketholders = Array.from({ length: ticketAmount }, (_, index) => {
-    return (
-      <TicketHolder
-        ticketHolder={props.ticketHolder}
-        setTicketHolder={props.setTicketHolder}
-        key={index}
-        ticketHolderArr={props.ticketHolderArr}
-      ></TicketHolder>
-    );
+  const ticketholdersREG = Array.from({ length: props.counterREG }, (_, index) => {
+    return <TicketHolderREG key={index} ticketHolderArr={props.ticketHolderArr}></TicketHolderREG>;
+  });
+
+  const ticketholdersVIP = Array.from({ length: props.counterVIP }, (_, index) => {
+    return <TicketHolderVIP key={index} ticketHolderArr={props.ticketHolderArr}></TicketHolderVIP>;
   });
 
   return (
@@ -55,7 +53,11 @@ function Tickets(props) {
             <button onClick={() => props.setShowTicketHolder(true)}>Continue</button>
           )}
           {/* hvad sker der herunder ???? */}
-          {props.showTicketHolder && ticketholders}
+          {props.showTicketHolder ? (
+            <>
+              {ticketholdersVIP} {ticketholdersREG}
+            </>
+          ) : null}
           {props.showTicketHolder && !props.showExtras && (
             <button onClick={() => props.setShowExtras(true)}>Continue</button>
           )}

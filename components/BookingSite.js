@@ -29,6 +29,8 @@ function BookingSite() {
     getData();
   }, []);
 
+  console.log("Ticketholders", ticketHolderArr);
+
   return (
     <>
       {" "}

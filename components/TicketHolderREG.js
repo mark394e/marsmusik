@@ -1,7 +1,7 @@
 import "../styles/Ticketholder.module.scss";
 import { useRef } from "react";
 
-function TicketHolder(props) {
+function TicketHolderREG(props) {
   const ticketHolderForm = useRef(null);
 
   function submit(e) {
@@ -9,6 +9,7 @@ function TicketHolder(props) {
     props.ticketHolderArr.push({
       fullname: ticketHolderForm.current.elements.fullname.value,
       email: ticketHolderForm.current.elements.email.value,
+      tickettype: "REG",
     });
     console.log(props.ticketHolderArr);
   }
@@ -31,4 +32,4 @@ function TicketHolder(props) {
   );
 }
 
-export default TicketHolder;
+export default TicketHolderREG;
