@@ -16,7 +16,8 @@
     border: 1px solid;
     border-color: none none none none;
     border-radius: 0px 0px 0px 50px;
-    width: 500px;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   //planet-logo
@@ -35,77 +36,54 @@
       rgba(172, 73, 100, 1) 82%,
       rgba(111, 4, 66, 1) 100%
     );
+    animation: rotation 5s infinite linear;
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
   }
-}
+  .menu_overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(251, 136, 49, 0.485);
 
-/* Position and sizing of burger button */
-.bm-burger-button {
-  cursor: pointer;
-  position: fixed;
-  z-index: 100;
-  width: 36px;
-  height: 30px;
-  right: 36px;
-  top: 36px;
-}
+    .menu {
+      background-color: #fdf8f0;
+      border: 1px solid rgba(111, 4, 66, 1);
+      border-radius: 0px 0px 0px 50px;
+      position: absolute;
+      height: 100vh;
+      width: 50vw;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: rgba(111, 4, 66, 1);
-  content: "MENU" !important;
-}
+      li {
+        list-style: none;
 
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: #a90000;
-}
+        a {
+          -webkit-text-stroke: 1px rgba(111, 4, 66, 1);
+          text-stroke: 1px rgba(111, 4, 66, 1);
+          color: rgba(111, 4, 66, 0);
+          margin-bottom: 2rem;
+          font-size: 5rem;
+        }
 
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-  right: 0 !important;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  //   background: #373a47;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-  right: 0;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+        a:hover {
+          transition: 0.3s;
+          color: rgba(111, 4, 66, 1);
+        }
+      }
+    }
+  }
 }

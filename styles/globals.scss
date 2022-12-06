@@ -8,11 +8,31 @@
 @use "./Schedule.module.scss";
 @use "./BookingSite.module.scss";
 @use "./Tickets.module.scss";
-
 @use "./Header.module.scss";
+@use "./Frontpage.module.scss";
+@use "./Footer.module.scss";
+
+$darkred-color: #510926;
+$orange-color: rgb(251, 135, 49);
+$light-color: rgba(254, 240, 224);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-color;
+  background: linear-gradient(16deg, $orange-color 0%, $light-color 100%);
+}
 
 img {
   width: 100%;
+}
+
+h1 {
+  color: $darkred-color;
 }
 
 a {
@@ -21,10 +41,10 @@ a {
 
 button {
   text-transform: uppercase;
-  border: 1px solid #510926;
-  border-radius: 7px;
+  border: 1px solid $darkred-color;
+  border-radius: 5px;
   padding: 0.7rem;
-  color: #510926;
+  color: $darkred-color;
   background-color: transparent;
   max-width: fit-content;
 }
