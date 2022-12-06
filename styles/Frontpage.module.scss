@@ -1,0 +1,67 @@
+.hero {
+  overflow: hidden;
+  z-index: -1;
+  height: 100%;
+  width: 100vw;
+  background: rgb(251, 135, 49);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 135, 49, 1) 0%,
+    rgba(254, 249, 241, 1) 100%
+  );
+
+  .frontpage_txt {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      font-size: 6rem;
+      line-height: 0.8;
+    }
+  }
+
+  .frontpage_bg {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .frontpage_picture {
+    grid-column: 2;
+    opacity: 0.5;
+    background-image: url("/scene.webp");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+
+  article {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ticketsLink {
+    background-color: #510926;
+    color: #fef0e0;
+  }
+
+  .scheduleLink {
+    background-color: #fef0e0;
+    color: #510926;
+  }
+}
