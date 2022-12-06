@@ -6,10 +6,11 @@ function TicketHolder(props) {
 
   function submit(e) {
     e.preventDefault();
-    props.setTicketHolder({
+    props.ticketHolderArr.push({
       fullname: ticketHolderForm.current.elements.fullname.value,
       email: ticketHolderForm.current.elements.email.value,
     });
+    console.log(props.ticketHolderArr);
   }
 
   return (

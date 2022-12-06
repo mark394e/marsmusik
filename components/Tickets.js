@@ -7,6 +7,18 @@ function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
   // - det skal bla. bruges til at tjekke om der er nok ledige camping spots
   const ticketAmount = props.counterREG + props.counterVIP;
+
+  const ticketholders = Array.from({ length: ticketAmount }, (_, index) => {
+    return (
+      <TicketHolder
+        ticketHolder={props.ticketHolder}
+        setTicketHolder={props.setTicketHolder}
+        key={index}
+        ticketHolderArr={props.ticketHolderArr}
+      ></TicketHolder>
+    );
+  });
+
   return (
     <>
       <section className="around">
@@ -43,12 +55,7 @@ function Tickets(props) {
             <button onClick={() => props.setShowTicketHolder(true)}>Continue</button>
           )}
           {/* hvad sker der herunder ???? */}
-          {props.showTicketHolder && (
-            <TicketHolder
-              ticketHolder={props.ticketHolder}
-              setTicketHolder={props.setTicketHolder}
-            ></TicketHolder>
-          )}
+          {props.showTicketHolder && ticketholders}
           {props.showTicketHolder && !props.showExtras && (
             <button onClick={() => props.setShowExtras(true)}>Continue</button>
           )}
