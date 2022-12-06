@@ -2,7 +2,7 @@ import "../styles/PaymentForm.module.scss";
 import { insertOrder } from "../modules/db";
 import { useRef } from "react";
 
-function PaymentForm() {
+function PaymentForm(props) {
   const theForm = useRef(null);
 
   function submit(e) {
@@ -16,8 +16,8 @@ function PaymentForm() {
       city: theForm.current.elements.city.value,
       ticketholder: [
         {
-          fullname: "janne hjuler",
-          email: "jannehjuler@hotmail.com",
+          fullname: props.ticketHolder.fullname,
+          email: props.ticketHolder.email,
           tickettype: "reg",
         },
       ],
@@ -42,12 +42,7 @@ function PaymentForm() {
           </label>
           <label htmlFor="zipcode">
             Zip code
-            <input
-              type="text"
-              inputMode="numeric"
-              id="zipcode"
-              name="zipcode"
-            />
+            <input type="text" inputMode="numeric" id="zipcode" name="zipcode" />
           </label>
           <label htmlFor="city">
             City
@@ -73,33 +68,15 @@ function PaymentForm() {
           </label>
           <label htmlFor="month">
             Month
-            <input
-              type="text"
-              inputMode="numeric"
-              maxLength="2"
-              id="month"
-              name="month"
-            />
+            <input type="text" inputMode="numeric" maxLength="2" id="month" name="month" />
           </label>
           <label htmlFor="year">
             Year
-            <input
-              type="text"
-              inputMode="numeric"
-              maxLength="2"
-              id="year"
-              name="year"
-            />
+            <input type="text" inputMode="numeric" maxLength="2" id="year" name="year" />
           </label>
           <label htmlFor="cvv">
             CVV
-            <input
-              type="text"
-              inputMode="numeric"
-              maxLength="3"
-              id="cvv"
-              name="cvv"
-            />
+            <input type="text" inputMode="numeric" maxLength="3" id="cvv" name="cvv" />
           </label>
         </form>
       </section>

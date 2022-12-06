@@ -43,7 +43,12 @@ function Tickets(props) {
             <button onClick={() => props.setShowTicketHolder(true)}>Continue</button>
           )}
           {/* hvad sker der herunder ???? */}
-          {props.showTicketHolder && <TicketHolder></TicketHolder>}
+          {props.showTicketHolder && (
+            <TicketHolder
+              ticketHolder={props.ticketHolder}
+              setTicketHolder={props.setTicketHolder}
+            ></TicketHolder>
+          )}
           {props.showTicketHolder && !props.showExtras && (
             <button onClick={() => props.setShowExtras(true)}>Continue</button>
           )}

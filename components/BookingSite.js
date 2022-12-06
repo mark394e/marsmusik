@@ -9,6 +9,7 @@ import "../styles/BookingSite.module.scss";
 
 function BookingSite() {
   const [pickedCamping, setPickedCamping] = useState("");
+  const [ticketHolder, setTicketHolder] = useState([]);
   const [counterVIP, setCounterVIP] = useState(0);
   const [counterREG, setCounterREG] = useState(0);
   const [campingspot, setCampingspot] = useState([]);
@@ -26,6 +27,8 @@ function BookingSite() {
     }
     getData();
   }, []);
+
+  console.log(ticketHolder);
 
   return (
     <>
@@ -47,12 +50,16 @@ function BookingSite() {
         setPickedCamping={setPickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
+        ticketHolder={ticketHolder}
+        setTicketHolder={setTicketHolder}
       ></Tickets>
       {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
       {/* hvad betyder &&?? */}
       <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
       {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
-      {showPaymentForm && <PaymentForm></PaymentForm>}
+      {showPaymentForm && (
+        <PaymentForm ticketHolder={ticketHolder} setTicketHolder={setTicketHolder}></PaymentForm>
+      )}
       <Basket
         counterREG={counterREG}
         counterVIP={counterVIP}

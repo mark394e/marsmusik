@@ -1,9 +1,20 @@
 import "../styles/Ticketholder.module.scss";
+import { useRef } from "react";
 
-function TicketHolder() {
+function TicketHolder(props) {
+  const ticketHolderForm = useRef(null);
+
+  function submit(e) {
+    e.preventDefault();
+    props.setTicketHolder({
+      fullname: ticketHolderForm.current.elements.fullname.value,
+      email: ticketHolderForm.current.elements.email.value,
+    });
+  }
+
   return (
     <>
-      <form id="ticketholderform">
+      <form id="ticketholderform" onSubmit={submit} ref={ticketHolderForm}>
         <label htmlFor="fullname">
           {" "}
           Full name
@@ -13,6 +24,7 @@ function TicketHolder() {
           E-mail
           <input type="email" id="email" name="email" />
         </label>
+        <button>Submit</button>
       </form>
     </>
   );
