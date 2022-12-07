@@ -6,16 +6,25 @@ function TicketHolderVIP(props) {
 
   function submit(e) {
     e.preventDefault();
-    props.ticketHolderArr.push({
-      fullname: ticketHolderForm.current.elements.fullname.value,
-      email: ticketHolderForm.current.elements.email.value,
-      tickettype: "VIP",
-    });
-    console.log(props.ticketHolderArr);
+    props.setTicketHolders((current) => [
+      ...current,
+      {
+        fullname: ticketHolderForm.current.elements.fullname.value,
+        email: ticketHolderForm.current.elements.email.value,
+        tickettype: "VIP",
+      },
+    ]);
+    // props.ticketHolderArr.push({
+    //   fullname: ticketHolderForm.current.elements.fullname.value,
+    //   email: ticketHolderForm.current.elements.email.value,
+    //   tickettype: "VIP",
+    // });
+    console.log(props.ticketHolders);
   }
 
   return (
     <>
+      <h3>VIP ticket</h3>
       <form id="ticketholderform" onSubmit={submit} ref={ticketHolderForm}>
         <label htmlFor="fullname">
           {" "}

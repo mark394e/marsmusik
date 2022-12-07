@@ -10,11 +10,25 @@ function Tickets(props) {
   const ticketAmount = props.counterREG + props.counterVIP;
 
   const ticketholdersREG = Array.from({ length: props.counterREG }, (_, index) => {
-    return <TicketHolderREG key={index} ticketHolderArr={props.ticketHolderArr}></TicketHolderREG>;
+    return (
+      <TicketHolderREG
+        key={index}
+        ticketHolderArr={props.ticketHolderArr}
+        ticketHolders={props.ticketHolders}
+        setTicketHolders={props.setTicketHolders}
+      ></TicketHolderREG>
+    );
   });
 
   const ticketholdersVIP = Array.from({ length: props.counterVIP }, (_, index) => {
-    return <TicketHolderVIP key={index} ticketHolderArr={props.ticketHolderArr}></TicketHolderVIP>;
+    return (
+      <TicketHolderVIP
+        key={index}
+        ticketHolderArr={props.ticketHolderArr}
+        ticketHolders={props.ticketHolders}
+        setTicketHolders={props.setTicketHolders}
+      ></TicketHolderVIP>
+    );
   });
 
   return (

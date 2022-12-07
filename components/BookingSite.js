@@ -9,6 +9,7 @@ import "../styles/BookingSite.module.scss";
 
 function BookingSite() {
   const [pickedCamping, setPickedCamping] = useState("");
+  const [ticketHolders, setTicketHolders] = useState([]);
   const [counterVIP, setCounterVIP] = useState(0);
   const [counterREG, setCounterREG] = useState(0);
   const [campingspot, setCampingspot] = useState([]);
@@ -19,6 +20,7 @@ function BookingSite() {
   const [showPickedCamping, setShowPickedCamping] = useState(false);
 
   const ticketHolderArr = [];
+  console.log("Ticketholders", ticketHolders);
 
   useEffect(() => {
     async function getData() {
@@ -28,8 +30,6 @@ function BookingSite() {
     }
     getData();
   }, []);
-
-  console.log("Ticketholders", ticketHolderArr);
 
   return (
     <>
@@ -51,13 +51,21 @@ function BookingSite() {
         setPickedCamping={setPickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
-        ticketHolderArr={ticketHolderArr}
+        // ticketHolderArr={ticketHolderArr}
+        ticketHolders={ticketHolders}
+        setTicketHolders={setTicketHolders}
       ></Tickets>
       {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
       {/* hvad betyder &&?? */}
       <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
       {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
-      {showPaymentForm && <PaymentForm ticketHolderArr={ticketHolderArr}></PaymentForm>}
+      {showPaymentForm && (
+        <PaymentForm
+          ticketHolderArr={ticketHolderArr}
+          ticketHolders={ticketHolders}
+          setTicketHolders={setTicketHolders}
+        ></PaymentForm>
+      )}
       <Basket
         counterREG={counterREG}
         counterVIP={counterVIP}

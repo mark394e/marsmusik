@@ -14,7 +14,7 @@ function PaymentForm(props) {
       address: theForm.current.elements.address.value,
       zipcode: theForm.current.elements.zipcode.value,
       city: theForm.current.elements.city.value,
-      ticketholder: props.ticketHolderArr,
+      ticketholder: props.ticketHolders,
     });
   }
   return (
