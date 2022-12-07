@@ -39,7 +39,8 @@ function Basket(props) {
           </li>
         )}
       </ul>
-      <h4>Camping: {!props.showPickedCamping ? "None" : props.pickedCamping}</h4>
+      <h4>Camping:</h4>
+      <p>{!props.showPickedCamping ? "None" : props.pickedCamping}</p>
       <ul>
         <li>extra product</li>
         <li>extra product</li>

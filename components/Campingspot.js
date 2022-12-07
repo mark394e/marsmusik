@@ -4,7 +4,6 @@ import "../styles/Campingspot.module.scss";
 function Campingspot(props) {
   const ref = useRef(null);
 
-  const pickedCamping = props.showPickedCamping;
   // vi bruger useeffect så vi kun henter data når det er nødvndigt (så det ikke looper unødvsndigt meget)
   useEffect(() => {
     // hvad betyder ref.current???
@@ -15,19 +14,22 @@ function Campingspot(props) {
     if (props.data.available < props.ticketAmount || props.data.available <= 0) {
       campingspot.classList.add("fullybooked");
       campingspot.style.pointerEvents = "none";
-    } else campingspot.classList.remove("fullybooked");
+    } else {
+      campingspot.classList.remove("fullybooked");
+      campingspot.style.pointerEvents = "auto";
+    }
   });
 
   function clickedCamping() {
-    props.setPickedCamping(props.data.area);
+    props.setPickedCamping(props.data.area + " - Price: 99,-");
     props.setShowPickedCamping(true);
   }
 
   return (
     <>
-      <section className="grid">
+      <section>
         <article ref={ref} className="campingspot" onClick={clickedCamping}>
-          <p>{props.data.area}</p>
+          <h3>{props.data.area}</h3>
           <p>Available: {props.data.available}</p>
         </article>
       </section>
