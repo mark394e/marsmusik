@@ -59,15 +59,15 @@ function ScheduleSite(props) {
     return 0;
   });
 
-  // filtered.sort((a, b) => {
-  //   if (a[sortReversed] > b[sortReversed]) {
-  //     return -1;
-  //   }
-  //   if (a[sortReversed] < b[sortReversed]) {
-  //     return 1;
-  //   }
-  //   return 0;
-  // });
+  filtered.sort((a, b) => {
+    if (a[sortReversed] > b[sortReversed]) {
+      return -1;
+    }
+    if (a[sortReversed] < b[sortReversed]) {
+      return 1;
+    }
+    return 0;
+  });
 
   //Her filtrer vi blandt det rå data fra pureBands
   if (filterStage) {
@@ -81,6 +81,7 @@ function ScheduleSite(props) {
 
   return (
     <section className="schedule">
+      <div className="schedule_bg"></div>
       <h1>Schedule</h1>
       <fieldset>
         <legend>Filter by stage</legend>
@@ -118,7 +119,7 @@ function ScheduleSite(props) {
             stage={day}
           />
         ))}
-        <legend>Filter by stage</legend>
+        <legend>Filter by day</legend>
       </fieldset>
       <fieldset>
         <legend>Sort</legend>

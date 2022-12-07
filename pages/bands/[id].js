@@ -1,57 +1,34 @@
 import configData from "../../config.json";
+import Head from "next/head";
+import Anchor from "../../components/Anchor";
 
-export default function Artist(props) {
-  console.log(props);
+export default function Artist({ data }) {
+  console.log(...data);
+
   return (
     <>
-      <h1>Hej</h1>
-      {/* <Head>
-        <title>{data.productdisplayname}</title>
+      <Head>
+        <title>{data[0].name}</title>
       </Head>
-      <div className="product-margin">
-        <Anchor href="/shop/">
-          <div className="cta">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-arrow-left-circle"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
-              />
-            </svg>
-            <p>Go back</p>
+      <section className="artist">
+        <Anchor href="/schedule">
+          <div>
+            <p style={{ marginTop: "20%" }}> Go back</p>
           </div>
         </Anchor>
-        <div className="dog-grid">
-          <img
-            src={`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp`}
-            alt={data.productdisplayname}
-          />
-          <div className="dog-flex">
-            <h1>{data.productdisplayname}</h1>
-            <p>
-              Brand: <em>{data.brandname}</em>
-            </p>
-            <h3>{data.price},-</h3>
-            <button onClick={addToCart}>Add to cart</button>
-          </div>
-        </div>
-      </div> */}
+        <h1 style={{ fontSize: "5rem", marginTop: "1%" }}>{data[0].name}</h1>
+        <p>{data[0].bio}</p>
+      </section>
     </>
   );
 }
 
-export async function getStaticProps(context) {
-  console.log(context);
+export async function getServerSideProps(context) {
+  // console.log(context.params.id);
   const res = await fetch(
-    `${configData.url}/bands/` + context.params.id // id fordi min fil eller id
+    `${configData.url}/bands/` // id fordi min fil eller id
   );
-
+  // console.log(res);
   // If no succes, return a 404 redirect
   if (res.status != 200) {
     return {
@@ -59,30 +36,39 @@ export async function getStaticProps(context) {
     };
   }
 
-  const data = await res.json();
+  const bands = await res.json();
 
-  console.log(data);
+  //I en const lagrer jeg dét band hvis id er det samme som context.params.id
+  //Dét bands information skal vises på siden
+  const currentBand = bands.filter(
+    (band) => Number(band.id) === Number(context.params.id)
+  );
+  // console.log(currentBand);
+
+  // console.log(data);
 
   return {
     props: {
-      data,
+      data: currentBand,
     },
   };
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${configData.url}/bands/`);
+// export async function getStaticPaths() {
+//   const res = await fetch(`${configData.url}/bands/`);
 
-  const data = await res.json();
+//   const data = await res.json();
 
-  console.log(data);
+//   console.log(data.id);
 
-  const paths = data.map((entry) => {
-    return { params: { id: entry.id.toString() } }; // id i stedet for slug. skal laves til string, da browser ikke læser numre
-  });
+//   const paths = data.map((entry) => {
+//     return { params: { id: entry.id.toString() } }; // id i stedet for slug. skal laves til string, da browser ikke læser numre
+//   });
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   console.log(paths);
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }

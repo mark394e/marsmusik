@@ -1,4 +1,27 @@
 .schedule {
+  .schedule_bg {
+    background-image: url("/stages.webp");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    // opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
+    );
+  }
+
+  h1 {
+    margin-top: 30%;
+    font-size: 5rem;
+  }
   margin-left: 15%;
   margin-right: 15%;
   .schedule_container {
@@ -7,10 +30,26 @@
     grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
   }
 
-  //Her vil jeg gerne justere kolonnerne så til differentierer på devices
-  //   @media (min-width: 700px) {
-  //     .schedule_container {
-  //       grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
-  //     }
-  //   }
+  fieldset {
+    // justify-content: stretch;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 50%;
+    border: none;
+    margin-top: 1rem;
+    gap: 5px;
+
+    legend {
+      flex-grow: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    //Her vil jeg gerne justere kolonnerne så til differentierer på devices
+    //   @media (min-width: 700px) {
+    //     .schedule_container {
+    //       grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
+    //     }
+    //   }
+  }
 }
