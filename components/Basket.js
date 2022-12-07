@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 function Basket(props) {
   const [showVIPTicket, setShowVIPTicket] = useState(false);
   const [showREGTicket, setShowREGTicket] = useState(false);
+  const [showExtras, setShowExtras] = useState(false);
 
   // conster der definere hva de forskellige priser på biletter er
   const priceVIP = 1299;
@@ -41,11 +42,13 @@ function Basket(props) {
       </ul>
       <h4>Camping:</h4>
       <p>{!props.showPickedCamping ? "None" : props.pickedCamping}</p>
-      <ul>
-        <li>extra product</li>
-        <li>extra product</li>
-        <li>extra product</li>
-      </ul>
+      {showExtras && (
+        <ul>
+          <li>extra product</li>
+          <li>extra product</li>
+          <li>extra product</li>
+        </ul>
+      )}
 
       <h3>Total: 1200,-</h3>
     </section>

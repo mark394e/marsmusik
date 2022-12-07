@@ -12,6 +12,9 @@ function BookingSite() {
   const [ticketHolders, setTicketHolders] = useState([]);
   const [counterVIP, setCounterVIP] = useState(0);
   const [counterREG, setCounterREG] = useState(0);
+  const [counterGreenCamp, setCounterGreenCamp] = useState(0);
+  const [counterPrebuildTwo, setCounterPrebuildTwo] = useState(0);
+  const [counterPrebuildThree, setCounterPrebuildThree] = useState(0);
   const [campingspot, setCampingspot] = useState([]);
   const [showExtras, setShowExtras] = useState(false);
   const [showCamping, setShowCamping] = useState(false);
@@ -57,7 +60,18 @@ function BookingSite() {
       ></Tickets>
       {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
       {/* hvad betyder &&?? */}
-      <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
+      <div className="extra-placement">
+        {showExtras && (
+          <Extras
+            counterGreenCamp={counterGreenCamp}
+            setCounterGreenCamp={setCounterGreenCamp}
+            counterPrebuildTwo={counterPrebuildTwo}
+            counterPrebuildThree={counterPrebuildThree}
+            setCounterPrebuildTwo={setCounterPrebuildTwo}
+            setCounterPrebuildThree={setCounterPrebuildThree}
+          ></Extras>
+        )}
+      </div>
       {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
       {showPaymentForm && (
         <PaymentForm
