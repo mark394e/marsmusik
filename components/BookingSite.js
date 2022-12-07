@@ -20,7 +20,7 @@ function BookingSite() {
   const [showPickedCamping, setShowPickedCamping] = useState(false);
 
   const ticketHolderArr = [];
-  console.log("Ticketholders", ticketHolders);
+  // console.log("Ticketholders", ticketHolders);
 
   useEffect(() => {
     async function getData() {

@@ -46,21 +46,28 @@ function Tickets(props) {
           {!props.showCamping && (
             <button onClick={() => props.setShowCamping(true)}>Continue</button>
           )}
-          <div className="grid">
+          <div className="camping-wrapper">
             {/* her mapper vi ignnem camping spots for at få vist alle */}
             {/* det her skal forklares bedre !!! */}
-            {props.showCamping &&
-              props.campingspot.map((spot) => (
-                <Campingspot
-                  data={spot}
-                  key={spot.area}
-                  ticketAmount={ticketAmount}
-                  setPickedCamping={props.setPickedCamping}
-                  pickedCamping={props.pickedCamping}
-                  showPickedCamping={props.showPickedCamping}
-                  setShowPickedCamping={props.setShowPickedCamping}
-                ></Campingspot>
-              ))}
+            {props.showCamping && (
+              <>
+                <h3>Pick a campingspot:</h3>
+                <p>99,- for one area</p>
+                <div className="campingspot-container">
+                  {props.campingspot.map((spot) => (
+                    <Campingspot
+                      data={spot}
+                      key={spot.area}
+                      ticketAmount={ticketAmount}
+                      setPickedCamping={props.setPickedCamping}
+                      pickedCamping={props.pickedCamping}
+                      showPickedCamping={props.showPickedCamping}
+                      setShowPickedCamping={props.setShowPickedCamping}
+                    ></Campingspot>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
           {props.showCamping && !props.showTicketHolder && (

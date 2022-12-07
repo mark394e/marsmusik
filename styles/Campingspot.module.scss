@@ -3,19 +3,30 @@
   border-radius: 25px;
   padding: 1rem;
   color: antiquewhite;
-  width: 50%;
+  cursor: pointer;
+  line-height: 1.5rem;
+  letter-spacing: 2px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .fullybooked {
   background-color: lightgray;
   color: black;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-.grid {
-  margin: 10px;
-
-  display: grid;
-  justify-content: center;
-  gap: 0.1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+.camping-wrapper {
+  display: flex;
+  flex-direction: column;
+  .campingspot-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
