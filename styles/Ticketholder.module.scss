@@ -1,9 +1,41 @@
 #ticketholderform {
   display: flex;
   flex-direction: column;
+  border: 1px solid #510927;
+    border-radius: 7px;
+  margin: 2rem;
+
   label {
     display: flex;
     flex-direction: column;
+    margin: 0.7rem;
   }
 
+  input {
+  border-width: 1px;
+  border-radius: 7px;
+  height: 40px;
+  padding:8px;
+  margin: 0.2rem;
+  border: 1px solid #510927;
 }
+
+button{
+  margin: 1.5rem;
+}
+
+
+
+}
+
+.thankyou{
+  margin: 3rem;
+}
+
+.formticketholder{
+  margin: 2rem;
+  margin-top: 5rem;
+
+
+}
+

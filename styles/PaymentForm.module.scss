@@ -3,6 +3,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 10%;
   margin: 3rem; 
+ max-width: 800px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+
   .forms {
     display: flex;
     flex-direction: column;
@@ -32,8 +36,9 @@ body {
 
 input {
   border-width: 1px;
-
+border: 1px solid #510927;
   border-radius: 7px;
+
   height: 40px;
   padding:8px;
 }
@@ -41,6 +46,7 @@ input {
     label {
       display: flex;
       flex-direction: column;
+    
     }
   }
 }
