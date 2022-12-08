@@ -22,9 +22,6 @@ function BookingSite() {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [showPickedCamping, setShowPickedCamping] = useState(false);
 
-  const ticketHolderArr = [];
-  // console.log("Ticketholders", ticketHolders);
-
   useEffect(() => {
     async function getData() {
       const res = await fetch(`${configData.url}/available-spots`);
@@ -54,7 +51,6 @@ function BookingSite() {
         setPickedCamping={setPickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
-        // ticketHolderArr={ticketHolderArr}
         ticketHolders={ticketHolders}
         setTicketHolders={setTicketHolders}
       ></Tickets>
@@ -64,9 +60,9 @@ function BookingSite() {
         {showExtras && (
           <Extras
             counterGreenCamp={counterGreenCamp}
-            setCounterGreenCamp={setCounterGreenCamp}
             counterPrebuildTwo={counterPrebuildTwo}
             counterPrebuildThree={counterPrebuildThree}
+            setCounterGreenCamp={setCounterGreenCamp}
             setCounterPrebuildTwo={setCounterPrebuildTwo}
             setCounterPrebuildThree={setCounterPrebuildThree}
           ></Extras>
@@ -75,7 +71,6 @@ function BookingSite() {
       {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
       {showPaymentForm && (
         <PaymentForm
-          ticketHolderArr={ticketHolderArr}
           ticketHolders={ticketHolders}
           setTicketHolders={setTicketHolders}
         ></PaymentForm>
@@ -87,6 +82,9 @@ function BookingSite() {
         pickedCamping={pickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
+        counterGreenCamp={counterGreenCamp}
+        counterPrebuildTwo={counterPrebuildTwo}
+        counterPrebuildThree={counterPrebuildThree}
       ></Basket>
     </>
   );

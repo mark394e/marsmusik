@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/Extras.module.scss";
 
-function Extras() {
+function Extras(props) {
   const increaseGreenCamp = () => {
     props.setCounterGreenCamp((count) => count + 1);
   };
 
   const decreaseGreenCamp = () => {
-    if (props.counterVIP > 0) {
+    if (props.counterGreenCamp > 0) {
       props.setCounterGreenCamp((count) => count - 1);
     }
   };
@@ -17,7 +17,7 @@ function Extras() {
   };
 
   const decreasePrebuildTwo = () => {
-    if (props.counterREG > 0) {
+    if (props.counterPrebuildTwo > 0) {
       props.setCounterPrebuildTwo((count) => count - 1);
     }
   };
@@ -27,7 +27,7 @@ function Extras() {
   };
 
   const decreasePrebuildThree = () => {
-    if (props.counterREG > 0) {
+    if (props.counterPrebuildThree > 0) {
       props.setCounterPrebuildThree((count) => count - 1);
     }
   };
@@ -49,7 +49,7 @@ function Extras() {
         <button onClick={decreaseGreenCamp} className="counter-minus">
           -
         </button>
-        <span>{props.counterVIP}</span>
+        <span>{props.counterGreenCamp}</span>
         <button onClick={increaseGreenCamp} className="counter-plus">
           +
         </button>
@@ -66,7 +66,7 @@ function Extras() {
         <button onClick={decreasePrebuildTwo} className="counter-minus">
           -
         </button>
-        <span>{props.counterVIP}</span>
+        <span>{props.counterPrebuildTwo}</span>
         <button onClick={increasePrebuildTwo} className="counter-plus">
           +
         </button>
@@ -80,7 +80,7 @@ function Extras() {
         <button onClick={decreasePrebuildThree} className="counter-minus">
           -
         </button>
-        <span>{props.counterVIP}</span>
+        <span>{props.counterPrebuildThree}</span>
         <button onClick={increasePrebuildThree} className="counter-plus">
           +
         </button>

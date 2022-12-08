@@ -1,28 +1,53 @@
-import "../styles/basket.module.scss";
+// import "../styles/basket.module.scss";
+import styles from "../styles/Basket.module.scss";
+import prices from "../modules/prices.json";
 import { useState, useEffect } from "react";
 
 function Basket(props) {
   const [showVIPTicket, setShowVIPTicket] = useState(false);
   const [showREGTicket, setShowREGTicket] = useState(false);
-  const [showExtras, setShowExtras] = useState(false);
+  const [showGreenCamp, setShowGreenCamp] = useState(false);
+  const [showPrebuildTwo, setShowPrebuildTwo] = useState(false);
+  const [showPrebuildThree, setShowPrebuildThree] = useState(false);
+
+  const priceTotal =
+    props.counterVIP * prices.priceVIP +
+    props.counterREG * prices.priceREG +
+    props.counterGreenCamp * prices.priceGreenCamp +
+    props.counterPrebuildTwo * prices.pricePrebuildTwo +
+    props.counterPrebuildThree * prices.pricePrebuildThree +
+    prices.priceCampingspot;
 
   // conster der definere hva de forskellige priser på biletter er
-  const priceVIP = 1299;
-  const priceREG = 799;
 
   useEffect(() => {
     if (props.counterVIP > 0) {
       setShowVIPTicket(true);
     } else if (props.counterREG > 0) {
       setShowREGTicket(true);
-    } else {
-      setShowREGTicket(false);
+    } else if (props.counterVIP == 0) {
       setShowVIPTicket(false);
+    } else if (props.counterREG == 0) {
+      setShowREGTicket(false);
     }
   }, [props.counterVIP, props.counterREG]);
 
+  useEffect(() => {
+    if (props.counterGreenCamp > 0) {
+      setShowGreenCamp(true);
+    } else if (props.counterPrebuildTwo > 0) {
+      setShowPrebuildTwo(true);
+    } else if (props.counterPrebuildThree > 0) {
+      setShowPrebuildThree(true);
+    } else {
+      setShowGreenCamp(false);
+      setShowPrebuildTwo(false);
+      setShowPrebuildThree(false);
+    }
+  }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
+
   return (
-    <section className="basket">
+    <section className={styles.basket}>
       <h3>Order</h3>
       <h4>Tickets:</h4>
       <ul>
@@ -31,26 +56,48 @@ function Basket(props) {
             {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
           biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
           for så at få en total værdi af de valgte biletter lagt sammen  */}
-            {props.counterVIP}x VIP - Price: {props.counterVIP * priceVIP},-
+            {props.counterVIP}x VIP - Price: {props.counterVIP * prices.priceVIP},-
           </li>
         )}
         {showREGTicket && (
           <li>
-            {props.counterREG}x Standard - Price: {props.counterREG * priceREG},-
+            {props.counterREG}x Standard - Price: {props.counterREG * prices.priceREG},-
           </li>
         )}
       </ul>
       <h4>Camping:</h4>
-      <p>{!props.showPickedCamping ? "None" : props.pickedCamping}</p>
-      {showExtras && (
-        <ul>
-          <li>extra product</li>
-          <li>extra product</li>
-          <li>extra product</li>
-        </ul>
-      )}
+      <p>
+        {!props.showPickedCamping ? (
+          "None"
+        ) : (
+          <>
+            {props.pickedCamping} <span> - Price: {prices.priceCampingspot},-</span>
+          </>
+        )}
+      </p>
+      <h4>Extras:</h4>
+      <ul>
+        {showGreenCamp && (
+          <li>
+            {props.counterGreenCamp}x Green Camping - Price:{" "}
+            {props.counterGreenCamp * prices.priceGreenCamp},-
+          </li>
+        )}
+        {showPrebuildTwo && (
+          <li>
+            {props.counterPrebuildTwo}x 2 person tent - Price:{" "}
+            {props.counterPrebuildTwo * prices.pricePrebuildTwo},-
+          </li>
+        )}
+        {showPrebuildThree && (
+          <li>
+            {props.counterPrebuildThree}x 3 person tent - Price:{" "}
+            {props.counterPrebuildThree * prices.pricePrebuildThree},-
+          </li>
+        )}
+      </ul>
 
-      <h3>Total: 1200,-</h3>
+      <h3>Total: {priceTotal},-</h3>
     </section>
   );
 }
