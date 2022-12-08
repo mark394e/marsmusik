@@ -2,13 +2,48 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
+  margin: 3rem; 
   .forms {
     display: flex;
     flex-direction: column;
     gap: 10%;
+
+    form label {
+  display: contents;
+}
+
+input:invalid {
+  background-color: rgb(250, 144, 144);
+}
+
+input:valid {
+  background-color: rgb(182, 235, 182);
+}
+
+html,
+body {
+  height: 70%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+input {
+  border-width: 1px;
+
+  border-radius: 7px;
+  height: 40px;
+  padding:8px;
+}
+
     label {
       display: flex;
       flex-direction: column;
     }
   }
 }
+
+
+
