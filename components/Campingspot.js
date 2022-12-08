@@ -21,7 +21,7 @@ function Campingspot(props) {
   });
 
   function clickedCamping() {
-    props.setPickedCamping(props.data.area + " - Price: 99,-");
+    props.setPickedCamping(props.data.area);
     props.setShowPickedCamping(true);
   }
 

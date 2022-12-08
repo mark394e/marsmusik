@@ -12,15 +12,15 @@ function BookingSite() {
   const [ticketHolders, setTicketHolders] = useState([]);
   const [counterVIP, setCounterVIP] = useState(0);
   const [counterREG, setCounterREG] = useState(0);
+  const [counterGreenCamp, setCounterGreenCamp] = useState(0);
+  const [counterPrebuildTwo, setCounterPrebuildTwo] = useState(0);
+  const [counterPrebuildThree, setCounterPrebuildThree] = useState(0);
   const [campingspot, setCampingspot] = useState([]);
   const [showExtras, setShowExtras] = useState(false);
   const [showCamping, setShowCamping] = useState(false);
   const [showTicketHolder, setShowTicketHolder] = useState(false);
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [showPickedCamping, setShowPickedCamping] = useState(false);
-
-  const ticketHolderArr = [];
-  // console.log("Ticketholders", ticketHolders);
 
   useEffect(() => {
     async function getData() {
@@ -51,17 +51,26 @@ function BookingSite() {
         setPickedCamping={setPickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
-        // ticketHolderArr={ticketHolderArr}
         ticketHolders={ticketHolders}
         setTicketHolders={setTicketHolders}
       ></Tickets>
       {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
       {/* hvad betyder &&?? */}
-      <div className="extra-placement">{showExtras && <Extras></Extras>}</div>
+      <div className="extra-placement">
+        {showExtras && (
+          <Extras
+            counterGreenCamp={counterGreenCamp}
+            counterPrebuildTwo={counterPrebuildTwo}
+            counterPrebuildThree={counterPrebuildThree}
+            setCounterGreenCamp={setCounterGreenCamp}
+            setCounterPrebuildTwo={setCounterPrebuildTwo}
+            setCounterPrebuildThree={setCounterPrebuildThree}
+          ></Extras>
+        )}
+      </div>
       {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
       {showPaymentForm && (
         <PaymentForm
-          ticketHolderArr={ticketHolderArr}
           ticketHolders={ticketHolders}
           setTicketHolders={setTicketHolders}
         ></PaymentForm>
@@ -73,6 +82,9 @@ function BookingSite() {
         pickedCamping={pickedCamping}
         showPickedCamping={showPickedCamping}
         setShowPickedCamping={setShowPickedCamping}
+        counterGreenCamp={counterGreenCamp}
+        counterPrebuildTwo={counterPrebuildTwo}
+        counterPrebuildThree={counterPrebuildThree}
       ></Basket>
     </>
   );
