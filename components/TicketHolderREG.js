@@ -63,7 +63,12 @@ function TicketHolderREG(props) {
           <label htmlFor="fullname">
             {" "}
             Full name
-            <input type="text" id="fullname" name="fullname" />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Fullname"
+            />
           </label>
           <label htmlFor="email">
             E-mail

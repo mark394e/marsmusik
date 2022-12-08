@@ -14,6 +14,7 @@
 
     form label {
   display: contents;
+
 }
 
 input:invalid {
@@ -38,7 +39,7 @@ input {
   border-width: 1px;
 border: 1px solid #510927;
   border-radius: 7px;
-
+// background-color: transparent;
   height: 40px;
   padding:8px;
 }
@@ -51,5 +52,13 @@ border: 1px solid #510927;
   }
 }
 
+.flexit{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  label{
+    width: 110px;
+  }
+}
 
 

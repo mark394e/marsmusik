@@ -94,29 +94,31 @@ function PaymentForm(props) {
               placeholder="Address"
             />
           </label>
-          <label htmlFor="zipcode">
-            Zip code
-            <input
-              onInput={inputChange}
-              type="text"
-              inputMode="numeric"
-              id="zipcode"
-              name="zipcode"
-              maxLength={4}
-              required
-              placeholder="Zip code"
-            />
-          </label>
-          <label htmlFor="city">
-            City
-            <input
-              type="text"
-              id="city"
-              name="city"
-              required
-              placeholder="City"
-            />
-          </label>
+          <div className="flexit">
+            <label htmlFor="zipcode">
+              Zip code
+              <input
+                onInput={inputChange}
+                type="text"
+                inputMode="numeric"
+                id="zipcode"
+                name="zipcode"
+                maxLength={4}
+                required
+                placeholder="Zip code"
+              />
+            </label>
+            <label htmlFor="city">
+              City
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+                placeholder="City"
+              />
+            </label>
+          </div>
           <button>submit</button>
         </form>
 
@@ -144,44 +146,46 @@ function PaymentForm(props) {
               placeholder="XXXXXXXXXXXXXXXX"
             />
           </label>
-          <label htmlFor="month">
-            Month
-            <input
-              onInput={inputChange}
-              type="text"
-              inputMode="numeric"
-              maxLength={2}
-              id="month"
-              name="month"
-              placeholder="XX"
-              required
-            />
-          </label>
-          <label htmlFor="year">
-            Year
-            <input
-              onInput={inputChange}
-              type="text"
-              inputMode="numeric"
-              maxLength={2}
-              id="year"
-              name="year"
-              placeholder="XX"
-              required
-            />
-          </label>
-          <label htmlFor="cvv">
-            CVV
-            <input
-              type="text"
-              inputMode="numeric"
-              maxLength={3}
-              id="cvv"
-              name="cvv"
-              placeholder="XXX"
-              required
-            />
-          </label>
+          <div className="flexit">
+            <label htmlFor="month">
+              Month
+              <input
+                onInput={inputChange}
+                type="text"
+                inputMode="numeric"
+                maxLength={2}
+                id="month"
+                name="month"
+                placeholder="XX"
+                required
+              />
+            </label>
+            <label htmlFor="year">
+              Year
+              <input
+                onInput={inputChange}
+                type="text"
+                inputMode="numeric"
+                maxLength={2}
+                id="year"
+                name="year"
+                placeholder="XX"
+                required
+              />
+            </label>
+            <label htmlFor="cvv">
+              CVV
+              <input
+                type="text"
+                inputMode="numeric"
+                maxLength={3}
+                id="cvv"
+                name="cvv"
+                placeholder="XXX"
+                required
+              />
+            </label>
+          </div>
         </form>
       </section>
     </>
