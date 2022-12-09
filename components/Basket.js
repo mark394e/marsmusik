@@ -15,8 +15,7 @@ function Basket(props) {
     props.counterREG * prices.priceREG +
     props.counterGreenCamp * prices.priceGreenCamp +
     props.counterPrebuildTwo * prices.pricePrebuildTwo +
-    props.counterPrebuildThree * prices.pricePrebuildThree +
-    prices.priceCampingspot;
+    props.counterPrebuildThree * prices.pricePrebuildThree;
 
   // conster der definere hva de forskellige priser på biletter er
 
@@ -97,7 +96,7 @@ function Basket(props) {
         )}
       </ul>
 
-      <h3>Total: {priceTotal},-</h3>
+      <h3>Total: {priceTotal + prices.priceCampingspot},-</h3>
     </section>
   );
 }
