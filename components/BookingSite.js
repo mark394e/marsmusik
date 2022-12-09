@@ -69,9 +69,7 @@ function BookingSite() {
             ></Extras>
           )}
         </div>
-        {showExtras && (
-          <button onClick={() => setShowPaymentForm(true)}>Continue</button>
-        )}
+        {showExtras && <button onClick={() => setShowPaymentForm(true)}>Continue</button>}
         {showPaymentForm && (
           <PaymentForm
             ticketHolders={ticketHolders}

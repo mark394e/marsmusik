@@ -9,6 +9,7 @@ function Basket(props) {
   const [showGreenCamp, setShowGreenCamp] = useState(false);
   const [showPrebuildTwo, setShowPrebuildTwo] = useState(false);
   const [showPrebuildThree, setShowPrebuildThree] = useState(false);
+  const [priceCampingspot, setPriceCampingspot] = useState(0);
 
   const priceTotal =
     props.counterVIP * prices.priceVIP +
@@ -45,6 +46,12 @@ function Basket(props) {
     }
   }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
 
+  useEffect(() => {
+    if (props.showPickedCamping) {
+      setPriceCampingspot(99);
+    }
+  }, [props.showPickedCamping]);
+
   return (
     <section className={styles.basket}>
       <h3>Order</h3>
@@ -70,7 +77,7 @@ function Basket(props) {
           "None"
         ) : (
           <>
-            {props.pickedCamping} <span> - Price: {prices.priceCampingspot},-</span>
+            {props.pickedCamping} <span> - Price: 99,-</span>
           </>
         )}
       </p>
@@ -96,7 +103,7 @@ function Basket(props) {
         )}
       </ul>
 
-      <h3>Total: {priceTotal + prices.priceCampingspot},-</h3>
+      <h3>Total: {priceTotal + priceCampingspot},-</h3>
     </section>
   );
 }
