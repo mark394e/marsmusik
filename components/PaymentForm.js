@@ -1,5 +1,5 @@
 import "../styles/PaymentForm.module.scss";
-import { insertOrder } from "../modules/db";
+import { insertOrder, fullfillReservation } from "../modules/db";
 import { useRef } from "react";
 import { useState } from "react";
 
@@ -16,7 +16,12 @@ function PaymentForm(props) {
       zipcode: theForm.current.elements.zipcode.value,
       city: theForm.current.elements.city.value,
       ticketholder: props.ticketHolders,
+      campingspot: props.pickedCamping,
     });
+
+    console.log(props.reserveID);
+
+    fullfillReservation({ id: props.reserveID });
   }
   // det her virker hvis man fjerner labels... så vil den hoppe fra input felt til inputfelt
   // når maxlenght er her nået - meeeeeen ligenu er lorte labels ivejen mææhh
@@ -62,13 +67,7 @@ function PaymentForm(props) {
           <label htmlFor="fullname">
             {" "}
             Full name
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              required
-              placeholder="Full name "
-            />
+            <input type="text" id="fullname" name="fullname" required placeholder="Full name " />
           </label>
           <label htmlFor="email">
             E-mail
@@ -86,13 +85,7 @@ function PaymentForm(props) {
 
           <label htmlFor="address">
             Address
-            <input
-              type="text"
-              id="address"
-              name="address"
-              required
-              placeholder="Address"
-            />
+            <input type="text" id="address" name="address" required placeholder="Address" />
           </label>
           <div className="flexit">
             <label htmlFor="zipcode">
@@ -110,13 +103,7 @@ function PaymentForm(props) {
             </label>
             <label htmlFor="city">
               City
-              <input
-                type="text"
-                id="city"
-                name="city"
-                required
-                placeholder="City"
-              />
+              <input type="text" id="city" name="city" required placeholder="City" />
             </label>
           </div>
           <button>submit</button>

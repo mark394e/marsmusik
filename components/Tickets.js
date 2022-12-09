@@ -3,6 +3,7 @@ import Campingspot from "./Campingspot";
 import TicketHolderREG from "./TicketHolderREG";
 import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
+import configData from "../config.json";
 
 function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
@@ -63,6 +64,8 @@ function Tickets(props) {
                       pickedCamping={props.pickedCamping}
                       showPickedCamping={props.showPickedCamping}
                       setShowPickedCamping={props.setShowPickedCamping}
+                      reserveID={props.reserveID}
+                      setReserveID={props.setReserveID}
                     ></Campingspot>
                   ))}
                 </div>
