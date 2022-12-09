@@ -38,27 +38,33 @@ function PaymentForm(props) {
 
   // KODE FUNDET HER !! https://bobbyhadz.com/blog/react-check-if-email-is-valid
 
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState(null);
+  // const [email, setEmail] = useState("");
+  // const [error, setError] = useState(null);
 
-  function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
+  // function isValidEmail(email) {
+  //   return /\S+@\S+\.\S+/.test(email);
+  // }
 
-  const handleChange = (event) => {
-    if (!isValidEmail(event.target.value)) {
-      setError("Email is invalid");
-    } else {
-      setError(null);
-    }
+  // const handleChange = (event) => {
+  //   if (!isValidEmail(event.target.value)) {
+  //     setError("Email is invalid");
+  //   } else {
+  //     setError(null);
+  //   }
 
-    setEmail(event.target.value);
-  };
+  //   setEmail(event.target.value);
+  // };
 
   return (
     <>
       <section id="paymentform">
-        <form className="forms" onSubmit={submit} ref={theForm}>
+        <form
+          // action=""
+          // onsubmit="return false;"
+          className="forms"
+          onSubmit={submit}
+          ref={theForm}
+        >
           <label htmlFor="fullname">
             {" "}
             Full name
@@ -77,11 +83,15 @@ function PaymentForm(props) {
               id="email"
               name="email"
               placeholder="abc@gmail.com"
-              // required
-              value={email}
-              onChange={handleChange}
+              aria-describedby="hint-mail"
+              required
+              // value={email}
+              // onChange={handleChange}
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            <span class="error" id="err-mail" aria-live="assertive">
+              Type in your email address
+            </span>
+            {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
           </label>
 
           <label htmlFor="address">
