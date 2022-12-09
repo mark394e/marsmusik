@@ -20,6 +20,7 @@ const roboto = Roboto({
 //takes children meaning that it takes content from our pages
 export default function Layout(props) {
   const [openMenu, setOpenMenu] = useState(false);
+
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -44,18 +45,17 @@ export default function Layout(props) {
           </button>
           {openMenu ? (
             <div className="menu_overlay">
-              <ul style={{ fontFamily: `${shrikhand.style.fontFamily}` }} className="menu">
-                <li>
-                  <Anchor onClick={toggleMenu} href="/">
-                    Home
-                  </Anchor>
+              <ul
+                style={{ fontFamily: `${shrikhand.style.fontFamily}` }}
+                className="menu"
+              >
+                <li onClick={toggleMenu}>
+                  <Anchor href="/">Home</Anchor>
                 </li>
-                <li>
-                  <Anchor onClick={toggleMenu} href="/schedule/">
-                    Schedule
-                  </Anchor>
+                <li onClick={toggleMenu}>
+                  <Anchor href="/schedule/">Schedule</Anchor>
                 </li>
-                <li>
+                <li onClick={toggleMenu}>
                   <Anchor href="/booking/">Tickets</Anchor>
                 </li>
               </ul>

@@ -9,9 +9,9 @@ function ScheduleSite(props) {
   const [filterDay, setFilterDay] = useState("");
 
   //En state for sortering
-  const [sort, setSort] = useState("");
-
-  const [sortReversed, setSortReversed] = useState("");
+  const [sortColumn, setSortColumn] = useState("name");
+  //Ascending el. descending
+  const [sortDirection, setSortDirection] = useState("asc");
 
   //Istedet for at "spørge" efter hver scene og dag, indkapsler jeg disse i arrays
   //Det betyder jeg kan bruge forEach som i nedstående map
@@ -49,25 +49,29 @@ function ScheduleSite(props) {
   // console.log(starttime.reverse());
 
   filtered.sort((a, b) => {
-    if (a[sort] > b[sort]) {
+    if (a[sortColumn] > b[sortColumn]) {
       return 1;
     }
-    if (a[sort] < b[sort]) {
+    if (a[sortColumn] < b[sortColumn]) {
       return -1;
     }
 
     return 0;
   });
 
-  filtered.sort((a, b) => {
-    if (a[sortReversed] > b[sortReversed]) {
-      return -1;
-    }
-    if (a[sortReversed] < b[sortReversed]) {
-      return 1;
-    }
-    return 0;
-  });
+  if (sortDirection === "desc") {
+    filtered.reverse();
+  }
+
+  // filtered.sort((a, b) => {
+  //   if (a[sortDirection] > b[sortDirection]) {
+  //     return -1;
+  //   }
+  //   if (a[sortDirection] < b[sortDirection]) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
 
   //Her filtrer vi blandt det rå data fra pureBands
   if (filterStage) {
@@ -123,9 +127,38 @@ function ScheduleSite(props) {
       </fieldset>
       <fieldset>
         <legend>Sort</legend>
-        <button onClick={() => setSort("name")}>A - Z</button>
-        <button onClick={() => setSortReversed("name")}>Z - A</button>
-        <button onClick={() => setSort("start")}>First to play</button>
+        <button
+          onClick={() => {
+            setSortColumn("name");
+            setSortDirection("asc");
+          }}
+        >
+          A - Z
+        </button>
+        <button
+          onClick={() => {
+            setSortDirection("desc");
+            setSortColumn("name");
+          }}
+        >
+          Z - A
+        </button>
+        <button
+          onClick={() => {
+            setSortDirection("asc");
+            setSortColumn("start");
+          }}
+        >
+          First to play
+        </button>
+        {/* <button
+          onClick={() => {
+            setSortDirection("desc");
+            setSortColumn("start");
+          }}
+        >
+          Last to play
+        </button> */}
       </fieldset>
       <div className="schedule_container">
         {filtered.map((band) => {

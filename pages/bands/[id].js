@@ -1,9 +1,11 @@
 import configData from "../../config.json";
 import Head from "next/head";
 import Anchor from "../../components/Anchor";
+// import "Artist.module.scss" from "../styles/"
 
 export default function Artist({ data }) {
   console.log(...data);
+  const startsWith = data[0].logo.startsWith("http");
 
   return (
     <>
@@ -16,8 +18,40 @@ export default function Artist({ data }) {
             <p style={{ marginTop: "20%" }}> Go back</p>
           </div>
         </Anchor>
-        <h1 style={{ fontSize: "5rem", marginTop: "1%" }}>{data[0].name}</h1>
-        <p>{data[0].bio}</p>
+        <div className="artist_grid">
+          {" "}
+          {startsWith ? (
+            <div
+              className="background_image"
+              style={{
+                backgroundImage: `url("${data[0].logo.toString()}")`,
+                backgroundSize: "cover",
+                height: "100%",
+                width: "100%",
+                aspectRatio: "1/1",
+              }}
+            ></div>
+          ) : (
+            <div
+              className="background_image"
+              style={{
+                backgroundImage: `url("${
+                  configData.url
+                }/logos/${data[0].logo.toString()}")`,
+                backgroundSize: "cover",
+                height: "100%",
+                width: "100%",
+                aspectRatio: "1/1",
+              }}
+            ></div>
+          )}
+          <div>
+            <h1 style={{ fontSize: "5rem", marginTop: "1%" }}>
+              {data[0].name}
+            </h1>
+            <p>{data[0].bio}</p>
+          </div>
+        </div>
       </section>
     </>
   );
