@@ -1,3 +1,5 @@
 {
-  "url": "http://localhost:8080"
+  "url": "http://localhost:8080",
+  "serverURL": "https://solitary-butterfly-1534.fly.dev",
+  "localURL": "http://localhost:8080"
 }
