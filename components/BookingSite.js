@@ -21,6 +21,7 @@ function BookingSite() {
   const [showTicketHolder, setShowTicketHolder] = useState(false);
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [showPickedCamping, setShowPickedCamping] = useState(false);
+  const [showBasket, setShowBasket] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -30,6 +31,14 @@ function BookingSite() {
     }
     getData();
   }, []);
+
+  useEffect(() => {
+    if (counterVIP || counterREG > 0) {
+      setShowBasket(true);
+    } else if (counterVIP || counterREG == 0) {
+      setShowBasket(false);
+    }
+  }, [counterVIP, counterREG]);
 
   return (
     <>
@@ -76,17 +85,19 @@ function BookingSite() {
             setTicketHolders={setTicketHolders}
           ></PaymentForm>
         )}
-        <Basket
-          counterREG={counterREG}
-          counterVIP={counterVIP}
-          campingspot={campingspot}
-          pickedCamping={pickedCamping}
-          showPickedCamping={showPickedCamping}
-          setShowPickedCamping={setShowPickedCamping}
-          counterGreenCamp={counterGreenCamp}
-          counterPrebuildTwo={counterPrebuildTwo}
-          counterPrebuildThree={counterPrebuildThree}
-        ></Basket>
+        {showBasket && (
+          <Basket
+            counterREG={counterREG}
+            counterVIP={counterVIP}
+            campingspot={campingspot}
+            pickedCamping={pickedCamping}
+            showPickedCamping={showPickedCamping}
+            setShowPickedCamping={setShowPickedCamping}
+            counterGreenCamp={counterGreenCamp}
+            counterPrebuildTwo={counterPrebuildTwo}
+            counterPrebuildThree={counterPrebuildThree}
+          ></Basket>
+        )}
       </div>
     </>
   );

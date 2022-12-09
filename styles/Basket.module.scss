@@ -7,7 +7,14 @@
   padding: 1rem;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  h3 {
+    align-self: center;
+  }
   ul {
     list-style: none;
+    line-height: 1.75rem;
   }
 }

@@ -23,10 +23,12 @@ function Basket(props) {
   useEffect(() => {
     if (props.counterVIP > 0) {
       setShowVIPTicket(true);
-    } else if (props.counterREG > 0) {
-      setShowREGTicket(true);
     } else if (props.counterVIP == 0) {
       setShowVIPTicket(false);
+    }
+
+    if (props.counterREG > 0) {
+      setShowREGTicket(true);
     } else if (props.counterREG == 0) {
       setShowREGTicket(false);
     }
@@ -35,13 +37,19 @@ function Basket(props) {
   useEffect(() => {
     if (props.counterGreenCamp > 0) {
       setShowGreenCamp(true);
-    } else if (props.counterPrebuildTwo > 0) {
-      setShowPrebuildTwo(true);
-    } else if (props.counterPrebuildThree > 0) {
-      setShowPrebuildThree(true);
-    } else {
+    } else if (props.counterGreenCamp == 0) {
       setShowGreenCamp(false);
+    }
+
+    if (props.counterPrebuildTwo > 0) {
+      setShowPrebuildTwo(true);
+    } else if (props.counterGreenCamp == 0) {
       setShowPrebuildTwo(false);
+    }
+
+    if (props.counterPrebuildThree > 0) {
+      setShowPrebuildThree(true);
+    } else if (props.counterGreenCamp == 0) {
       setShowPrebuildThree(false);
     }
   }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
@@ -55,53 +63,59 @@ function Basket(props) {
   return (
     <section className={styles.basket}>
       <h3>Order</h3>
-      <h4>Tickets:</h4>
-      <ul>
-        {showVIPTicket && (
-          <li>
-            {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
+      <div>
+        <h4>Tickets:</h4>
+        <ul>
+          {showVIPTicket && (
+            <li>
+              {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
           biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
           for så at få en total værdi af de valgte biletter lagt sammen  */}
-            {props.counterVIP}x VIP - Price: {props.counterVIP * prices.priceVIP},-
-          </li>
-        )}
-        {showREGTicket && (
-          <li>
-            {props.counterREG}x Standard - Price: {props.counterREG * prices.priceREG},-
-          </li>
-        )}
-      </ul>
-      <h4>Camping:</h4>
-      <p>
-        {!props.showPickedCamping ? (
-          "None"
-        ) : (
-          <>
-            {props.pickedCamping} <span> - Price: 99,-</span>
-          </>
-        )}
-      </p>
-      <h4>Extras:</h4>
-      <ul>
-        {showGreenCamp && (
-          <li>
-            {props.counterGreenCamp}x Green Camping - Price:{" "}
-            {props.counterGreenCamp * prices.priceGreenCamp},-
-          </li>
-        )}
-        {showPrebuildTwo && (
-          <li>
-            {props.counterPrebuildTwo}x 2 person tent - Price:{" "}
-            {props.counterPrebuildTwo * prices.pricePrebuildTwo},-
-          </li>
-        )}
-        {showPrebuildThree && (
-          <li>
-            {props.counterPrebuildThree}x 3 person tent - Price:{" "}
-            {props.counterPrebuildThree * prices.pricePrebuildThree},-
-          </li>
-        )}
-      </ul>
+              {props.counterVIP}x VIP {props.counterVIP * prices.priceVIP},-
+            </li>
+          )}
+          {showREGTicket && (
+            <li>
+              {props.counterREG}x Standard {props.counterREG * prices.priceREG},-
+            </li>
+          )}
+        </ul>
+      </div>
+      <div>
+        <h4>Camping:</h4>
+        <p>
+          {!props.showPickedCamping ? (
+            "None"
+          ) : (
+            <>
+              {props.pickedCamping} <span> 99,-</span>
+            </>
+          )}
+        </p>
+      </div>
+      <div>
+        <h4>Extras:</h4>
+        <ul>
+          {showGreenCamp && (
+            <li>
+              {props.counterGreenCamp}x Green Camping{" "}
+              {props.counterGreenCamp * prices.priceGreenCamp},-
+            </li>
+          )}
+          {showPrebuildTwo && (
+            <li>
+              {props.counterPrebuildTwo}x 2 pers. tent{" "}
+              {props.counterPrebuildTwo * prices.pricePrebuildTwo},-
+            </li>
+          )}
+          {showPrebuildThree && (
+            <li>
+              {props.counterPrebuildThree}x 3 pers. tent{" "}
+              {props.counterPrebuildThree * prices.pricePrebuildThree},-
+            </li>
+          )}
+        </ul>
+      </div>
 
       <h3>Total: {priceTotal + priceCampingspot},-</h3>
     </section>
