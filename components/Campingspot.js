@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../styles/Campingspot.module.scss";
+import configData from "../config.json";
 
 function Campingspot(props) {
   const ref = useRef(null);
@@ -23,6 +24,23 @@ function Campingspot(props) {
   function clickedCamping() {
     props.setPickedCamping(props.data.area);
     props.setShowPickedCamping(true);
+    reserveSpot({
+      area: props.data.area,
+      amount: props.ticketAmount,
+    });
+  }
+
+  function reserveSpot(payload) {
+    fetch(`${configData.url}/reserve-spot`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((response) => props.setReserveID(response.id))
+      .catch((err) => console.error(err));
   }
 
   return (

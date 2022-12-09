@@ -23,6 +23,8 @@ function BookingSite() {
   const [showPickedCamping, setShowPickedCamping] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
 
+  const [reserveID, setReserveID] = useState(null);
+
   useEffect(() => {
     async function getData() {
       const res = await fetch(`${configData.url}/available-spots`);
@@ -63,6 +65,8 @@ function BookingSite() {
           setShowPickedCamping={setShowPickedCamping}
           ticketHolders={ticketHolders}
           setTicketHolders={setTicketHolders}
+          reserveID={reserveID}
+          setReserveID={setReserveID}
         ></Tickets>
         {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
         {/* hvad betyder &&?? */}
@@ -83,6 +87,9 @@ function BookingSite() {
           <PaymentForm
             ticketHolders={ticketHolders}
             setTicketHolders={setTicketHolders}
+            pickedCamping={pickedCamping}
+            reserveID={reserveID}
+            setReserveID={setReserveID}
           ></PaymentForm>
         )}
         {showBasket && (
