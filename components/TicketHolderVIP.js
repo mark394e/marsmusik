@@ -49,11 +49,19 @@ function TicketHolderVIP(props) {
               id="fullname"
               name="fullname"
               placeholder="Fullname"
+              required
             />
           </label>
           <label htmlFor="email">
             E-mail
-            <input type="email" id="email" name="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="abc@gmail.com"
+              aria-describedby="hint-mail"
+              required
+            />
           </label>
           <button onClick={() => setSent(true)}>Submit</button>
         </form>
