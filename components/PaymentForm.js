@@ -154,9 +154,14 @@ function PaymentForm(props) {
                 id="zipcode"
                 name="zipcode"
                 maxLength={4}
+                minLength={3}
                 required
                 placeholder="Zip code"
+                aria-describedby="hint-zip"
               />
+              <span class="error" id="err-zip" aria-live="assertive">
+                choose at least 3 numbers
+              </span>
             </label>
             <label htmlFor="city">
               City
@@ -192,13 +197,18 @@ function PaymentForm(props) {
               type="text"
               inputMode="numeric"
               maxLength={16}
+              minLength={16}
               id="cardnumber"
               name="cardnumber"
               required
               placeholder="XXXXXXXXXXXXXXXX"
+              aria-describedby="hint-cardnumber"
               // onChange={on3InputChange}
               // value={txt3}
             />
+            <span class="error" id="err-cardnumber" aria-live="assertive">
+              type at least 16 numbers
+            </span>
           </label>
           <div className="flexit">
             <label htmlFor="month">
@@ -208,11 +218,16 @@ function PaymentForm(props) {
                 type="text"
                 inputMode="numeric"
                 maxLength={2}
+                minLength={2}
                 id="month"
                 name="month"
                 placeholder="XX"
                 required
+                aria-describedby="hint-month"
               />
+              <span class="error" id="err-month" aria-live="assertive">
+                type at least 2 numbers
+              </span>
             </label>
             <label htmlFor="year">
               Year
@@ -221,11 +236,16 @@ function PaymentForm(props) {
                 type="text"
                 inputMode="numeric"
                 maxLength={2}
+                minLength={2}
                 id="year"
                 name="year"
                 placeholder="XX"
                 required
+                aria-describedby="hint-year"
               />
+              <span class="error" id="err-year" aria-live="assertive">
+                type at least 2 numbers
+              </span>
             </label>
             <label htmlFor="cvv">
               CVV
@@ -233,11 +253,16 @@ function PaymentForm(props) {
                 type="text"
                 inputMode="numeric"
                 maxLength={3}
+                minLength={3}
                 id="cvv"
                 name="cvv"
                 placeholder="XXX"
                 required
+                aria-describedby="hint-cvv"
               />
+              <span class="error" id="err-cvv" aria-live="assertive">
+                type at least 3 numbers
+              </span>
             </label>
           </div>
         </form>

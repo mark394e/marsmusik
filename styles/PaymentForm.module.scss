@@ -43,7 +43,7 @@ border: 1px solid rgb(235, 82, 82);
 
 
 input:invalid:not(:placeholder-shown, :focus) + .error {
-  max-height: 2rem;
+  max-height: 3rem;
 }
 
 
