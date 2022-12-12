@@ -20,6 +20,7 @@ export function insertOrder(payload) {
   })
     .then()
     .then();
+  console.log("insertOrder");
 }
 
 export function fullfillReservation(payload) {
@@ -33,4 +34,5 @@ export function fullfillReservation(payload) {
     .then((response) => response.json())
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
+  console.log("fullfillReservation");
 }

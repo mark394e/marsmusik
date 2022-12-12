@@ -22,8 +22,6 @@ function PaymentForm(props) {
       campingspot: props.pickedCamping,
     });
 
-    console.log(props.reserveID);
-
     fullfillReservation({ id: props.reserveID });
   }
   // det her virker hvis man fjerner labels... så vil den hoppe fra input felt til inputfelt

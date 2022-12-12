@@ -3,7 +3,6 @@ import Campingspot from "./Campingspot";
 import TicketHolderREG from "./TicketHolderREG";
 import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
-import configData from "../config.json";
 
 function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
@@ -31,6 +30,12 @@ function Tickets(props) {
       ></TicketHolderVIP>
     );
   });
+
+  function startTimer() {
+    props.setShowTimer(true);
+    props.setTimer(Date.now() + 300000);
+    props.setShowTicketHolder(true);
+  }
 
   return (
     <>
@@ -66,6 +71,8 @@ function Tickets(props) {
                       setShowPickedCamping={props.setShowPickedCamping}
                       reserveID={props.reserveID}
                       setReserveID={props.setReserveID}
+                      setShowTimer={props.setShowTimer}
+                      setTimer={props.setTimer}
                     ></Campingspot>
                   ))}
                 </div>
@@ -74,7 +81,7 @@ function Tickets(props) {
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
           {props.showCamping && !props.showTicketHolder && (
-            <button onClick={() => props.setShowTicketHolder(true)}>Continue</button>
+            <button onClick={startTimer}>Continue</button>
           )}
           {/* hvad sker der herunder ???? */}
           {props.showTicketHolder ? (
