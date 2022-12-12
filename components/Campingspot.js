@@ -28,6 +28,8 @@ function Campingspot(props) {
       area: props.data.area,
       amount: props.ticketAmount,
     });
+    props.setShowTimer(true);
+    props.setTimer(Date.now() + 300000);
   }
 
   function reserveSpot(payload) {

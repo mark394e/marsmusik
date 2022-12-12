@@ -66,6 +66,8 @@ function Tickets(props) {
                       setShowPickedCamping={props.setShowPickedCamping}
                       reserveID={props.reserveID}
                       setReserveID={props.setReserveID}
+                      setShowTimer={props.setShowTimer}
+                      setTimer={props.setTimer}
                     ></Campingspot>
                   ))}
                 </div>

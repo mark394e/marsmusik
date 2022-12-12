@@ -22,6 +22,8 @@ function BookingSite() {
   const [showPaymentForm, setShowPaymentForm] = useState(false);
   const [showPickedCamping, setShowPickedCamping] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
+  const [showTimer, setShowTimer] = useState(false);
+  const [timer, setTimer] = useState(null);
 
   const [reserveID, setReserveID] = useState(null);
 
@@ -67,6 +69,8 @@ function BookingSite() {
           setTicketHolders={setTicketHolders}
           reserveID={reserveID}
           setReserveID={setReserveID}
+          setShowTimer={setShowTimer}
+          setTimer={setTimer}
         ></Tickets>
         {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
         {/* hvad betyder &&?? */}
@@ -103,6 +107,8 @@ function BookingSite() {
             counterGreenCamp={counterGreenCamp}
             counterPrebuildTwo={counterPrebuildTwo}
             counterPrebuildThree={counterPrebuildThree}
+            showTimer={showTimer}
+            timer={timer}
           ></Basket>
         )}
       </div>

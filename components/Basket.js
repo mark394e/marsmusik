@@ -1,7 +1,7 @@
-// import "../styles/basket.module.scss";
 import styles from "../styles/Basket.module.scss";
 import prices from "../modules/prices.json";
 import { useState, useEffect } from "react";
+import Countdown from "react-countdown";
 
 function Basket(props) {
   const [showVIPTicket, setShowVIPTicket] = useState(false);
@@ -118,6 +118,7 @@ function Basket(props) {
       </div>
 
       <h3>Total: {priceTotal + priceCampingspot},-</h3>
+      {props.showTimer && <Countdown date={props.timer}></Countdown>}
     </section>
   );
 }
