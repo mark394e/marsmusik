@@ -118,7 +118,16 @@ function Basket(props) {
       </div>
 
       <h3>Total: {priceTotal + priceCampingspot},-</h3>
-      {props.showTimer && <Countdown date={props.timer}></Countdown>}
+      {props.showTimer && (
+        <Countdown
+          date={props.timer}
+          renderer={(props) => (
+            <div>
+              {props.minutes}:{props.seconds}
+            </div>
+          )}
+        ></Countdown>
+      )}
     </section>
   );
 }
