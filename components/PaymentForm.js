@@ -5,6 +5,9 @@ import { useState } from "react";
 
 function PaymentForm(props) {
   const theForm = useRef(null);
+  const [txt, setTxt] = useState("");
+  const [txt2, setTxt2] = useState("");
+  // const [txt3, setTxt3] = useState("");
 
   function submit(e) {
     e.preventDefault();
@@ -41,6 +44,39 @@ function PaymentForm(props) {
     }
   }
 
+  // validate name
+  const onInputChange = (e) => {
+    const { value } = e.target;
+    console.log("Input value: ", value);
+
+    const re = /^[A-ø a-ø]+$/;
+    if (value === "" || re.test(value)) {
+      setTxt(value);
+    }
+  };
+
+  const on2InputChange = (e) => {
+    const { value } = e.target;
+    console.log("Input value: ", value);
+
+    const re2 = /^[A-ø a-ø]+$/;
+    if (value === "" || re2.test(value)) {
+      setTxt2(value);
+    }
+  };
+
+  //numbers
+
+  // const on3InputChange = (event) => {
+  //   const { value } = event.target;
+  //   console.log("Input value: ", value);
+
+  //   const re3 = /^[0-9 9-0]+$/;
+  //   if (value === "" || re3.test(value)) {
+  //     setTxt3(value);
+  //   }
+  // };
+
   // KODE FUNDET HER !! https://bobbyhadz.com/blog/react-check-if-email-is-valid
 
   // const [email, setEmail] = useState("");
@@ -73,7 +109,15 @@ function PaymentForm(props) {
           <label htmlFor="fullname">
             {" "}
             Full name
-            <input type="text" id="fullname" name="fullname" required placeholder="Full name " />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              required
+              placeholder="Full name "
+              onChange={onInputChange}
+              value={txt}
+            />
           </label>
           <label htmlFor="email">
             E-mail
@@ -84,18 +128,21 @@ function PaymentForm(props) {
               placeholder="abc@gmail.com"
               aria-describedby="hint-mail"
               required
-              // value={email}
-              // onChange={handleChange}
             />
             <span class="error" id="err-mail" aria-live="assertive">
               Type in your email address
             </span>
-            {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
           </label>
 
           <label htmlFor="address">
             Address
-            <input type="text" id="address" name="address" required placeholder="Address" />
+            <input
+              type="text"
+              id="address"
+              name="address"
+              required
+              placeholder="Address"
+            />
           </label>
           <div className="flexit">
             <label htmlFor="zipcode">
@@ -113,7 +160,13 @@ function PaymentForm(props) {
             </label>
             <label htmlFor="city">
               City
-              <input type="text" id="city" name="city" required placeholder="City" />
+              <input
+                type="text"
+                id="city"
+                name="city"
+                required
+                placeholder="City"
+              />
             </label>
           </div>
           <button>submit</button>
@@ -128,6 +181,8 @@ function PaymentForm(props) {
               name="cardholder"
               required
               placeholder="Cardholder name"
+              onChange={on2InputChange}
+              value={txt2}
             />
           </label>
           <label htmlFor="cardnumber">
@@ -141,6 +196,8 @@ function PaymentForm(props) {
               name="cardnumber"
               required
               placeholder="XXXXXXXXXXXXXXXX"
+              // onChange={on3InputChange}
+              // value={txt3}
             />
           </label>
           <div className="flexit">

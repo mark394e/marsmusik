@@ -25,8 +25,7 @@ function TicketHolderREG(props) {
 
   //giver besked "thank you" når der trykket submit på knap
   const [sent, setSent] = useState(false);
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState(null);
+  const [txt, setTxt] = useState("");
 
   if (sent) {
     return (
@@ -39,20 +38,15 @@ function TicketHolderREG(props) {
     );
   }
 
-  // KODE FUNDET HER !! https://bobbyhadz.com/blog/react-check-if-email-is-valid
+  // validate name
+  const onInputChange = (e) => {
+    const { value } = e.target;
+    console.log("Input value: ", value);
 
-  function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
-
-  const handleChange = (event) => {
-    if (!isValidEmail(event.target.value)) {
-      setError("Email is invalid");
-    } else {
-      setError(null);
+    const re = /^[A-ø a-ø]+$/;
+    if (value === "" || re.test(value)) {
+      setTxt(value);
     }
-
-    setEmail(event.target.value);
   };
 
   return (
@@ -68,6 +62,9 @@ function TicketHolderREG(props) {
               id="fullname"
               name="fullname"
               placeholder="Fullname"
+              required
+              onChange={onInputChange}
+              value={txt}
             />
           </label>
           <label htmlFor="email">
@@ -77,11 +74,12 @@ function TicketHolderREG(props) {
               id="email"
               name="email"
               placeholder="abc@gmail.com"
-              // required
-              value={email}
-              onChange={handleChange}
+              aria-describedby="hint-mail"
+              required
             />
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            <span class="error" id="err-mail" aria-live="assertive">
+              Type in your email address
+            </span>
           </label>
           <button onClick={() => setSent(true)}>Submit</button>
         </form>
