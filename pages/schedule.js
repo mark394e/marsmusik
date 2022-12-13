@@ -7,7 +7,8 @@ function schedule(props) {
   return <ScheduleSite bands={props.bands} program={props.program} />;
 }
 
-export async function getServerSideProps() {
+//getStaticProps svarer til hardcoded HTML
+export async function getStaticProps() {
   //fetching bands
   const bandRes = await fetch(`${configData.url}/bands`);
   const bands = await bandRes.json();
