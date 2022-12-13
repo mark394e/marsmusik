@@ -1,6 +1,7 @@
 .nav {
   position: fixed;
-  background-color: #fdf8f0;
+  backdrop-filter: blur(15px);
+  // background-color: #fdf8f0;
   height: 95px;
   width: 95%;
   margin-left: 2rem;
@@ -24,7 +25,6 @@
   .logo {
     z-index: 1001;
     top: 40px;
-    left: 3%;
     position: fixed;
     height: 80px;
     width: 80px;

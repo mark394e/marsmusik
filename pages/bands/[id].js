@@ -57,6 +57,9 @@ export default function Artist({ data }) {
   );
 }
 
+//Kalder serveren der kalder API'en
+//Gør at koden kører på serveren
+
 export async function getServerSideProps(context) {
   // console.log(context.params.id);
   const res = await fetch(
@@ -66,7 +69,7 @@ export async function getServerSideProps(context) {
   // If no succes, return a 404 redirect
   if (res.status != 200) {
     return {
-      notFound: true,
+      notFound: true, //Hvis api ik svarer, ender jeg på en 404
     };
   }
 

@@ -64,4 +64,18 @@
     background-color: #fef0e0;
     color: #510926;
   }
+
+  a:hover {
+    transition: 0.3s;
+    border-width: 7px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #40e259, #fffd41) 1;
+
+    h2 {
+      transition: 0.3s;
+
+      text-shadow: 3px 3px #41ffff;
+      transform: scale(1.1);
+    }
+  }
 }
