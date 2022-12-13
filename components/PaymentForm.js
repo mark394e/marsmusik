@@ -21,6 +21,7 @@ function PaymentForm(props) {
       ticketholder: props.ticketHolders,
       campingspot: props.pickedCamping,
     });
+    props.setShowThankYou(true);
 
     fullfillReservation({ id: props.reserveID });
   }
@@ -127,7 +128,7 @@ function PaymentForm(props) {
               aria-describedby="hint-mail"
               required
             />
-            <span class="error" id="err-mail" aria-live="assertive">
+            <span className="error" id="err-mail" aria-live="assertive">
               Type in your email address
             </span>
           </label>
@@ -157,7 +158,7 @@ function PaymentForm(props) {
                 placeholder="Zip code"
                 aria-describedby="hint-zip"
               />
-              <span class="error" id="err-zip" aria-live="assertive">
+              <span className="error" id="err-zip" aria-live="assertive">
                 choose at least 3 numbers
               </span>
             </label>
@@ -204,7 +205,7 @@ function PaymentForm(props) {
               // onChange={on3InputChange}
               // value={txt3}
             />
-            <span class="error" id="err-cardnumber" aria-live="assertive">
+            <span className="error" id="err-cardnumber" aria-live="assertive">
               type at least 16 numbers
             </span>
           </label>
@@ -223,7 +224,7 @@ function PaymentForm(props) {
                 required
                 aria-describedby="hint-month"
               />
-              <span class="error" id="err-month" aria-live="assertive">
+              <span className="error" id="err-month" aria-live="assertive">
                 type at least 2 numbers
               </span>
             </label>
@@ -241,7 +242,7 @@ function PaymentForm(props) {
                 required
                 aria-describedby="hint-year"
               />
-              <span class="error" id="err-year" aria-live="assertive">
+              <span className="error" id="err-year" aria-live="assertive">
                 type at least 2 numbers
               </span>
             </label>
@@ -258,7 +259,7 @@ function PaymentForm(props) {
                 required
                 aria-describedby="hint-cvv"
               />
-              <span class="error" id="err-cvv" aria-live="assertive">
+              <span className="error" id="err-cvv" aria-live="assertive">
                 type at least 3 numbers
               </span>
             </label>

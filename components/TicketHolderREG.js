@@ -77,7 +77,7 @@ function TicketHolderREG(props) {
               aria-describedby="hint-mail"
               required
             />
-            <span class="error" id="err-mail" aria-live="assertive">
+            <span className="error" id="err-mail" aria-live="assertive">
               Type in your email address
             </span>
           </label>
