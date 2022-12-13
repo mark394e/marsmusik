@@ -48,10 +48,20 @@ button {
   padding: 0.7rem;
   color: $darkred-color;
   background-color: transparent;
-  max-width: fit-content;
+  // max-width: fit-content;
 }
 
 button:hover,
 a:hover {
   cursor: pointer;
+}
+
+.continueBtn {
+  align-self: center;
+  width: 150px;
+  background-color: #510927;
+  color: #fae3cc;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
