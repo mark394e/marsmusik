@@ -52,7 +52,11 @@ function Basket(props) {
     } else if (props.counterGreenCamp == 0) {
       setShowPrebuildThree(false);
     }
-  }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
+  }, [
+    props.counterGreenCamp,
+    props.counterPrebuildThree,
+    props.counterPrebuildTwo,
+  ]);
 
   useEffect(() => {
     if (props.showPickedCamping) {
@@ -62,27 +66,30 @@ function Basket(props) {
 
   return (
     <section className={styles.basket}>
-      <h3>Order</h3>
+      <h3>Vælg dine billetter</h3>
       <div>
-        <h4>Tickets:</h4>
+        <h4>TICKETS</h4>
         <ul>
           {showVIPTicket && (
             <li>
               {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
           biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
           for så at få en total værdi af de valgte biletter lagt sammen  */}
-              {props.counterVIP}x VIP {props.counterVIP * prices.priceVIP},-
+              {props.counterVIP} &#10799; VIP{" "}
+              {props.counterVIP * prices.priceVIP},-
             </li>
           )}
           {showREGTicket && (
             <li>
-              {props.counterREG}x Standard {props.counterREG * prices.priceREG},-
+              {props.counterREG} &#10799; Standard{" "}
+              {props.counterREG * prices.priceREG}
+              ,-
             </li>
           )}
         </ul>
       </div>
       <div>
-        <h4>Camping:</h4>
+        <h4>CAMPING</h4>
         <p>
           {!props.showPickedCamping ? (
             "None"
@@ -94,7 +101,7 @@ function Basket(props) {
         </p>
       </div>
       <div>
-        <h4>Extras:</h4>
+        <h4>EXTRAS</h4>
         <ul>
           {showGreenCamp && (
             <li>
@@ -116,8 +123,8 @@ function Basket(props) {
           )}
         </ul>
       </div>
-
-      <h3>Total: {priceTotal + priceCampingspot},-</h3>
+      <hr />
+      <h3>Total {priceTotal + priceCampingspot},-</h3>
       {props.showTimer && (
         <Countdown
           date={props.timer}
