@@ -15,19 +15,39 @@ export default function Home() {
         <div className="frontpage_bg">
           <div className="frontpage_picture"></div>
         </div>
-        <div className="date">
-          <h2
-            style={{
-              fontFamily: `${xanhMonoItal.style.fontFamily}`,
-              position: "absolute",
-              right: "-15vh",
-              top: "49vh",
-              transform: "rotate(90deg)",
-              color: "#510926",
-            }}
-          >
-            24th June - 11th July 2125
-          </h2>
+        <div className="date_wrapper">
+          <div className="date">
+            <div className="date_animate">
+              <h2
+                style={{
+                  fontFamily: `${xanhMonoItal.style.fontFamily}`,
+                }}
+              >
+                24th June - 11th July 2125{" "}
+              </h2>
+              <h2
+                style={{
+                  fontFamily: `${xanhMonoItal.style.fontFamily}`,
+                }}
+              >
+                24th June - 11th July 2125{" "}
+              </h2>
+              <h2
+                style={{
+                  fontFamily: `${xanhMonoItal.style.fontFamily}`,
+                }}
+              >
+                24th June - 11th July 2125{" "}
+              </h2>{" "}
+              <h2
+                style={{
+                  fontFamily: `${xanhMonoItal.style.fontFamily}`,
+                }}
+              >
+                24th June - 11th July 2125{" "}
+              </h2>
+            </div>
+          </div>
         </div>
         <div className="frontpage_txt">
           <h1>
