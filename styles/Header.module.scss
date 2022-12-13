@@ -80,8 +80,11 @@
         }
 
         a:hover {
-          transition: 0.3s;
-          color: rgba(111, 4, 66, 1);
+          transition: 0.8s;
+          background: -webkit-linear-gradient(#40e259, #fffd41);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // color: rgba(111, 4, 66, 1);
         }
       }
     }
