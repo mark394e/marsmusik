@@ -50,6 +50,7 @@ button {
   max-width: fit-content;
 }
 
-button:hover {
+button:hover,
+a:hover {
   cursor: pointer;
 }

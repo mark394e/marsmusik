@@ -1,6 +1,8 @@
 import "../styles/globals.scss";
 import Layout from "../components/Layout";
 import { Shrikhand } from "@next/font/google";
+import { XandMono } from "@next/font/google";
+
 import localFont from "@next/font/local";
 
 const xanhMonoReg = localFont({ src: "./xanhmono-regular-webfont.woff2" });
