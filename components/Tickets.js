@@ -50,7 +50,9 @@ function Tickets(props) {
           ></TicketType>
           {/* knap der bliver sat til true når der trykkes på den - hvorefter den vil vise campingspots */}
           {!props.showCamping && (
-            <button onClick={() => props.setShowCamping(true)}>Continue</button>
+            <button onClick={() => props.setShowCamping(true)} className="continueBtn">
+              Continue
+            </button>
           )}
           <div className="camping-wrapper">
             {/* her mapper vi ignnem camping spots for at få vist alle */}
@@ -81,7 +83,9 @@ function Tickets(props) {
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
           {props.showCamping && !props.showTicketHolder && (
-            <button onClick={startTimer}>Continue</button>
+            <button onClick={startTimer} className="continueBtn">
+              Continue
+            </button>
           )}
           {/* hvad sker der herunder ???? */}
           {props.showTicketHolder ? (
@@ -90,7 +94,9 @@ function Tickets(props) {
             </>
           ) : null}
           {props.showTicketHolder && !props.showExtras && (
-            <button onClick={() => props.setShowExtras(true)}>Continue</button>
+            <button onClick={() => props.setShowExtras(true)} className="continueBtn">
+              Continue
+            </button>
           )}
         </div>
       </section>

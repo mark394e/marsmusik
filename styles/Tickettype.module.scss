@@ -1,47 +1,76 @@
 section {
- 
   .ticket {
-max-width: 100%;
-  
+    max-width: 100%;
     margin: 2rem;
-
-  
-  }
-
-  .extra-heading{
-    display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .border{
-    display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-          border: 1px solid #510926;
-            border-radius: 20px;
-  
-
-      .red {
+    text-align: center;
+    .counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 250px;
+      padding-top: 0.5rem;
+      gap: 20px;
+      span {
+        font-size: 1.2rem;
+      }
+      .counterBtn {
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        &:hover {
           background-color: #510926;
-          color: white;
-          padding: 1rem;
-          border-radius: 10px;
+          color: #fae3cc;
         }
-      
-        .orange {
-          background-color: #FAE3CC;
-          color: #510926;
-          padding: 1rem;
-          border-radius: 10px;
-        }
-      
-        .white {
-          background-color: transparent;
-          color: #510926;
-          padding: 1rem;
-          border-radius: 10px;
-        }
+      }
+    }
   }
-  
 
-  
+  .extra-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 0.5rem;
+  }
+
+  .border {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid #510926;
+    border-radius: 20px;
+
+    .gold {
+      background-image: url(../public/goldTicket.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // background-color: #510926;
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+    }
+
+    .cobber {
+      background-image: url(../public/cobberTicket.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // background-color: #510926;
+      color: white;
+      padding: 1rem;
+      border-radius: 15px;
+    }
+
+    .orange {
+      background-color: #fae3cc;
+      color: #510926;
+      padding: 1rem;
+      border-radius: 15px;
+    }
+
+    .white {
+      background-color: transparent;
+      color: #510926;
+      padding: 1rem;
+      border-radius: 15px;
+    }
+  }
 }

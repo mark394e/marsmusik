@@ -1,17 +1,18 @@
-.ticketholder{
-    // max-width: 70%;
-    border: 1px solid #510927;
-    border-radius: 20px;
-        margin-bottom: 2rem;
-        padding: 1rem;
-        // display: flex;
-        // flex-direction: column;
-        // justify-items: center;
+.ticketholder {
+  border: 1px solid #510927;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  width: 830px;
+  display: flex;
+  flex-direction: column;
+  section {
+    padding-bottom: 2rem;
+  }
 }
 
-.around{
-display: flex;
+.around {
+  display: flex;
 
-    justify-content: center;
-
+  justify-content: center;
 }

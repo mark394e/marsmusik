@@ -21,12 +21,16 @@
 }
 
 .camping-wrapper {
-  display: flex;
-  flex-direction: column;
+  text-align: center;
   .campingspot-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    padding-bottom: 2rem;
   }
+}
+
+.camping-wrapper > p {
+  padding-bottom: 1.5rem;
 }
