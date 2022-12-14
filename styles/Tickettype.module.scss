@@ -36,6 +36,7 @@ section {
     grid-template-columns: 1fr 1fr 1fr;
     border: 1px solid #510926;
     border-radius: 20px;
+    overflow: hidden;
 
     .gold {
       background-image: url(../public/goldTicket.png);
@@ -44,8 +45,8 @@ section {
       background-size: cover;
       // background-color: #510926;
       color: white;
-      padding: 1rem;
-      border-radius: 15px;
+      padding: 1.5rem;
+      border-radius: 19px;
     }
 
     .cobber {
@@ -55,21 +56,21 @@ section {
       background-size: cover;
       // background-color: #510926;
       color: white;
-      padding: 1rem;
-      border-radius: 15px;
+      padding: 1.5rem;
+      border-radius: 19px;
     }
 
     .orange {
       background-color: #fae3cc;
       color: #510926;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 15px;
     }
 
     .white {
       background-color: transparent;
       color: #510926;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 15px;
     }
   }
