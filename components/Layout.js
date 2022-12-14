@@ -1,10 +1,20 @@
-import Anchor from "./Anchor";
-import "../styles/Header.module.scss";
+//React
 import React, { useState } from "react";
+
+//Styling
+import "../styles/Header.module.scss";
+
+//Fonte
 import { Roboto } from "@next/font/google";
 import { Shrikhand } from "@next/font/google";
-
 import localFont from "@next/font/local";
+
+//Fra date-fns
+import { add } from "date-fns";
+
+//Components
+import Ticker from "./Ticker";
+import Anchor from "./Anchor";
 
 const xanhMonoReg = localFont({
   src: "../pages/xanhmono-regular-webfont.woff2",
@@ -25,6 +35,13 @@ export default function Layout(props) {
     setOpenMenu(!openMenu);
   };
 
+  const futureDate = add(new Date(), {
+    years: 102,
+    days: 192,
+    hours: 3,
+    minutes: 44,
+  });
+
   return (
     <div className={roboto.className}>
       <header>
@@ -32,6 +49,7 @@ export default function Layout(props) {
           <Anchor href="/">
             <div className="logo"></div>
           </Anchor>
+          <Ticker futureDate={futureDate} />
 
           <button
             onClick={toggleMenu}

@@ -1,0 +1,29 @@
+.ticker {
+  color: #510926;
+  mix-blend-mode: overlay;
+  margin: 1rem;
+  padding-left: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .label {
+    font-size: 1.3rem;
+  }
+  .value {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .ticker {
+    .label {
+      font-size: 0.8rem;
+    }
+    .value {
+      font-size: 1rem;
+    }
+  }
+}
