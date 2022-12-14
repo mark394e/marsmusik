@@ -6,9 +6,16 @@
   width: 826px;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(15px);
+
   section {
     padding-bottom: 2rem;
   }
+}
+
+.ticketholder > h3 {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
 }
 
 .around {
