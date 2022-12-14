@@ -3,6 +3,7 @@
   z-index: -1;
   height: 100%;
   width: 100vw;
+  // position: relative;
   background: rgb(251, 135, 49);
   background: linear-gradient(
     0deg,
@@ -10,6 +11,42 @@
     rgba(254, 249, 241, 1) 100%
   );
 
+  @keyframes bannermove {
+    0% {
+      transform: translate3d(calc(-100% - 4rem), 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .date_wrapper {
+    width: 50px;
+    // top: 90vh;
+    // left: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .date {
+      transform: rotate(90deg);
+      white-space: nowrap;
+
+      .date_animate {
+        animation: bannermove 3s linear infinite;
+        gap: 4rem;
+        display: flex;
+        width: 100%;
+
+        h2 {
+          // transform: rotate(90deg);
+          color: #510926;
+        }
+      }
+    }
+  }
   .frontpage_txt {
     position: absolute;
     top: 0;
@@ -47,6 +84,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
+  z-index: 2;
 
   article {
     height: 100%;
