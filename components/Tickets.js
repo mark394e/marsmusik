@@ -60,7 +60,7 @@ function Tickets(props) {
             {/* det her skal forklares bedre !!! */}
             {props.showCamping && (
               <>
-                <h3>Pick a campingsite:</h3>
+                <h3>Pick a campingsite</h3>
                 <p>99,- for one area</p>
                 <div className="campingspot-container">
                   {props.campingspot.map((spot) => (
@@ -88,10 +88,10 @@ function Tickets(props) {
               Continue
             </button>
           )}
-          <h3>Please fill out each ticketholder</h3>
           {/* hvad sker der herunder ???? */}
           {props.showTicketHolder ? (
             <>
+              <h3>Please fill out each ticketholder</h3>
               {ticketholdersVIP} {ticketholdersREG}
             </>
           ) : null}
