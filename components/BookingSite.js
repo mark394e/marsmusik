@@ -88,12 +88,11 @@ function BookingSite() {
                 setCounterGreenCamp={setCounterGreenCamp}
                 setCounterPrebuildTwo={setCounterPrebuildTwo}
                 setCounterPrebuildThree={setCounterPrebuildThree}
+                showExtras={showExtras}
+                setShowPaymentForm={setShowPaymentForm}
               ></Extras>
             )}
           </div>
-          {showExtras && (
-            <button onClick={() => setShowPaymentForm(true)}>Continue</button>
-          )}
           {showPaymentForm && (
             <PaymentForm
               ticketHolders={ticketHolders}

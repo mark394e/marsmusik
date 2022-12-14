@@ -41,6 +41,7 @@ function Tickets(props) {
     <>
       <section className="around">
         <div className="ticketholder">
+          <h3>Select your tickets</h3>
           {/* sender data videre ind i component */}
           <TicketType
             setCounterVIP={props.setCounterVIP}
@@ -59,7 +60,7 @@ function Tickets(props) {
             {/* det her skal forklares bedre !!! */}
             {props.showCamping && (
               <>
-                <h3>Pick a campingspot:</h3>
+                <h3>Pick a campingsite:</h3>
                 <p>99,- for one area</p>
                 <div className="campingspot-container">
                   {props.campingspot.map((spot) => (
@@ -87,6 +88,7 @@ function Tickets(props) {
               Continue
             </button>
           )}
+          <h3>Please fill out each ticketholder</h3>
           {/* hvad sker der herunder ???? */}
           {props.showTicketHolder ? (
             <>

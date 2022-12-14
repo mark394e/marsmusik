@@ -48,7 +48,7 @@ function Campingspot(props) {
       <section>
         <article ref={ref} className="campingspot" onClick={clickedCamping}>
           <h3>{props.data.area}</h3>
-          <p>Available: {props.data.available}</p>
+          <p>{props.data.available} spots left</p>
         </article>
       </section>
     </>

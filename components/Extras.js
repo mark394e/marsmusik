@@ -34,57 +34,72 @@ function Extras(props) {
 
   return (
     <section className="extrabox">
-      <p>Extras - optional</p>
-      <div className="extra-heading">
-        <p>Green choices</p>
-        <p>Price</p>
-        <p>Total</p>
-      </div>
-      <div className="extra" id="greenchoice">
-        <div className="border">
-          <div className="red">Green camping</div>
-          <div className="orange">1234,-</div>
-          <div className="white">4321,-</div>
+      <h3>
+        Extras - <span>optional</span>
+      </h3>
+      <div className="optionals">
+        <div className="extra-heading">
+          <p>Green choices</p>
+          <p>Price</p>
+          <p>Total</p>
         </div>
-        <button onClick={decreaseGreenCamp} className="counter-minus">
-          -
-        </button>
-        <span>{props.counterGreenCamp}</span>
-        <button onClick={increaseGreenCamp} className="counter-plus">
-          +
-        </button>
-      </div>
-      <div className="extra-heading">
-        <p>Prebuild tent</p>
-      </div>
-      <div className="extra" id="twoperstent">
-        <div className="border">
-          <div className="red">2 person tent</div>
-          <div className="orange">1234,-</div>
-          <div className="white">4321,-</div>
+        <div className="extra" id="greenchoice">
+          <div className="border">
+            <div className="red">Green camping</div>
+            <div className="orange">249,-</div>
+            <div className="white">{props.counterGreenCamp * 249},-</div>
+          </div>
+          <div className="counter">
+            <button onClick={decreaseGreenCamp} className="counterBtn">
+              -
+            </button>
+            <span>{props.counterGreenCamp}</span>
+            <button onClick={increaseGreenCamp} className="counterBtn">
+              +
+            </button>
+          </div>
         </div>
-        <button onClick={decreasePrebuildTwo} className="counter-minus">
-          -
-        </button>
-        <span>{props.counterPrebuildTwo}</span>
-        <button onClick={increasePrebuildTwo} className="counter-plus">
-          +
-        </button>
-      </div>
-      <div className="extra" id="threeperstent">
-        <div className="border">
-          <div className="red">3 person tent</div>
-          <div className="orange">1234,-</div>
-          <div className="white">4321,-</div>
+        <div className="extra-heading">
+          <p>Prebuild tent</p>
         </div>
-        <button onClick={decreasePrebuildThree} className="counter-minus">
-          -
-        </button>
-        <span>{props.counterPrebuildThree}</span>
-        <button onClick={increasePrebuildThree} className="counter-plus">
-          +
-        </button>
+        <div className="extra" id="twoperstent">
+          <div className="border">
+            <div className="red">2 person tent</div>
+            <div className="orange">299,-</div>
+            <div className="white">{props.counterPrebuildTwo * 299},-</div>
+          </div>
+          <div className="counter">
+            <button onClick={decreasePrebuildTwo} className="counterBtn">
+              -
+            </button>
+            <span>{props.counterPrebuildTwo}</span>
+            <button onClick={increasePrebuildTwo} className="counterBtn">
+              +
+            </button>
+          </div>
+        </div>
+        <div className="extra" id="threeperstent">
+          <div className="border">
+            <div className="red">3 person tent</div>
+            <div className="orange">399,-</div>
+            <div className="white">{props.counterPrebuildThree * 399},-</div>
+          </div>
+          <div className="counter">
+            <button onClick={decreasePrebuildThree} className="counterBtn">
+              -
+            </button>
+            <span>{props.counterPrebuildThree}</span>
+            <button onClick={increasePrebuildThree} className="counterBtn">
+              +
+            </button>
+          </div>
+        </div>
       </div>
+      {props.showExtras && (
+        <button onClick={() => props.setShowPaymentForm(true)} className="continueBtn">
+          Continue
+        </button>
+      )}
     </section>
   );
 }

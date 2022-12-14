@@ -1,8 +1,6 @@
 #ticketholderform {
   display: flex;
   flex-direction: column;
-  border: 1px solid #510927;
-    border-radius: 7px;
   margin: 2rem;
 
   label {
@@ -12,111 +10,76 @@
   }
 
   input {
-  border-width: 1px;
-  border-radius: 7px;
-  height: 40px;
-  padding:8px;
-  margin: 0.2rem;
-  border: 1px solid #510927;
-  background-color: transparent;
-}
-
-button{
-  margin: 1.5rem;
-}
-
-
-
-
-//danny kode
-//////////////////////////////////
-input:valid {
-  border-color: #59b062;
-}
-
-input:invalid:not(:placeholder-shown, :focus) {
-animation: shake .125s 2 backwards;
-border: 1px solid rgb(235, 82, 82);
-
-}
-
-
-
-
-@keyframes shake {
-  25% {
-    transform: translateX(-6px);
+    border-width: 1px;
+    border-radius: 7px;
+    height: 40px;
+    padding: 8px;
+    margin: 0.2rem;
+    border: 1px solid #510927;
+    background-color: transparent;
   }
-  75% {
-    transform: translateX(6px);
+
+  button {
+    margin: 1.5rem;
   }
+
+  //danny kode
+  //////////////////////////////////
+  input:valid {
+    border-color: #59b062;
+  }
+
+  input:invalid:not(:placeholder-shown, :focus) {
+    animation: shake 0.125s 2 backwards;
+    border: 1px solid rgb(235, 82, 82);
+  }
+
+  @keyframes shake {
+    25% {
+      transform: translateX(-6px);
+    }
+    75% {
+      transform: translateX(6px);
+    }
+  }
+
+  input:invalid:not(:placeholder-shown, :focus) + .error {
+    max-height: 2rem;
+  }
+
+  .error {
+    color: rgb(148, 37, 59);
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s max-height;
+  }
+
+  // form > * + *,
+  // fieldset > * + *:not(.address) {
+  //   margin-top: 1.5rem;
+  // }
+
+  input {
+    color: #510927;
+    border: 1px solid #510927;
+    outline: none;
+    margin-top: 3px;
+    margin-bottom: 2px;
+  }
+
+  input:focus {
+    border: 3px solid;
+    border-color: rgb(255, 102, 0);
+  }
+
+  //////////////////////////////////////
 }
 
-
-
-input:invalid:not(:placeholder-shown, :focus) + .error {
-  max-height: 2rem;
-}
-
-
-
-
-
-
-
-.error {
-  color: rgb(148, 37, 59);
-  max-height: 0;
-  overflow: hidden;
-  transition: .3s max-height;
-}
-
-
-
-
-
-// form > * + *,
-// fieldset > * + *:not(.address) {
-//   margin-top: 1.5rem;
-// }
-
-
-
-
-input {
-  color: #510927;
-  border: 1px solid #510927;
-  outline: none;
-  margin-top: 3px;
-  margin-bottom: 2px;
-
-}
-
-input:focus {
-  border: 3px solid;
-  border-color: rgb(255, 102, 0);
-}
-
-
-
-
-
-
-
-//////////////////////////////////////
-
-}
-
-.thankyou{
+.thankyou {
   margin: 3rem;
 }
 
-.formticketholder{
+.formticketholder {
   margin: 2rem;
   margin-top: 5rem;
-
-
 }
-
-
-

@@ -1,7 +1,7 @@
 section {
   .ticket {
     max-width: 100%;
-    margin: 2rem;
+    padding: 2rem;
     text-align: center;
     .counter {
       display: flex;
@@ -29,6 +29,8 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding-bottom: 0.5rem;
+    text-align: center;
+    color: #510926;
   }
 
   .border {
@@ -64,14 +66,14 @@ section {
       background-color: #fae3cc;
       color: #510926;
       padding: 1.5rem;
-      border-radius: 15px;
+      border-radius: 20px;
     }
 
     .white {
       background-color: transparent;
       color: #510926;
       padding: 1.5rem;
-      border-radius: 15px;
+      border-radius: 20px;
     }
   }
 }
