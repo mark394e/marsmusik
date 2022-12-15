@@ -1,10 +1,87 @@
 .artist {
+  margin-top: 25%;
   margin-left: 15%;
   margin-right: 15%;
 
-  .artist_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
+  img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .artist_bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .goBack {
+    margin-bottom: 3.5rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 7%;
+  }
+
+  .flex_symbol {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 1rem;
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        list-style: none;
+        width: 130px;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .artist {
+    margin-top: 0;
+
+    .goBack {
+      margin-top: 20%;
+    }
+
+    .artist_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .artist {
+    .goBack {
+      margin-top: 50%;
+    }
+
+    .artist_grid {
+      img {
+        margin-bottom: 2rem;
+      }
+
+      .symbol_last {
+        margin-bottom: 3rem;
+      }
+
+      p,
+      li {
+        font-size: 0.8rem;
+      }
+    }
   }
 }

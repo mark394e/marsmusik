@@ -7,11 +7,15 @@ function Ticker({ futureDate }) {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       //   console.log("ticking");
       setNow(new Date());
     }, 1000);
-  }, [setNow]); // Det tomme array er til for ikke at "re-fire"
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [futureDate]);
   //   const now = newDate();
 
   const isTimeUp = isBefore(futureDate, now);

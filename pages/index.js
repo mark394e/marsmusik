@@ -2,6 +2,7 @@ import Head from "next/head";
 import Anchor from "../components/Anchor";
 import localFont from "@next/font/local";
 import { Shrikhand } from "@next/font/google";
+import { useEffect } from "react";
 
 const xanhMonoReg = localFont({ src: "./xanhmono-regular-webfont.woff2" });
 const xanhMonoItal = localFont({ src: "./xanhmono-italic-webfont.woff2" });

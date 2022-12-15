@@ -132,7 +132,9 @@
   padding: 0 !important;
 
   .banner {
-    overflow: hidden;
+    width: 2972px;
+
+    // overflow: hidden;
     display: flex;
     font-size: 3rem;
     gap: 4rem;
@@ -142,7 +144,7 @@
     white-space: nowrap;
 
     // gap: 3rem;
-    animation: bannermove 10s linear infinite;
+    animation: bannermove 20s linear infinite;
 
     p {
       display: inline-block;
@@ -152,10 +154,10 @@
 
   @keyframes bannermove {
     0% {
-      transform: translate3d(calc(100% - 4rem), 0, 0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translate3d(0, 0, 0);
+      transform: translate3d(-100%, 0, 0);
     }
   }
 }
