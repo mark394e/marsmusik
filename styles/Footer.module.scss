@@ -1,10 +1,16 @@
 .footer {
-  border: 1px solid #fef0e0;
-  border-radius: 0px 50px 0px 0px;
+  border-top: 1px solid #fae3cc;
+  border-right: 1px solid #fae3cc;
+  border-top-right-radius: 50px;
   height: 20%;
   margin-top: 20vh;
   margin-right: 2rem;
   padding-bottom: 2rem;
+  color: #510926;
+
+  a {
+    color: #510926;
+  }
 
   article {
     padding: 1.5rem;

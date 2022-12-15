@@ -84,10 +84,11 @@ export default function Layout(props) {
           <h3>Location</h3>
           <p>Mars Musik ApS</p>
           <p>Planet Mars</p>
+          <p>RA 4h 36m 4s | De +24° 34′ 5″</p>
           <p>The Milky Way</p>
         </article>
         <article>
-          <h3>Shorcuts</h3>
+          <h3>Shortcuts</h3>
           <Anchor href="/booking">
             <p>Tickets</p>
           </Anchor>
