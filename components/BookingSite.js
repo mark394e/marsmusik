@@ -55,10 +55,10 @@ function BookingSite() {
           <div className="booking_bg"></div>
           <div className="ticket"></div>
           <h1>Tickets</h1>
-          <p>
+          <h3>
             Here you can select your tickets, pick a campingsite and add extras to make your stay
             more comfortable.
-          </p>
+          </h3>
           <Tickets
             // her henter fortæller vi hvilket data de forskellige components skal hente ind så de kan bruges
             setCounterVIP={setCounterVIP}

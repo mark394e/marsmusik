@@ -81,7 +81,9 @@ function TicketHolderVIP(props) {
               Type in your email address
             </span>
           </label>
-          <button onClick={() => setSent(true)}>Submit</button>
+          <button onClick={() => setSent(true)} className="submitBtn">
+            Submit
+          </button>
         </form>
       </div>
     </>
