@@ -21,9 +21,9 @@ function PaymentForm(props) {
       ticketholder: props.ticketHolders,
       campingspot: props.pickedCamping,
     });
-    props.setShowThankYou(true);
 
     fullfillReservation({ id: props.reserveID });
+    props.setShowThankYou(true);
   }
   // det her virker hvis man fjerner labels... så vil den hoppe fra input felt til inputfelt
   // når maxlenght er her nået - meeeeeen ligenu er lorte labels ivejen mææhh
@@ -142,12 +142,18 @@ function PaymentForm(props) {
             <div className="flexit">
               <label htmlFor="city">
                 City
-                <input type="text" id="city" name="city" required placeholder="City" />
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required
+                  placeholder="City"
+                  onInput={inputChange}
+                />
               </label>
               <label htmlFor="zipcode">
                 Zip code
                 <input
-                  onInput={inputChange}
                   type="text"
                   inputMode="numeric"
                   id="zipcode"
