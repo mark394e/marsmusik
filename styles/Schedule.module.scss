@@ -1,11 +1,12 @@
 .schedule {
   .schedule_bg {
-    background-image: url("/stages.webp");
+    background-image: url("/schedule.webp");
+    background-position: center;
     background-size: cover;
+    opacity: 0.6;
     height: 100%;
     width: 100%;
     position: absolute;
-    // opacity: 0.8;
     top: 0;
     left: 0;
     z-index: -2;
@@ -19,37 +20,72 @@
   }
 
   h1 {
-    margin-top: 30%;
-    font-size: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    // font-size: 5rem;
+    text-align: center;
   }
+
+  p {
+    text-align: center;
+    padding: 0 4rem 4rem 4rem;
+  }
+
   margin-left: 15%;
   margin-right: 15%;
+
   .schedule_container {
-    gap: 30px;
+    margin-top: 5%;
+    gap: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
 
   fieldset {
-    // justify-content: stretch;
     display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    width: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
     border: none;
     margin-top: 1rem;
     gap: 5px;
 
     legend {
-      flex-grow: 1;
       margin-bottom: 0.5rem;
     }
 
-    //Her vil jeg gerne justere kolonnerne så til differentierer på devices
-    //   @media (min-width: 700px) {
-    //     .schedule_container {
-    //       grid-template-columns: repeat(auto-fit, minmax(312px, 250px));
-    //     }
-    //   }
+    button {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.353);
+      // border-radius: 5px;
+      &:hover {
+        background: -webkit-linear-gradient(#41ffff, #fffd41);
+      }
+
+      &:focus {
+        // outline: none;
+        font-style: italic;
+        // box-shadow: 0 0 0 2px rgba(65, 255, 255, 1);
+        border: 3px solid;
+        border-radius: 5px;
+        border-image: linear-gradient(to right, #41ffff, #fffd41) 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .schedule {
+    margin-left: 2%;
+    margin-right: 2%;
+
+    fieldset {
+      flex-wrap: wrap;
+      button {
+        width: 127px;
+      }
+    }
   }
 }

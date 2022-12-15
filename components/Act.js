@@ -27,44 +27,13 @@ function Act(props) {
           <div className={props.data.stage}></div>
 
           {startsWith ? (
-            <div
-              className="background_image"
-              style={{
-                backgroundImage: `url("${props.data.logo.toString()}")`,
-                backgroundSize: "cover",
-                opacity: "0.2",
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-              }}
-            ></div>
+            <img src={props.data.logo.toString()} />
           ) : (
-            <div
-              className="background_image"
-              style={{
-                backgroundImage: `url("${
-                  configData.url
-                }/logos/${props.data.logo.toString()}")`,
-                backgroundSize: "cover",
-                opacity: "0.2",
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-              }}
-            ></div>
+            <img
+              alt={props.data.logoCredits}
+              src={`${configData.url}/logos/${props.data.logo.toString()}`}
+            />
           )}
-
-          {/* <div
-              className="background_image"
-              style={{
-                backgroundImage: url(${{startsWith ? `${props.data.logo.toString()}` : `"https://solitary-butterfly-1534.fly.dev/logos/${props.data.logo.toString()}"`}}),
-                backgroundSize: "cover",
-                opacity: "0.2",
-                height: "100%",
-                width: "100%",
-                position: "absolute",
-              }}
-            ></div> */}
         </article>
       </Anchor>
     </>

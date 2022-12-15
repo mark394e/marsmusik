@@ -63,16 +63,6 @@ function ScheduleSite(props) {
     filtered.reverse();
   }
 
-  // filtered.sort((a, b) => {
-  //   if (a[sortDirection] > b[sortDirection]) {
-  //     return -1;
-  //   }
-  //   if (a[sortDirection] < b[sortDirection]) {
-  //     return 1;
-  //   }
-  //   return 0;
-  // });
-
   //Her filtrer vi blandt det rå data fra pureBands
   if (filterStage) {
     filtered = pureBands.filter((band) => band.stage === filterStage);
@@ -86,7 +76,11 @@ function ScheduleSite(props) {
   return (
     <section className="schedule">
       <div className="schedule_bg"></div>
-      <h1>Schedule</h1>
+      <h1>Schedule 2125</h1>
+      <p>
+        Dive into Mars Musiks schedule, that ensures to bring back legends from
+        the Rock-history of planet earth!{" "}
+      </p>
       <fieldset>
         <legend>Filter by stage</legend>
         <button
@@ -151,14 +145,6 @@ function ScheduleSite(props) {
         >
           First to play
         </button>
-        {/* <button
-          onClick={() => {
-            setSortDirection("desc");
-            setSortColumn("start");
-          }}
-        >
-          Last to play
-        </button> */}
       </fieldset>
       <div className="schedule_container">
         {filtered.map((band) => {

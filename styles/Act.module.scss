@@ -2,12 +2,23 @@
   background-color: #e04d03;
   height: 100%;
   width: 100%;
+  border-radius: 5px;
   aspect-ratio: 1/1;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
+
+  img {
+    opacity: 0.2;
+    top: 0;
+    height: inherit;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+  }
 
   h2 {
     color: #faf1e9;
@@ -23,7 +34,7 @@
     top: 0;
     right: 0;
     // z-index: 2;
-    border-radius: 15px;
+    border-radius: 100px;
     margin: 0.5rem;
     height: 60%;
     width: 5%;
@@ -58,7 +69,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    // z-index: 2;
     border-radius: 15px;
     margin: 0.5rem;
     height: 60%;
@@ -68,14 +78,24 @@
 
   .time {
     display: flex;
-    margin-left: 1.5rem;
-    margin-right: 4rem;
-    margin-bottom: 1rem;
     color: #faf1e9;
     z-index: 2;
+
     p {
+      display: flex;
+      gap: 4px;
       margin-right: 1rem;
       text-transform: uppercase;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .act_container {
+    aspect-ratio: 16/7;
   }
 }
