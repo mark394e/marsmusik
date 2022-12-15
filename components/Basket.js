@@ -62,7 +62,7 @@ function Basket(props) {
 
   return (
     <section className={styles.basket}>
-      <h3>Vælg dine billetter</h3>
+      <h3>Your order</h3>
       <div>
         <h4>TICKETS</h4>
         <ul>
