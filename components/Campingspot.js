@@ -22,6 +22,7 @@ function Campingspot(props) {
   });
 
   function clickedCamping() {
+    ref.current.classList.add("pickedCamping");
     props.setPickedCamping(props.data.area);
     props.setShowPickedCamping(true);
     reserveSpot({
@@ -48,7 +49,9 @@ function Campingspot(props) {
       <section>
         <article ref={ref} className="campingspot" onClick={clickedCamping}>
           <h3>{props.data.area}</h3>
-          <p>{props.data.available} spots left</p>
+          <p>
+            {props.data.available} <span>spots left</span>
+          </p>
         </article>
       </section>
     </>

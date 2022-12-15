@@ -2,7 +2,7 @@
   background-color: #510926;
   border-radius: 25px;
   padding: 1rem;
-  color: antiquewhite;
+  color: #fae3cc;
   cursor: pointer;
   line-height: 1.5rem;
   letter-spacing: 2px;
@@ -33,4 +33,9 @@
 
 .camping-wrapper > p {
   padding-bottom: 1.5rem;
+}
+
+.pickedCamping {
+  background: -webkit-linear-gradient(#41ffff, #fffd41);
+  color: #510926;
 }

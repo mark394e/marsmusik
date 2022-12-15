@@ -3,6 +3,7 @@ import Campingspot from "./Campingspot";
 import TicketHolderREG from "./TicketHolderREG";
 import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
+import { useRef } from "react";
 
 function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
