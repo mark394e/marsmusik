@@ -98,6 +98,7 @@ function PaymentForm(props) {
   return (
     <>
       <section id="paymentform">
+        <h2>Checkout</h2>
         <form
           // action=""
           // onsubmit="return false;"
@@ -105,154 +106,157 @@ function PaymentForm(props) {
           onSubmit={submit}
           ref={theForm}
         >
-          <label htmlFor="fullname">
-            {" "}
-            Full name
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              required
-              placeholder="Full name "
-              onChange={onInputChange}
-              value={txt}
-            />
-          </label>
-          <label htmlFor="email">
-            E-mail
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="abc@gmail.com"
-              aria-describedby="hint-mail"
-              required
-            />
-            <span className="error" id="err-mail" aria-live="assertive">
-              Type in your email address
-            </span>
-          </label>
+          <div className="buyerinfo">
+            <label htmlFor="fullname">
+              {" "}
+              Full name
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                placeholder="Full name "
+                onChange={onInputChange}
+                value={txt}
+              />
+            </label>
+            <label htmlFor="email">
+              E-mail
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="abc@gmail.com"
+                aria-describedby="hint-mail"
+                required
+              />
+              <span className="error" id="err-mail" aria-live="assertive">
+                Type in your email address
+              </span>
+            </label>
 
-          <label htmlFor="address">
-            Address
-            <input type="text" id="address" name="address" required placeholder="Address" />
-          </label>
-          <div className="flexit">
-            <label htmlFor="zipcode">
-              Zip code
+            <label htmlFor="address">
+              Address
+              <input type="text" id="address" name="address" required placeholder="Address" />
+            </label>
+            <div className="flexit">
+              <label htmlFor="city">
+                City
+                <input type="text" id="city" name="city" required placeholder="City" />
+              </label>
+              <label htmlFor="zipcode">
+                Zip code
+                <input
+                  onInput={inputChange}
+                  type="text"
+                  inputMode="numeric"
+                  id="zipcode"
+                  name="zipcode"
+                  maxLength={4}
+                  minLength={3}
+                  required
+                  placeholder="Zip code"
+                  aria-describedby="hint-zip"
+                />
+                <span className="error" id="err-zip" aria-live="assertive">
+                  choose at least 3 numbers
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="cardinfo">
+            <label htmlFor="cardholder">
+              Cardholder name
+              <input
+                type="text"
+                id="cardholder"
+                name="cardholder"
+                required
+                placeholder="Cardholder name"
+                onChange={on2InputChange}
+                value={txt2}
+              />
+            </label>
+            <label htmlFor="cardnumber">
+              Credit card number
               <input
                 onInput={inputChange}
                 type="text"
                 inputMode="numeric"
-                id="zipcode"
-                name="zipcode"
-                maxLength={4}
-                minLength={3}
+                maxLength={16}
+                minLength={16}
+                id="cardnumber"
+                name="cardnumber"
                 required
-                placeholder="Zip code"
-                aria-describedby="hint-zip"
+                placeholder="XXXXXXXXXXXXXXXX"
+                aria-describedby="hint-cardnumber"
+                // onChange={on3InputChange}
+                // value={txt3}
               />
-              <span className="error" id="err-zip" aria-live="assertive">
-                choose at least 3 numbers
+              <span className="error" id="err-cardnumber" aria-live="assertive">
+                type at least 16 numbers
               </span>
             </label>
-            <label htmlFor="city">
-              City
-              <input type="text" id="city" name="city" required placeholder="City" />
-            </label>
+            <div className="flexit">
+              <label htmlFor="month">
+                Month
+                <input
+                  onInput={inputChange}
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={2}
+                  minLength={2}
+                  id="month"
+                  name="month"
+                  placeholder="XX"
+                  required
+                  aria-describedby="hint-month"
+                />
+                <span className="error" id="err-month" aria-live="assertive">
+                  type at least 2 numbers
+                </span>
+              </label>
+              <label htmlFor="year">
+                Year
+                <input
+                  onInput={inputChange}
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={2}
+                  minLength={2}
+                  id="year"
+                  name="year"
+                  placeholder="XX"
+                  required
+                  aria-describedby="hint-year"
+                />
+                <span className="error" id="err-year" aria-live="assertive">
+                  type at least 2 numbers
+                </span>
+              </label>
+              <label htmlFor="cvv">
+                CVV
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={3}
+                  minLength={3}
+                  id="cvv"
+                  name="cvv"
+                  placeholder="XXX"
+                  required
+                  aria-describedby="hint-cvv"
+                />
+                <span className="error" id="err-cvv" aria-live="assertive">
+                  type at least 3 numbers
+                </span>
+              </label>
+            </div>
           </div>
-          <button>submit</button>
+          <button className="submitBtn">book now</button>
         </form>
 
-        <form className="forms">
-          <label htmlFor="cardholder">
-            Cardholder name
-            <input
-              type="text"
-              id="cardholder"
-              name="cardholder"
-              required
-              placeholder="Cardholder name"
-              onChange={on2InputChange}
-              value={txt2}
-            />
-          </label>
-          <label htmlFor="cardnumber">
-            Credit card number
-            <input
-              onInput={inputChange}
-              type="text"
-              inputMode="numeric"
-              maxLength={16}
-              minLength={16}
-              id="cardnumber"
-              name="cardnumber"
-              required
-              placeholder="XXXXXXXXXXXXXXXX"
-              aria-describedby="hint-cardnumber"
-              // onChange={on3InputChange}
-              // value={txt3}
-            />
-            <span className="error" id="err-cardnumber" aria-live="assertive">
-              type at least 16 numbers
-            </span>
-          </label>
-          <div className="flexit">
-            <label htmlFor="month">
-              Month
-              <input
-                onInput={inputChange}
-                type="text"
-                inputMode="numeric"
-                maxLength={2}
-                minLength={2}
-                id="month"
-                name="month"
-                placeholder="XX"
-                required
-                aria-describedby="hint-month"
-              />
-              <span className="error" id="err-month" aria-live="assertive">
-                type at least 2 numbers
-              </span>
-            </label>
-            <label htmlFor="year">
-              Year
-              <input
-                onInput={inputChange}
-                type="text"
-                inputMode="numeric"
-                maxLength={2}
-                minLength={2}
-                id="year"
-                name="year"
-                placeholder="XX"
-                required
-                aria-describedby="hint-year"
-              />
-              <span className="error" id="err-year" aria-live="assertive">
-                type at least 2 numbers
-              </span>
-            </label>
-            <label htmlFor="cvv">
-              CVV
-              <input
-                type="text"
-                inputMode="numeric"
-                maxLength={3}
-                minLength={3}
-                id="cvv"
-                name="cvv"
-                placeholder="XXX"
-                required
-                aria-describedby="hint-cvv"
-              />
-              <span className="error" id="err-cvv" aria-live="assertive">
-                type at least 3 numbers
-              </span>
-            </label>
-          </div>
-        </form>
+        {/* <form className="forms"></form> */}
       </section>
     </>
   );

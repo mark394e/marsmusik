@@ -29,6 +29,11 @@
       background: -webkit-linear-gradient(#41ffff, #fffd41);
       font-style: italic;
     }
+    &:focus {
+      border: 3px solid;
+      border-color: #510927;
+      outline: none;
+    }
   }
 
   //danny kode
@@ -75,7 +80,7 @@
 
   input:focus {
     border: 3px solid;
-    border-color: rgb(255, 102, 0);
+    border-color: #510927;
     background-color: #fae2cc;
   }
 
