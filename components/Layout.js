@@ -35,12 +35,13 @@ export default function Layout(props) {
     setOpenMenu(!openMenu);
   };
 
-  const futureDate = add(new Date(), {
-    years: 102,
-    days: 192,
-    hours: 3,
-    minutes: 44,
-  });
+  const futureDate = new Date(2125, 5, 24, 2);
+  // const futureDate = add(new Date(), {
+  //   years: 102,
+  //   days: 192,
+  //   hours: 3,
+  //   minutes: 44,
+  // });
 
   return (
     <div className={roboto.className}>
@@ -63,7 +64,10 @@ export default function Layout(props) {
           </button>
           {openMenu ? (
             <div className="menu_overlay">
-              <ul style={{ fontFamily: `${shrikhand.style.fontFamily}` }} className="menu">
+              <ul
+                style={{ fontFamily: `${shrikhand.style.fontFamily}` }}
+                className="menu"
+              >
                 <li onClick={toggleMenu}>
                   <Anchor href="/">Home</Anchor>
                 </li>
