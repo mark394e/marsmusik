@@ -52,11 +52,7 @@ function Basket(props) {
     } else if (props.counterGreenCamp == 0) {
       setShowPrebuildThree(false);
     }
-  }, [
-    props.counterGreenCamp,
-    props.counterPrebuildThree,
-    props.counterPrebuildTwo,
-  ]);
+  }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
 
   useEffect(() => {
     if (props.showPickedCamping) {
@@ -75,14 +71,12 @@ function Basket(props) {
               {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
           biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
           for så at få en total værdi af de valgte biletter lagt sammen  */}
-              {props.counterVIP} &#10799; VIP{" "}
-              {props.counterVIP * prices.priceVIP},-
+              {props.counterVIP} &#10799; VIP {props.counterVIP * prices.priceVIP},-
             </li>
           )}
           {showREGTicket && (
             <li>
-              {props.counterREG} &#10799; Standard{" "}
-              {props.counterREG * prices.priceREG}
+              {props.counterREG} &#10799; Standard {props.counterREG * prices.priceREG}
               ,-
             </li>
           )}

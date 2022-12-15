@@ -63,10 +63,7 @@ export default function Layout(props) {
           </button>
           {openMenu ? (
             <div className="menu_overlay">
-              <ul
-                style={{ fontFamily: `${shrikhand.style.fontFamily}` }}
-                className="menu"
-              >
+              <ul style={{ fontFamily: `${shrikhand.style.fontFamily}` }} className="menu">
                 <li onClick={toggleMenu}>
                   <Anchor href="/">Home</Anchor>
                 </li>

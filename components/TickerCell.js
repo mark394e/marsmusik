@@ -12,10 +12,7 @@ function TickerCell(props) {
 
   return (
     <div>
-      <p
-        className="label"
-        style={{ fontFamily: `${shrikhand.style.fontFamily}` }}
-      >
+      <p className="label" style={{ fontFamily: `${shrikhand.style.fontFamily}` }}>
         {props.label}
       </p>
       <p

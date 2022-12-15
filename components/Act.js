@@ -11,11 +11,7 @@ function Act(props) {
   return (
     <>
       {" "}
-      <Anchor
-        band={props.pureBands}
-        key={props.data.name}
-        href={"/bands/" + props.data.id}
-      >
+      <Anchor band={props.pureBands} key={props.data.name} href={"/bands/" + props.data.id}>
         <article className="act_container" key={props.data.name}>
           <h2>{props.data.name}</h2>
           <div className="time">
@@ -42,9 +38,7 @@ function Act(props) {
             <div
               className="background_image"
               style={{
-                backgroundImage: `url("${
-                  configData.url
-                }/logos/${props.data.logo.toString()}")`,
+                backgroundImage: `url("${configData.url}/logos/${props.data.logo.toString()}")`,
                 backgroundSize: "cover",
                 opacity: "0.2",
                 height: "100%",

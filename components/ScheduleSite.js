@@ -89,10 +89,7 @@ function ScheduleSite(props) {
       <h1>Schedule</h1>
       <fieldset>
         <legend>Filter by stage</legend>
-        <button
-          className={filterStage === "" ? "active" : null}
-          onClick={() => setFilterStage("")}
-        >
+        <button className={filterStage === "" ? "active" : null} onClick={() => setFilterStage("")}>
           All
         </button>
         {stages.map((stage) => (
@@ -106,10 +103,7 @@ function ScheduleSite(props) {
         ))}
       </fieldset>
       <fieldset>
-        <button
-          className={filterDay === "" ? "active" : null}
-          onClick={() => setFilterDay("")}
-        >
+        <button className={filterDay === "" ? "active" : null} onClick={() => setFilterDay("")}>
           All
         </button>
         {days.map((day) => (
