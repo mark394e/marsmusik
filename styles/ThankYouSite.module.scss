@@ -1,11 +1,21 @@
-.thank_container{
-    display: grid;
-    justify-content: center;
-    margin-top: 15rem;
-    text-align: center;
-    place-items: center;
+.thank_container {
+  display: grid;
+  justify-content: center;
+  margin-top: 15rem;
+  text-align: center;
+  place-items: center;
 
-    button{
-        margin: 2rem;
+  button {
+    margin: 2rem;
+    background-color: #fae2cc;
+
+    &:hover {
+      background: -webkit-linear-gradient(#41ffff, #fffd41);
+      transform: scale(1.05);
+      font-style: italic;
     }
+    a {
+      color: #510926;
+    }
+  }
 }
