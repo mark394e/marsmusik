@@ -11,6 +11,7 @@ import ThankYouSite from "./ThankYouSite";
 function BookingSite() {
   const [pickedCamping, setPickedCamping] = useState("");
   const [ticketHolders, setTicketHolders] = useState([]);
+  const [extras, setExtras] = useState([]);
   const [counterVIP, setCounterVIP] = useState(0);
   const [counterREG, setCounterREG] = useState(0);
   const [counterGreenCamp, setCounterGreenCamp] = useState(0);
@@ -96,12 +97,16 @@ function BookingSite() {
                 setCounterPrebuildThree={setCounterPrebuildThree}
                 showExtras={showExtras}
                 setShowPaymentForm={setShowPaymentForm}
+                extras={extras}
+                setExtras={setExtras}
               ></Extras>
             )}
           </div>
           {showPaymentForm && (
             <PaymentForm
               ticketHolders={ticketHolders}
+              extras={extras}
+              setExtras={setExtras}
               setTicketHolders={setTicketHolders}
               pickedCamping={pickedCamping}
               reserveID={reserveID}

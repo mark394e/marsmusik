@@ -20,6 +20,7 @@ function PaymentForm(props) {
       city: theForm.current.elements.city.value,
       ticketholder: props.ticketHolders,
       campingspot: props.pickedCamping,
+      extras: props.extras,
     });
 
     fullfillReservation({ id: props.reserveID });
