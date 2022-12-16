@@ -9,9 +9,6 @@ import { Roboto } from "@next/font/google";
 import { Shrikhand } from "@next/font/google";
 import localFont from "@next/font/local";
 
-//Fra date-fns
-import { add } from "date-fns";
-
 //Components
 import Ticker from "./Ticker";
 import Anchor from "./Anchor";
