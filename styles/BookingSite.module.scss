@@ -35,3 +35,9 @@
     to(rgba(0, 0, 0, 0))
   );
 }
+
+@media only screen and (max-width: 600px) {
+  .bodybody > h3 {
+    padding: 2rem;
+  }
+}
