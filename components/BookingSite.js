@@ -99,6 +99,7 @@ function BookingSite() {
                 setShowPaymentForm={setShowPaymentForm}
                 extras={extras}
                 setExtras={setExtras}
+                showPaymentForm={showPaymentForm}
               ></Extras>
             )}
           </div>
