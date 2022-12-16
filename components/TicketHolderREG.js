@@ -4,6 +4,9 @@ import { useState } from "react";
 
 function TicketHolderREG(props) {
   const ticketHolderForm = useRef(null);
+  //giver besked "thank you" når der trykket submit på knap
+  const [sent, setSent] = useState(false);
+  const [txt, setTxt] = useState("");
 
   function submit(e) {
     e.preventDefault();
@@ -15,17 +18,9 @@ function TicketHolderREG(props) {
         tickettype: "REG",
       },
     ]);
-    // props.ticketHolderArr.push({
-    //   fullname: ticketHolderForm.current.elements.fullname.value,
-    //   email: ticketHolderForm.current.elements.email.value,
-    //   tickettype: "REG",
-    // });
-    console.log(props.ticketHolders);
+    setSent(true);
+    // console.log(props.ticketHolders);
   }
-
-  //giver besked "thank you" når der trykket submit på knap
-  const [sent, setSent] = useState(false);
-  const [txt, setTxt] = useState("");
 
   if (sent) {
     return (
@@ -81,9 +76,7 @@ function TicketHolderREG(props) {
               Type in your email address
             </span>
           </label>
-          <button onClick={() => setSent(true)} className="submitBtn">
-            Submit
-          </button>
+          <button className="submitBtn">Submit</button>
         </form>
       </div>
     </>
