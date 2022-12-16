@@ -75,10 +75,10 @@ export default function Home() {
           }}
         >
           <p>Is there life on Mars? Yes! </p>
-          <p>Arrive in your Rock &apos; n &apos; roll-rockets!</p>
+          <p>Arrive in your Rock &apos;n&apos; roll-rockets!</p>
           <p>Green beers on a red planet? Sounds great...</p>
           <p>Is there life on Mars? Yes! </p>
-          <p>Arrive in your Rock &apos; n &apos; roll-rockets!</p>
+          <p>Arrive in your Rock &apos;n&apos; roll-rockets!</p>
           <p>Green beers on a red planet? Sounds great...</p>
         </section>
       </div>
