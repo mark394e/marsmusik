@@ -78,3 +78,20 @@ section {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  section {
+    .ticket {
+      padding: 2rem 0;
+      .counter {
+        max-width: none;
+        margin-top: 0.5rem;
+        .counterBtn {
+          width: 50px;
+          height: 50px;
+          background-color: #fae3cc;
+        }
+      }
+    }
+  }
+}

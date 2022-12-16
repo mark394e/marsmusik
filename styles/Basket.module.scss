@@ -1,12 +1,14 @@
 .basket {
-  // position: fixed;
-  // bottom: 0;
-
-  z-index: 1;
+  position: fixed;
   backdrop-filter: blur(15px);
 
+  z-index: 1;
+  top: 150px;
+  right: 0px;
+  min-width: 200px;
   background-color: transparent;
   border: 1px solid #510926;
+  border-right: none;
   color: #510926;
   padding: 1rem;
   // border-radius: 15px;
@@ -16,42 +18,52 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  h3 {
+    align-self: center;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    line-height: 1.75rem;
+  }
+
+  hr {
+    color: #510926;
+  }
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .basket {
-    position: fixed;
-    backdrop-filter: blur(15px);
-
     z-index: 1;
-    top: 150px;
-    right: 0px;
-    min-width: 200px;
+    backdrop-filter: blur(15px);
     background-color: transparent;
-    border: 1px solid #510926;
-    border-right: none;
+    border-top: 1px solid #510926;
+    border-bottom: none;
+    border-left: none;
     color: #510926;
-    padding: 1rem;
-    // border-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
+    padding: 0 1rem;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
     line-height: 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    h3 {
-      align-self: center;
-    }
-    h4 {
-      font-weight: bold;
-    }
-    ul {
-      list-style: none;
-      line-height: 1.75rem;
-    }
+    // flex-direction: row;
+    gap: 10px;
+    bottom: 0px;
+    top: 550px;
+    width: 100%;
 
-    hr {
-      color: #510926;
+    h3 {
+      padding-top: 1rem;
     }
+  }
+  .mobileBasket {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+  }
+  .basketTimer {
+    text-align: center;
   }
 }

@@ -82,3 +82,27 @@ section {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .extrabox {
+    border-top: 1px solid #510926;
+    border-bottom: 1px solid #510926;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    .counter {
+      max-width: none;
+      margin-top: 0.5rem;
+      .counterBtn {
+        width: 50px;
+        height: 50px;
+        background-color: #fae3cc;
+      }
+    }
+  }
+  .extra-placement {
+    .optionals {
+      padding: unset;
+    }
+  }
+}

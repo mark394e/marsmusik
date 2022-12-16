@@ -133,3 +133,16 @@
     width: 110px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  #paymentform .forms {
+    display: flex;
+    flex-direction: column;
+    .cardinfo {
+      padding-top: 2rem;
+    }
+    .submitBtn {
+      align-self: center;
+    }
+  }
+}

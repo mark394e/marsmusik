@@ -53,3 +53,18 @@
 .camping-wrapper > p {
   padding-bottom: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .ticketholder {
+    border-top: 1px solid #510927;
+    border-bottom: 1px solid #510927;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+  }
+  .campingSection {
+    .campingspot {
+      width: 170px;
+    }
+  }
+}
