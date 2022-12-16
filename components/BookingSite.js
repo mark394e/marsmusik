@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Tickets from "../components/Tickets";
 import PaymentForm from "../components/PaymentForm";
-import Extras from "../components/Extras";
 import Basket from "../components/Basket";
 import configData from "../config.json";
 import "../styles/BookingSite.module.scss";
@@ -83,26 +82,20 @@ function BookingSite() {
             setReserveID={setReserveID}
             setShowTimer={setShowTimer}
             setTimer={setTimer}
+            setCounterGreenCamp={setCounterGreenCamp}
+            setCounterPrebuildThree={setCounterPrebuildThree}
+            setCounterPrebuildTwo={setCounterPrebuildTwo}
+            setShowPaymentForm={setShowPaymentForm}
+            counterGreenCamp={counterGreenCamp}
+            counterPrebuildTwo={counterPrebuildTwo}
+            counterPrebuildThree={counterPrebuildThree}
+            extras={extras}
+            setExtras={setExtras}
+            showPaymentForm={showPaymentForm}
           ></Tickets>
           {/* her færtæller vi hvad der skal vises når der trykkes på button  */}
           {/* hvad betyder &&?? */}
-          <div className="extra-placement">
-            {showExtras && (
-              <Extras
-                counterGreenCamp={counterGreenCamp}
-                counterPrebuildTwo={counterPrebuildTwo}
-                counterPrebuildThree={counterPrebuildThree}
-                setCounterGreenCamp={setCounterGreenCamp}
-                setCounterPrebuildTwo={setCounterPrebuildTwo}
-                setCounterPrebuildThree={setCounterPrebuildThree}
-                showExtras={showExtras}
-                setShowPaymentForm={setShowPaymentForm}
-                extras={extras}
-                setExtras={setExtras}
-                showPaymentForm={showPaymentForm}
-              ></Extras>
-            )}
-          </div>
+
           {showPaymentForm && (
             <PaymentForm
               ticketHolders={ticketHolders}

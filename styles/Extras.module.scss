@@ -49,8 +49,8 @@ section {
 }
 
 .extrabox {
-  border: 1px solid #510926;
-  border-radius: 20px;
+  // border: 1px solid #510926;
+  // border-radius: 20px;
   padding: 1rem;
   color: #510926;
   width: 830px;
@@ -85,11 +85,12 @@ section {
 
 @media only screen and (max-width: 600px) {
   .extrabox {
-    border-top: 1px solid #510926;
-    border-bottom: 1px solid #510926;
-    border-left: none;
-    border-right: none;
+    // border-top: 1px solid #510926;
+    // border-bottom: 1px solid #510926;
+    // border-left: none;
+    // border-right: none;
     border-radius: 0px;
+    width: unset;
     .counter {
       max-width: none;
       margin-top: 0.5rem;
