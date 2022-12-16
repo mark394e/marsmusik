@@ -1,15 +1,33 @@
-.campingspot {
-  background-color: #510926;
-  border-radius: 25px;
-  padding: 1rem;
-  color: #fae3cc;
-  cursor: pointer;
-  line-height: 1.5rem;
-  letter-spacing: 2px;
-
+.campingSection {
   &:hover {
     transform: scale(1.05);
   }
+  .campingspot {
+    background-color: #510926;
+    // border-radius: 25px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    padding: 1rem;
+    color: #fae3cc;
+    cursor: pointer;
+    line-height: 1.5rem;
+    letter-spacing: 2px;
+  }
+  .pickedCamping {
+    background: -webkit-linear-gradient(#41ffff, #fffd41);
+    color: #510926;
+  }
+}
+
+.available {
+  background-color: transparent;
+  border-bottom: 1px solid #510926;
+  border-left: 1px solid #510926;
+  border-right: 1px solid #510926;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 1rem;
 }
 
 .fullybooked {
@@ -28,14 +46,10 @@
     flex-wrap: wrap;
     gap: 10px;
     padding-bottom: 2rem;
+    justify-content: center;
   }
 }
 
 .camping-wrapper > p {
   padding-bottom: 1.5rem;
-}
-
-.pickedCamping {
-  background: -webkit-linear-gradient(#41ffff, #fffd41);
-  color: #510926;
 }

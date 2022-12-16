@@ -46,13 +46,15 @@ function Campingspot(props) {
 
   return (
     <>
-      <section>
+      <section className="campingSection">
         <article ref={ref} className="campingspot" onClick={clickedCamping}>
           <h3>{props.data.area}</h3>
+        </article>
+        <div className="available">
           <p>
             {props.data.available} <span>spots left</span>
           </p>
-        </article>
+        </div>
       </section>
     </>
   );
