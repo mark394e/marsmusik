@@ -75,76 +75,87 @@ function ScheduleSite(props) {
 
   return (
     <section className="schedule">
-      <div className="schedule_bg"></div>
-      <h1>Schedule 2125</h1>
-      <p>
-        Dive into Mars Musiks schedule, that ensures to bring back legends from
-        the Rock-history of planet earth!{" "}
-      </p>
-      <fieldset>
-        <legend>Filter by stage</legend>
-        <button className={filterStage === "" ? "active" : null} onClick={() => setFilterStage("")}>
-          All
-        </button>
-        {stages.map((stage) => (
-          <Filterbutton
-            band={pureBands}
-            setFilter={setFilterStage}
-            filter={filterStage}
-            key={stage}
-            stage={stage}
-          />
-        ))}
-      </fieldset>
-      <fieldset>
-        <button className={filterDay === "" ? "active" : null} onClick={() => setFilterDay("")}>
-          All
-        </button>
-        {days.map((day) => (
-          <Filterbutton
-            className={filterDay === day ? "active" : null}
-            onClick={() => setFilterDay(day)}
-            band={pureBands}
-            setFilter={setFilterDay}
-            filter={filterDay}
-            key={day}
-            stage={day}
-          />
-        ))}
-        <legend>Filter by day</legend>
-      </fieldset>
-      <fieldset>
-        <legend>Sort</legend>
-        <button
-          onClick={() => {
-            setSortColumn("name");
-            setSortDirection("asc");
-          }}
-        >
-          A - Z
-        </button>
-        <button
-          onClick={() => {
-            setSortDirection("desc");
-            setSortColumn("name");
-          }}
-        >
-          Z - A
-        </button>
-        <button
-          onClick={() => {
-            setSortDirection("asc");
-            setSortColumn("start");
-          }}
-        >
-          First to play
-        </button>
-      </fieldset>
+      <div className="schedule_bg"> </div>
+
+      <div className="schedule_txt">
+        <h1>Schedule 2125</h1>
+        <p>
+          Dive into Mars Musiks schedule, that ensures to bring back legends
+          from the Rock-history of planet earth!{" "}
+        </p>
+
+        <fieldset>
+          <legend>Filter by stage</legend>
+          <button
+            className={filterStage === "" ? "active" : null}
+            onClick={() => setFilterStage("")}
+          >
+            All
+          </button>
+          {stages.map((stage) => (
+            <Filterbutton
+              band={pureBands}
+              setFilter={setFilterStage}
+              filter={filterStage}
+              key={stage}
+              stage={stage}
+            />
+          ))}
+        </fieldset>
+        <fieldset>
+          <button
+            className={filterDay === "" ? "active" : null}
+            onClick={() => setFilterDay("")}
+          >
+            All
+          </button>
+          {days.map((day) => (
+            <Filterbutton
+              className={filterDay === day ? "active" : null}
+              onClick={() => setFilterDay(day)}
+              band={pureBands}
+              setFilter={setFilterDay}
+              filter={filterDay}
+              key={day}
+              stage={day}
+            />
+          ))}
+          <legend>Filter by day</legend>
+        </fieldset>
+        <fieldset>
+          <legend>Sort</legend>
+          <button
+            onClick={() => {
+              setSortColumn("name");
+              setSortDirection("asc");
+            }}
+          >
+            A - Z
+          </button>
+          <button
+            onClick={() => {
+              setSortDirection("desc");
+              setSortColumn("name");
+            }}
+          >
+            Z - A
+          </button>
+          <button
+            onClick={() => {
+              setSortDirection("asc");
+              setSortColumn("start");
+            }}
+          >
+            First to play
+          </button>
+        </fieldset>
+      </div>
       <div className="schedule_container">
         {filtered.map((band) => {
           return <Act key={band.name} data={band} />;
         })}
       </div>
+      <div className="gradient"></div>
     </section>
   );
 }

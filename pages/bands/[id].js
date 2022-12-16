@@ -30,6 +30,9 @@ export default function Artist({ data }) {
           )}
 
           <div>
+            <div>
+              <p>{data[0].start} </p>
+            </div>
             <div className="flex_symbol">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,13 +83,19 @@ export async function getServerSideProps(context) {
   const res = await fetch(
     `${configData.url}/bands/` // id fordi min fil eller id
   );
+  const res2 = await fetch(
+    `${configData.url}/schedule/` // id fordi min fil eller id
+  );
   // console.log(res);
   // If no succes, return a 404 redirect
-  if (res.status != 200) {
+  if (res.status != 200 || res2.status != 200) {
     return {
       notFound: true, //Hvis api ik svarer, ender jeg på en 404
     };
   }
+
+  const schedule = await res2.json();
+  console.log(schedule);
 
   const bands = await res.json();
 
@@ -95,9 +104,6 @@ export async function getServerSideProps(context) {
   const currentBand = bands.filter(
     (band) => Number(band.id) === Number(context.params.id)
   );
-  // console.log(currentBand);
-
-  // console.log(data);
 
   return {
     props: {
