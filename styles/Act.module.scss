@@ -96,6 +96,16 @@
 
 @media (max-width: 800px) {
   .act_container {
-    aspect-ratio: 16/7;
+    margin-top: 95px;
+    width: 100%;
+    aspect-ratio: 16/4;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.6rem;
+    }
   }
 }
