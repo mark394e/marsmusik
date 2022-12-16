@@ -5,11 +5,7 @@
   width: 100vw;
   // position: relative;
   background: rgb(251, 135, 49);
-  background: linear-gradient(
-    0deg,
-    rgba(251, 135, 49, 1) 0%,
-    rgba(254, 249, 241, 1) 100%
-  );
+  background: linear-gradient(0deg, rgba(251, 135, 49, 1) 0%, rgba(254, 249, 241, 1) 100%);
 
   .date_wrapper {
     width: 50px;
@@ -129,7 +125,8 @@
   background: linear-gradient(to right, #41ffff, #fffd41);
   overflow: hidden;
   max-width: 100%;
-  padding: 0 !important;
+  // padding: 0 !important;
+  padding: 1rem;
 
   .banner {
     width: 2972px;
