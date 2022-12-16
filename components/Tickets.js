@@ -3,7 +3,7 @@ import Campingspot from "./Campingspot";
 import TicketHolderREG from "./TicketHolderREG";
 import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
-import { useRef } from "react";
+import Extras from "./Extras";
 
 function Tickets(props) {
   // her plusser vi den vaælgte mængde af reg biletter med vip billetter for at få en samlet billet mængde
@@ -79,6 +79,21 @@ function Tickets(props) {
                       setTimer={props.setTimer}
                     ></Campingspot>
                   ))}
+                  <div className="extra-placement">
+                    <Extras
+                      counterGreenCamp={props.counterGreenCamp}
+                      counterPrebuildTwo={props.counterPrebuildTwo}
+                      counterPrebuildThree={props.counterPrebuildThree}
+                      setCounterGreenCamp={props.setCounterGreenCamp}
+                      setCounterPrebuildTwo={props.setCounterPrebuildTwo}
+                      setCounterPrebuildThree={props.setCounterPrebuildThree}
+                      showExtras={props.showExtras}
+                      setShowPaymentForm={props.setShowPaymentForm}
+                      extras={props.extras}
+                      setExtras={props.setExtras}
+                      showPaymentForm={props.showPaymentForm}
+                    ></Extras>
+                  </div>
                 </div>
               </>
             )}
@@ -96,8 +111,8 @@ function Tickets(props) {
               {ticketholdersVIP} {ticketholdersREG}
             </>
           ) : null}
-          {props.showTicketHolder && !props.showExtras && (
-            <button onClick={() => props.setShowExtras(true)} className="continueBtn">
+          {props.showTicketHolder && !props.showPaymentForm && (
+            <button onClick={() => props.setShowPaymentForm(true)} className="continueBtn">
               Continue
             </button>
           )}
