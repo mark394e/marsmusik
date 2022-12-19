@@ -7,16 +7,18 @@ section {
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 250px;
+      max-width: 740px;
       padding-top: 0.5rem;
       gap: 20px;
       span {
         font-size: 1.2rem;
       }
       .counterBtn {
-        width: 25px;
-        height: 25px;
-        padding: 0;
+        width: 35px;
+        height: 35px;
+        padding: 0rem;
+        background-color: #fae3cc;
+        border-radius: 10px;
         &:hover {
           background-color: #510926;
           color: #fae3cc;
@@ -46,10 +48,9 @@ section {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      // background-color: #510926;
+      background-color: #510926;
       color: white;
       padding: 1.5rem;
-      border-radius: 19px;
     }
 
     .cobber {
@@ -57,17 +58,15 @@ section {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      // background-color: #510926;
+      background-color: #510926;
       color: white;
       padding: 1.5rem;
-      border-radius: 19px;
     }
 
     .orange {
       background-color: #fae3cc;
       color: #510926;
       padding: 1.5rem;
-      border-radius: 20px;
     }
 
     .white {
