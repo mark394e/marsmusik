@@ -1,7 +1,4 @@
 .campingSection {
-  &:hover {
-    transform: scale(1.05);
-  }
   .campingspot {
     background-color: #510926;
     // border-radius: 25px;
@@ -15,14 +12,32 @@
     letter-spacing: 2px;
   }
 
-  .campingspot:focus {
-    background: -webkit-linear-gradient(#41ffff, #fffd41);
-    color: #510926;
+  .fullybooked {
+    color: rgb(19, 19, 19);
+    border-radius: 20px;
+    border: 1px solid rgb(19, 19, 19);
+    .campingspot {
+      background-color: lightgray;
+      color: rgb(19, 19, 19);
+    }
+    .available {
+      border-bottom: 0px solid #510926;
+      border-left: 0px solid #510926;
+      border-right: 0px solid #510926;
+      border-top: 1px solid rgb(19, 19, 19);
+      background-color: rgb(230, 230, 230);
+    }
+    &:hover {
+      transform: scale(1);
+    }
   }
-  // .pickedCamping {
-  //   background: -webkit-linear-gradient(#41ffff, #fffd41);
-  //   color: #510926;
-  // }
+
+  .campingspotwrapper {
+    overflow: hidden;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .available {
@@ -33,14 +48,6 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 1rem;
-}
-
-.fullybooked {
-  background-color: lightgray;
-  color: black;
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .camping-wrapper {
@@ -76,4 +83,10 @@
       color: #510926;
     }
   }
+}
+
+.pickedCamping {
+  background: -webkit-linear-gradient(#41ffff, #fffd41);
+  color: #510926;
+  border-radius: 20px;
 }

@@ -24,7 +24,7 @@ function TicketType(props) {
   };
 
   return (
-    <section>
+    <section className="tickettype">
       <div className="ticket" id="vip-ticket">
         <div className="extra-heading">
           <p>Ticket type</p>
