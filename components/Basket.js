@@ -67,6 +67,7 @@ function Basket(props) {
       {/* Hvis showTimer er true vises Countdown (npm install). Udseendet på timeren er ændret vha. indbyggede custom props. */}
       {props.showTimer && (
         <Countdown
+          onComplete={() => props.setRefreshPage(true)}
           date={props.timer}
           renderer={(props) => (
             <div className="basketTimer">

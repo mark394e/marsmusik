@@ -29,6 +29,13 @@ function BookingSite() {
 
   const [reserveID, setReserveID] = useState(null);
 
+  const [refreshPage, setRefreshPage] = useState(false);
+
+  if (refreshPage) {
+    window.location.reload(false);
+    setRefreshPage(false);
+  }
+
   useEffect(() => {
     async function getData() {
       const res = await fetch(`${configData.url}/available-spots`);
@@ -121,6 +128,7 @@ function BookingSite() {
               counterPrebuildThree={counterPrebuildThree}
               showTimer={showTimer}
               timer={timer}
+              setRefreshPage={setRefreshPage}
             ></Basket>
           )}
         </div>
