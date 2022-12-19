@@ -63,8 +63,8 @@ function BookingSite() {
           <div className="ticket"></div>
           <h1>Tickets</h1>
           <h3>
-            Here you can select your tickets, pick a campingsite and add extras to make your stay
-            more comfortable.
+            Select your choise of tickets, choose a campsite and add extras to
+            make your stay even more comfortable.
           </h3>
           <Tickets
             // her henter fortæller vi hvilket data de forskellige components skal hente ind så de kan bruges

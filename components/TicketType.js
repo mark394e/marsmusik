@@ -32,9 +32,15 @@ function TicketType(props) {
           <p>Total</p>
         </div>
         <div className="border">
-          <div className="gold">VIP</div>
-          <div className="orange">1299,-</div>
-          <div className="white">{props.counterVIP * 1299},-</div>
+          <div className="gold">
+            <p> VIP</p>
+          </div>
+          <div className="orange">
+            <p> 1299,-</p>
+          </div>
+          <div className="white">
+            <p> {props.counterVIP * 1299},-</p>
+          </div>
         </div>
         <div className="counter">
           {/* her tilføjer vi conter til de forkslelige onclicks - så når der trykkes på lnappen vil if sætningen blive sat igang  */}
@@ -49,9 +55,15 @@ function TicketType(props) {
       </div>
       <div className="ticket" id="reg-ticket">
         <div className="border">
-          <div className="cobber">STANDARD</div>
-          <div className="orange">799,-</div>
-          <div className="white">{props.counterREG * 799},-</div>
+          <div className="cobber">
+            <p> STANDARD</p>
+          </div>
+          <div className="orange">
+            <p> 799,-</p>
+          </div>
+          <div className="white">
+            <p> {props.counterREG * 799},-</p>
+          </div>
         </div>
         <div className="counter">
           <button onClick={decreaseREG} className="counterBtn">
