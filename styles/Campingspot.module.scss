@@ -1,36 +1,30 @@
 .campingSection {
+  //Hvis camping spot ikke er tilgængeligt, gøres det gennemsigtigt
+  .fullybooked {
+    opacity: 0.3;
+  }
+  button{
+    border: none;
+    padding: 0;
+
   .campingspot {
+    
     background-color: #510926;
     // border-radius: 25px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-
     padding: 1rem;
-    color: #fae3cc;
     cursor: pointer;
     line-height: 1.5rem;
     letter-spacing: 2px;
   }
 
-  .fullybooked {
-    color: rgb(19, 19, 19);
-    border-radius: 20px;
-    border: 1px solid rgb(19, 19, 19);
-    .campingspot {
-      background-color: lightgray;
-      color: rgb(19, 19, 19);
-    }
-    .available {
-      border-bottom: 0px solid #510926;
-      border-left: 0px solid #510926;
-      border-right: 0px solid #510926;
-      border-top: 1px solid rgb(19, 19, 19);
-      background-color: rgb(230, 230, 230);
-    }
-    &:hover {
-      transform: scale(1);
-    }
+  h3{
+        color: rgba(254, 240, 224);
+        padding: 0 !important;
+
   }
+
 
   .campingspotwrapper {
     overflow: hidden;
@@ -38,7 +32,6 @@
       transform: scale(1.05);
     }
   }
-}
 
 .available {
   background-color: transparent;
@@ -48,7 +41,22 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 1rem;
+}  
+
+// .pickedCamping{
+//   border: 10px solid red;
+//    background: -webkit-linear-gradient(#41ffff, #fffd41);
+// }
+
+&:focus{
+  .available{
+   background: -webkit-linear-gradient(#41ffff, #fffd41);
 }
+  }
+}
+}
+
+
 
 .camping-wrapper {
   text-align: center;
@@ -78,15 +86,10 @@
     .campingspot {
       width: 170px;
     }
-    .campingspot:focus {
-      background: -webkit-linear-gradient(#41ffff, #fffd41);
-      color: #510926;
-    }
+    // .campingspot:focus {
+    //   background: -webkit-linear-gradient(#41ffff, #fffd41);
+    //   color: #510926;
+    // }
   }
 }
 
-.pickedCamping {
-  background: -webkit-linear-gradient(#41ffff, #fffd41);
-  color: #510926;
-  border-radius: 20px;
-}

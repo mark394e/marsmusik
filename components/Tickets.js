@@ -11,27 +11,33 @@ function Tickets(props) {
   // - det skal bla. bruges til at tjekke om der er nok ledige camping spots
   const ticketAmount = props.counterREG + props.counterVIP;
 
-  const ticketholdersREG = Array.from({ length: props.counterREG }, (_, index) => {
-    return (
-      <TicketHolderREG
-        key={index}
-        ticketHolderArr={props.ticketHolderArr}
-        ticketHolders={props.ticketHolders}
-        setTicketHolders={props.setTicketHolders}
-      ></TicketHolderREG>
-    );
-  });
+  const ticketholdersREG = Array.from(
+    { length: props.counterREG },
+    (_, index) => {
+      return (
+        <TicketHolderREG
+          key={index}
+          ticketHolderArr={props.ticketHolderArr}
+          ticketHolders={props.ticketHolders}
+          setTicketHolders={props.setTicketHolders}
+        ></TicketHolderREG>
+      );
+    }
+  );
 
-  const ticketholdersVIP = Array.from({ length: props.counterVIP }, (_, index) => {
-    return (
-      <TicketHolderVIP
-        key={index}
-        ticketHolderArr={props.ticketHolderArr}
-        ticketHolders={props.ticketHolders}
-        setTicketHolders={props.setTicketHolders}
-      ></TicketHolderVIP>
-    );
-  });
+  const ticketholdersVIP = Array.from(
+    { length: props.counterVIP },
+    (_, index) => {
+      return (
+        <TicketHolderVIP
+          key={index}
+          ticketHolderArr={props.ticketHolderArr}
+          ticketHolders={props.ticketHolders}
+          setTicketHolders={props.setTicketHolders}
+        ></TicketHolderVIP>
+      );
+    }
+  );
 
   function startTimer() {
     props.setShowTimer(true);
@@ -53,7 +59,10 @@ function Tickets(props) {
           ></TicketType>
           {/* knap der bliver sat til true når der trykkes på den - hvorefter den vil vise campingspots */}
           {!props.showCamping && (
-            <button onClick={() => props.setShowCamping(true)} className="continueBtn">
+            <button
+              onClick={() => props.setShowCamping(true)}
+              className="continueBtn"
+            >
               Continue
             </button>
           )}
@@ -63,7 +72,9 @@ function Tickets(props) {
             {props.showCamping && (
               <>
                 <h3>Pick a campingsite</h3>
-                <p>99,- for one area</p>
+                <p>
+                  <span className="fat"> 99,-</span>for one area
+                </p>
                 <div className="campingspot-container">
                   {props.campingspot.map((spot) => (
                     <Campingspot
@@ -113,7 +124,10 @@ function Tickets(props) {
             </>
           ) : null}
           {props.showTicketHolder && !props.showPaymentForm && (
-            <button onClick={() => props.setShowPaymentForm(true)} className="continueBtn">
+            <button
+              onClick={() => props.setShowPaymentForm(true)}
+              className="continueBtn"
+            >
               Continue
             </button>
           )}

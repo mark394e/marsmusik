@@ -34,7 +34,7 @@ img {
   width: 100%;
 }
 
-h1 {
+h1, h2, h3 {
   color: $darkred-color;
 }
 
@@ -57,10 +57,14 @@ a:hover {
   cursor: pointer;
 }
 
+input::placeholder {
+    color: #51092660;
+}
+
 .continueBtn {
   align-self: center;
   width: 150px;
-  background-color: #510927;
+  background-color: $darkred-color;
   color: #fae3cc;
   &:hover {
     transform: scale(1.05);

@@ -57,9 +57,16 @@ function Extras(props) {
         </div>
         <div className="extra" id="greenchoice">
           <div className="border">
-            <div className="red">Green camping</div>
-            <div className="orange">249,-</div>
-            <div className="white">{props.counterGreenCamp * 249},-</div>
+            <div className="red">
+              <p>Green camping</p>
+            </div>
+            <div className="orange">
+              <p> 249,-</p>
+            </div>
+            <div className="white">
+              {" "}
+              <p> {props.counterGreenCamp * 249},-</p>
+            </div>
           </div>
           <div className="counter">
             <button onClick={decreaseGreenCamp} className="counterBtn">
@@ -76,9 +83,16 @@ function Extras(props) {
         </div>
         <div className="extra" id="twoperstent">
           <div className="border">
-            <div className="red">2 person tent</div>
-            <div className="orange">299,-</div>
-            <div className="white">{props.counterPrebuildTwo * 299},-</div>
+            <div className="red">
+              {" "}
+              <p> 2 person tent </p>
+            </div>
+            <div className="orange">
+              <p> 299,-</p>
+            </div>
+            <div className="white">
+              <p> {props.counterPrebuildTwo * 299},-</p>
+            </div>
           </div>
           <div className="counter">
             <button onClick={decreasePrebuildTwo} className="counterBtn">
@@ -92,9 +106,15 @@ function Extras(props) {
         </div>
         <div className="extra" id="threeperstent">
           <div className="border">
-            <div className="red">3 person tent</div>
-            <div className="orange">399,-</div>
-            <div className="white">{props.counterPrebuildThree * 399},-</div>
+            <div className="red">
+              <p> 3 person tent</p>
+            </div>
+            <div className="orange">
+              <p> 399,-</p>
+            </div>
+            <div className="white">
+              <p> {props.counterPrebuildThree * 399},-</p>
+            </div>
           </div>
           <div className="counter">
             <button onClick={decreasePrebuildThree} className="counterBtn">
