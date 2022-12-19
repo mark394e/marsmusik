@@ -1,7 +1,7 @@
 import styles from "../styles/Basket.module.scss";
 import prices from "../modules/prices.json";
 import { useState, useEffect } from "react";
-import Countdown from "react-countdown";
+import Countdown, { zeroPad } from "react-countdown";
 
 function Basket(props) {
   const [showVIPTicket, setShowVIPTicket] = useState(false);
@@ -61,6 +61,12 @@ function Basket(props) {
     }
   }, [props.showPickedCamping]);
 
+  const renderer = ({ minutes, seconds }) => (
+    <div className="basketTimer">
+      {zeroPad(minutes)}:{zeroPad(seconds)}
+    </div>
+  );
+
   return (
     <section className={styles.basket}>
       <h3>Your order</h3>
@@ -69,11 +75,7 @@ function Basket(props) {
         <Countdown
           onComplete={() => props.setRefreshPage(true)}
           date={props.timer}
-          renderer={(props) => (
-            <div className="basketTimer">
-              {props.minutes}:{props.seconds}
-            </div>
-          )}
+          renderer={renderer}
         ></Countdown>
       )}
       <div className="mobileBasket">
