@@ -34,7 +34,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .basket {
     z-index: 1;
     backdrop-filter: blur(15px);
@@ -51,7 +51,7 @@
     // flex-direction: row;
     gap: 10px;
     bottom: 0px;
-    top: 550px;
+    top: 760px;
     width: 100%;
 
     h3 {
@@ -65,5 +65,11 @@
   }
   .basketTimer {
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .basket {
+    top: 550px;
   }
 }

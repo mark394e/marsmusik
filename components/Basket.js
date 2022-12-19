@@ -18,8 +18,7 @@ function Basket(props) {
     props.counterPrebuildTwo * prices.pricePrebuildTwo +
     props.counterPrebuildThree * prices.pricePrebuildThree;
 
-  // conster der definere hva de forskellige priser på biletter er
-
+  // Hvis antallet af både VIP og Standard billeter er større end 0, sættes deres State til true og de vises de i Basket
   useEffect(() => {
     if (props.counterVIP > 0) {
       setShowVIPTicket(true);
@@ -34,6 +33,7 @@ function Basket(props) {
     }
   }, [props.counterVIP, props.counterREG]);
 
+  // Hvis antallet af divers extras er større end 0, sættes deres State til true og de vises de i Basket
   useEffect(() => {
     if (props.counterGreenCamp > 0) {
       setShowGreenCamp(true);
@@ -54,6 +54,7 @@ function Basket(props) {
     }
   }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
 
+  // sætter prisen på campingspot til 99,- hvis der er valgt et campingspot
   useEffect(() => {
     if (props.showPickedCamping) {
       setPriceCampingspot(99);
@@ -63,6 +64,7 @@ function Basket(props) {
   return (
     <section className={styles.basket}>
       <h3>Your order</h3>
+      {/* Hvis showTimer er true vises Countdown (npm install). Udseendet på timeren er ændret vha. indbyggede custom props. */}
       {props.showTimer && (
         <Countdown
           date={props.timer}
@@ -79,9 +81,7 @@ function Basket(props) {
           <ul>
             {showVIPTicket && (
               <li>
-                {/* her henter vi vores contervip ind som er sat til at tælle hvor mange 
-          biletter der er valgt og gange det valgte billettal med pricevip som er sat til en bestemt pris 
-          for så at få en total værdi af de valgte biletter lagt sammen  */}
+                {/* værdien fra counterVIP-prop vises og multipliceres med den faste pris (hentet fra lokal JSON). */}
                 {props.counterVIP} &#10799; VIP {props.counterVIP * prices.priceVIP},-
               </li>
             )}
@@ -96,6 +96,7 @@ function Basket(props) {
         <div>
           <h4>CAMPING</h4>
           <p>
+            {/* Campingspot er sat til "None" indtil der er showPickedCamping er true. Det valgte campingspot indsættes i p-tagget. */}
             {!props.showPickedCamping ? (
               "None"
             ) : (
@@ -130,6 +131,7 @@ function Basket(props) {
         </div>
       </div>
       <hr />
+      {/* Den totale udregnet pris adderes med prisen på ét enkelt campingspot (booking fee 99,-) */}
       <h3>Total {priceTotal + priceCampingspot},-</h3>
     </section>
   );

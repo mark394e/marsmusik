@@ -79,21 +79,21 @@ function Tickets(props) {
                       setTimer={props.setTimer}
                     ></Campingspot>
                   ))}
-                  <div className="extra-placement">
-                    <Extras
-                      counterGreenCamp={props.counterGreenCamp}
-                      counterPrebuildTwo={props.counterPrebuildTwo}
-                      counterPrebuildThree={props.counterPrebuildThree}
-                      setCounterGreenCamp={props.setCounterGreenCamp}
-                      setCounterPrebuildTwo={props.setCounterPrebuildTwo}
-                      setCounterPrebuildThree={props.setCounterPrebuildThree}
-                      showExtras={props.showExtras}
-                      setShowPaymentForm={props.setShowPaymentForm}
-                      extras={props.extras}
-                      setExtras={props.setExtras}
-                      showPaymentForm={props.showPaymentForm}
-                    ></Extras>
-                  </div>
+                </div>
+                <div className="extra-placement">
+                  <Extras
+                    counterGreenCamp={props.counterGreenCamp}
+                    counterPrebuildTwo={props.counterPrebuildTwo}
+                    counterPrebuildThree={props.counterPrebuildThree}
+                    setCounterGreenCamp={props.setCounterGreenCamp}
+                    setCounterPrebuildTwo={props.setCounterPrebuildTwo}
+                    setCounterPrebuildThree={props.setCounterPrebuildThree}
+                    showExtras={props.showExtras}
+                    setShowPaymentForm={props.setShowPaymentForm}
+                    extras={props.extras}
+                    setExtras={props.setExtras}
+                    showPaymentForm={props.showPaymentForm}
+                  ></Extras>
                 </div>
               </>
             )}
