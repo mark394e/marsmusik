@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import "../styles/Campingspot.module.scss";
 import configData from "../config.json";
 
@@ -47,13 +47,15 @@ function Campingspot(props) {
   return (
     <>
       <section className="campingSection">
-        <article ref={ref} className="campingspot" onClick={clickedCamping}>
-          <h3>{props.data.area}</h3>
-        </article>
-        <div className="available">
-          <p>
-            {props.data.available} <span>spots left</span>
-          </p>
+        <div className="campingspotwrapper" ref={ref}>
+          <article className="campingspot" onClick={clickedCamping}>
+            <h3>{props.data.area}</h3>
+          </article>
+          <div className="available">
+            <p>
+              <span>{props.data.available}</span> spots left
+            </p>
+          </div>
         </div>
       </section>
     </>

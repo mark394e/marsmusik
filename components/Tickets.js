@@ -3,6 +3,7 @@ import Campingspot from "./Campingspot";
 import TicketHolderREG from "./TicketHolderREG";
 import TicketHolderVIP from "./TicketHolderVIP";
 import "../styles/Tickets.module.scss";
+import "../styles/Campingspot.module.scss";
 import Extras from "./Extras";
 
 function Tickets(props) {
