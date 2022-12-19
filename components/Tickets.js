@@ -33,12 +33,6 @@ function Tickets(props) {
     );
   });
 
-  function startTimer() {
-    props.setShowTimer(true);
-    props.setTimer(Date.now() + 300000);
-    props.setShowTicketHolder(true);
-  }
-
   return (
     <>
       <section className="around">
@@ -101,7 +95,7 @@ function Tickets(props) {
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
           {props.showCamping && !props.showTicketHolder && (
-            <button onClick={startTimer} className="continueBtn">
+            <button onClick={() => props.setShowTicketHolder(true)} className="continueBtn">
               Continue
             </button>
           )}
