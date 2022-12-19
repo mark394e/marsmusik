@@ -5,7 +5,7 @@
   z-index: 1;
   top: 150px;
   right: 0px;
-  min-width: 200px;
+  min-width: 17vw;
   background-color: transparent;
   border: 1px solid #510926;
   border-right: none;
@@ -20,19 +20,58 @@
   gap: 20px;
   h3 {
     align-self: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
   }
   h4 {
     font-weight: bold;
+    font-size: 0.9rem;
+   
+
+    // text-align: center;
+
   }
   ul {
     list-style: none;
     line-height: 1.75rem;
+     margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+      li{
+           display: flex;
+    
+      }
+   
   }
 
   hr {
     color: #510926;
   }
+
+  p{
+     margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+  }
+
 }
+
+.fat{
+      font-weight: bolder;
+     margin-right: 1rem;
+    }
+
+ 
+.small{
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.basketTimer {
+    text-align: center;
+  }
+   
+ 
 
 @media (max-width: 850px) {
   .basket {
@@ -57,7 +96,9 @@
     h3 {
       padding-top: 1rem;
     }
+    
   }
+  
   .mobileBasket {
     display: flex;
     gap: 13px;

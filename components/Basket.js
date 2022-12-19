@@ -52,7 +52,11 @@ function Basket(props) {
     } else if (props.counterGreenCamp == 0) {
       setShowPrebuildThree(false);
     }
-  }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
+  }, [
+    props.counterGreenCamp,
+    props.counterPrebuildThree,
+    props.counterPrebuildTwo,
+  ]);
 
   // sætter prisen på campingspot til 99,- hvis der er valgt et campingspot
   useEffect(() => {
@@ -82,13 +86,26 @@ function Basket(props) {
             {showVIPTicket && (
               <li>
                 {/* værdien fra counterVIP-prop vises og multipliceres med den faste pris (hentet fra lokal JSON). */}
-                {props.counterVIP} &#10799; VIP {props.counterVIP * prices.priceVIP},-
+                <span className="fat">{props.counterVIP}</span>
+
+                <span className="small">
+                  <span> VIP </span>
+                  <span className="fat">
+                    {props.counterVIP * prices.priceVIP},-
+                  </span>
+                </span>
               </li>
             )}
             {showREGTicket && (
               <li>
-                {props.counterREG} &#10799; Standard {props.counterREG * prices.priceREG}
-                ,-
+                <span className="fat">{props.counterREG}</span>
+                <span className="small">
+                  <span> Standard</span>
+                  <span className="fat">
+                    {props.counterREG * prices.priceREG}
+                    ,-
+                  </span>
+                </span>
               </li>
             )}
           </ul>
@@ -97,13 +114,16 @@ function Basket(props) {
           <h4>CAMPING</h4>
           <p>
             {/* Campingspot er sat til "None" indtil der er showPickedCamping er true. Det valgte campingspot indsættes i p-tagget. */}
-            {!props.showPickedCamping ? (
-              "None"
-            ) : (
-              <>
-                {props.pickedCamping} <span> 99,-</span>
-              </>
-            )}
+            <span className="small">
+              {!props.showPickedCamping ? (
+                "None"
+              ) : (
+                <>
+                  <span>{props.pickedCamping}</span>{" "}
+                  <span className="fat"> 99,-</span>
+                </>
+              )}
+            </span>
           </p>
         </div>
         <div>
@@ -111,20 +131,36 @@ function Basket(props) {
           <ul>
             {showGreenCamp && (
               <li>
-                {props.counterGreenCamp}x Green Camping{" "}
-                {props.counterGreenCamp * prices.priceGreenCamp},-
+                <span className="fat"> {props.counterGreenCamp}</span>
+                <span className="small">
+                  <span> Green Camping </span>
+                  <span className="fat">
+                    {props.counterGreenCamp * prices.priceGreenCamp}
+                    ,-
+                  </span>
+                </span>
               </li>
             )}
             {showPrebuildTwo && (
               <li>
-                {props.counterPrebuildTwo}x 2 pers. tent{" "}
-                {props.counterPrebuildTwo * prices.pricePrebuildTwo},-
+                <span className="fat"> {props.counterPrebuildTwo}</span>
+                <span className="small">
+                  <span> 2 pers. tent</span>
+                  <span className="fat">
+                    {props.counterPrebuildTwo * prices.pricePrebuildTwo},-
+                  </span>
+                </span>
               </li>
             )}
             {showPrebuildThree && (
               <li>
-                {props.counterPrebuildThree}x 3 pers. tent{" "}
-                {props.counterPrebuildThree * prices.pricePrebuildThree},-
+                <span className="fat">{props.counterPrebuildThree}</span>{" "}
+                <span className="small">
+                  <span> 3 pers. tent</span>
+                  <span className="fat">
+                    {props.counterPrebuildThree * prices.pricePrebuildThree},-
+                  </span>
+                </span>
               </li>
             )}
           </ul>
