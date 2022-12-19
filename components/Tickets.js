@@ -45,14 +45,15 @@ function Tickets(props) {
             counterREG={props.counterREG}
             counterVIP={props.counterVIP}
           ></TicketType>
-          {/* knap der bliver sat til true når der trykkes på den - hvorefter den vil vise campingspots */}
+          {/* showCamping state sættes til true for at få vist campingspots. 
+          Knappen fjernes når statet ikke længere er false */}
           {!props.showCamping && (
             <button onClick={() => props.setShowCamping(true)} className="continueBtn">
               Continue
             </button>
           )}
           <div className="camping-wrapper">
-            {/* her mapper vi ignnem camping spots for at få vist alle */}
+            {/*  */}
             {/* det her skal forklares bedre !!! */}
             {props.showCamping && (
               <>
