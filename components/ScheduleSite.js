@@ -10,7 +10,9 @@ function ScheduleSite(props) {
 
   //En state for sortering
   const [sortColumn, setSortColumn] = useState("name");
-  //Ascending el. descending
+
+  //Ascending el. descending.
+  //Bruges til at bestemme retning ifb. A-Z el. Z-A el. first to play
   const [sortDirection, setSortDirection] = useState("asc");
 
   //Istedet for at "spørge" efter hver scene og dag, indkapsler jeg disse i arrays
@@ -18,20 +20,22 @@ function ScheduleSite(props) {
   const stages = ["Midgard", "Jotunheim", "Vanaheim"];
   const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-  //Her merger jeg mine to arrays til ét array kaldet pureBands
+  //Her merger jeg mine to API'er til ét array kaldet pureBands
   const pureBands = props.bands.map((band) => {
     //newBand indeholder band fra starten
     const newBand = band;
+    //Multidimensionelt forEach-loop
+    //For hver scene, skal den loope i gennem hver dag...
     stages.forEach((stage) => {
       days.forEach((day) => {
-        //denne leder efter om samme navn eksisterer begge steder!
+        //Her leder vi efter om samme navn eksisterer begge steder! (Act el. name)
         const exists = props.program[stage][day].find(
-          //EXISTS indeholder act, hvor act og name er det samme
+          //konstanten EXISTS indeholder act, hvor act og name er det samme
           (act) => act.act == band.name
         );
-        //Hvis disse eksisterer, skal objektet indeholde disse properties
+        //Hvis bandet eksisterer begge steder, skal newBand-objektet indeholde disse properties
         if (exists) {
-          //Newband får properties fra indhold
+          //Newband får tilføjet nedstående properties til sine eksisterende
           newBand.day = day;
           newBand.stage = stage;
           newBand.start = exists.start;
@@ -40,14 +44,16 @@ function ScheduleSite(props) {
         }
       });
     });
+
+    //Derefter sendes det retur og lagres i arrayet pureBands
     return newBand;
   });
 
+  //Da vi ikke vil regulere original-arrayet pureBands, laver vi en ny variabel
+  //Denne variabel får samme indhold som pureBands
   let filtered = pureBands;
-  // const starttime = filtered.map((starting) => starting.start);
-  // console.log(starttime.sort());
-  // console.log(starttime.reverse());
 
+  //Variablen bruges her til sortering
   filtered.sort((a, b) => {
     if (a[sortColumn] > b[sortColumn]) {
       return 1;
@@ -59,16 +65,19 @@ function ScheduleSite(props) {
     return 0;
   });
 
+  //Hvis direction ændres til "desc", skal filtreringen vises omvendt
   if (sortDirection === "desc") {
     filtered.reverse();
   }
 
   //Her filtrer vi blandt det rå data fra pureBands
+  //Vi vil kun se de bands hvis scene matcher den filtrerede scene
   if (filterStage) {
     filtered = pureBands.filter((band) => band.stage === filterStage);
   }
 
   //Da vi vil filtrere yderligere, filtrerer vi blandt det i forvejen filtrerede
+  //Vi vil kun se de bands hvis dag matcher den filtrerede dag
   if (filterDay) {
     filtered = filtered.filter((band) => band.day === filterDay);
   }
@@ -92,6 +101,7 @@ function ScheduleSite(props) {
           >
             All
           </button>
+          {/* For hver scene skal der være en knap */}
           {stages.map((stage) => (
             <Filterbutton
               band={pureBands}
@@ -109,6 +119,7 @@ function ScheduleSite(props) {
           >
             All
           </button>
+          {/* For hver dag skal der være en knap */}
           {days.map((day) => (
             <Filterbutton
               className={filterDay === day ? "active" : null}

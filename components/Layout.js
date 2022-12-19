@@ -20,6 +20,7 @@ const xanhMonoReg = localFont({
 
 const shrikhand = Shrikhand({ subsets: ["latin"], weight: "400" });
 
+//Alt font som vi ikke specifiserer, skal være Roboto
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
@@ -29,17 +30,13 @@ const roboto = Roboto({
 export default function Layout(props) {
   const [openMenu, setOpenMenu] = useState(false);
 
+  //Ved toggle menu ændres state
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
 
+  //Dette er datoen for vores festival
   const futureDate = new Date(2125, 5, 24, 2);
-  // const futureDate = add(new Date(), {
-  //   years: 102,
-  //   days: 192,
-  //   hours: 3,
-  //   minutes: 44,
-  // });
 
   return (
     <>
@@ -68,7 +65,10 @@ export default function Layout(props) {
             </button>
             {openMenu ? (
               <div className="menu_overlay">
-                <ul style={{ fontFamily: `${shrikhand.style.fontFamily}` }} className="menu">
+                <ul
+                  style={{ fontFamily: `${shrikhand.style.fontFamily}` }}
+                  className="menu"
+                >
                   <li onClick={toggleMenu}>
                     <Anchor href="/">Home</Anchor>
                   </li>
