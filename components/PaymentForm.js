@@ -7,7 +7,11 @@ function PaymentForm(props) {
   const theForm = useRef(null);
   const [txt, setTxt] = useState("");
   const [txt2, setTxt2] = useState("");
-  // const [txt3, setTxt3] = useState("");
+  const [zip, setZip] = useState("");
+  const [creditcard, setCreidtcard] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [cvv, setCvv] = useState("");
 
   function submit(e) {
     e.preventDefault();
@@ -26,87 +30,66 @@ function PaymentForm(props) {
     fullfillReservation({ id: props.reserveID });
     props.setShowThankYou(true);
   }
-  // det her virker hvis man fjerner labels... så vil den hoppe fra input felt til inputfelt
-  // når maxlenght er her nået - meeeeeen ligenu er lorte labels ivejen mææhh
-  // document.querySelectorAll("input").forEach((el) => {
-  //   el.addEventListener("input", (e) => {
-  //     if (e.target.value.length == e.target.maxLength) {
-  //       console.log("something ");
-  //       e.target.parentElement.nextElementSibling.firstElementChild.focus();
-  //     }
-  //   });
-  // });
 
+  //til numbers og til at hoppe videre til næste felt hvis de skal det
   function inputChange(e) {
     if (e.target.value.length == e.target.maxLength) {
       console.log("something ");
       e.target.parentElement.nextElementSibling.firstElementChild.focus();
     }
+    const { value } = e.target;
+
+    if (e.target.id === "cardnumber") {
+      const re = /^[\d]+$/g;
+      if (value === "" || re.test(value)) {
+        setCreidtcard(value);
+      }
+    } else if (e.target.id === "month") {
+      const re = /^[\d]+$/g;
+      if (value === "" || re.test(value)) {
+        setMonth(value);
+      }
+    } else if (e.target.id === "year") {
+      const re = /^[\d]+$/g;
+      if (value === "" || re.test(value)) {
+        setYear(value);
+      }
+    }
   }
 
-  // validate name
-  const onInputChange = (e) => {
+  //denne kører functioner på de inputfelter der ikke skal hoppe aoutomatisk videre
+  //men som skal have en valudation på enten tal eller nummer
+  function onInputChange(e) {
     const { value } = e.target;
-    console.log("Input value: ", value);
 
-    const re = /^[A-ø a-ø]+$/;
-    if (value === "" || re.test(value)) {
-      setTxt(value);
+    if (e.target.id === "fullname") {
+      const re = /^[a-zæøåäöü\s]+$/gi;
+      if (value === "" || re.test(value)) {
+        setTxt(value);
+      }
+    } else if (e.target.id === "cardholder") {
+      const re = /^[a-zæøåäöü\s]+$/gi;
+      if (value === "" || re.test(value)) {
+        setTxt2(value);
+      }
+    } else if (e.target.id === "zipcode") {
+      const re = /^[\d]+$/g;
+      if (value === "" || re.test(value)) {
+        setZip(value);
+      }
+    } else if (e.target.id === "cvv") {
+      const re = /^[\d]+$/g;
+      if (value === "" || re.test(value)) {
+        setCvv(value);
+      }
     }
-  };
-
-  const on2InputChange = (e) => {
-    const { value } = e.target;
-    console.log("Input value: ", value);
-
-    const re2 = /^[A-ø a-ø]+$/;
-    if (value === "" || re2.test(value)) {
-      setTxt2(value);
-    }
-  };
-
-  //numbers
-
-  // const on3InputChange = (event) => {
-  //   const { value } = event.target;
-  //   console.log("Input value: ", value);
-
-  //   const re3 = /^[0-9 9-0]+$/;
-  //   if (value === "" || re3.test(value)) {
-  //     setTxt3(value);
-  //   }
-  // };
-
-  // KODE FUNDET HER !! https://bobbyhadz.com/blog/react-check-if-email-is-valid
-
-  // const [email, setEmail] = useState("");
-  // const [error, setError] = useState(null);
-
-  // function isValidEmail(email) {
-  //   return /\S+@\S+\.\S+/.test(email);
-  // }
-
-  // const handleChange = (event) => {
-  //   if (!isValidEmail(event.target.value)) {
-  //     setError("Email is invalid");
-  //   } else {
-  //     setError(null);
-  //   }
-
-  //   setEmail(event.target.value);
-  // };
+  }
 
   return (
     <>
       <section id="paymentform">
         <h2>Checkout</h2>
-        <form
-          // action=""
-          // onsubmit="return false;"
-          className="forms"
-          onSubmit={submit}
-          ref={theForm}
-        >
+        <form className="forms" onSubmit={submit} ref={theForm}>
           <div className="buyerinfo">
             <label htmlFor="fullname">
               {" "}
@@ -138,7 +121,13 @@ function PaymentForm(props) {
 
             <label htmlFor="address">
               Address
-              <input type="text" id="address" name="address" required placeholder="Address" />
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+                placeholder="Address"
+              />
             </label>
             <div className="flexit">
               <label htmlFor="city">
@@ -149,7 +138,6 @@ function PaymentForm(props) {
                   name="city"
                   required
                   placeholder="City"
-                  onInput={inputChange}
                 />
               </label>
               <label htmlFor="zipcode">
@@ -159,6 +147,8 @@ function PaymentForm(props) {
                   inputMode="numeric"
                   id="zipcode"
                   name="zipcode"
+                  onInput={onInputChange}
+                  value={zip}
                   maxLength={4}
                   minLength={3}
                   required
@@ -180,7 +170,7 @@ function PaymentForm(props) {
                 name="cardholder"
                 required
                 placeholder="Cardholder name"
-                onChange={on2InputChange}
+                onChange={onInputChange}
                 value={txt2}
               />
             </label>
@@ -188,6 +178,7 @@ function PaymentForm(props) {
               Credit card number
               <input
                 onInput={inputChange}
+                value={creditcard}
                 type="text"
                 inputMode="numeric"
                 maxLength={16}
@@ -197,8 +188,6 @@ function PaymentForm(props) {
                 required
                 placeholder="XXXXXXXXXXXXXXXX"
                 aria-describedby="hint-cardnumber"
-                // onChange={on3InputChange}
-                // value={txt3}
               />
               <span className="error" id="err-cardnumber" aria-live="assertive">
                 type at least 16 numbers
@@ -209,6 +198,7 @@ function PaymentForm(props) {
                 Month
                 <input
                   onInput={inputChange}
+                  value={month}
                   type="text"
                   inputMode="numeric"
                   maxLength={2}
@@ -227,6 +217,7 @@ function PaymentForm(props) {
                 Year
                 <input
                   onInput={inputChange}
+                  value={year}
                   type="text"
                   inputMode="numeric"
                   maxLength={2}
@@ -244,6 +235,8 @@ function PaymentForm(props) {
               <label htmlFor="cvv">
                 CVV
                 <input
+                  onChange={onInputChange}
+                  value={cvv}
                   type="text"
                   inputMode="numeric"
                   maxLength={3}
