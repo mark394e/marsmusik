@@ -1,5 +1,7 @@
 .schedule {
+  position: relative;
   display: grid;
+  top: 0;
   grid-template-columns: 1fr 1fr;
 
   .schedule_bg {
@@ -7,11 +9,11 @@
     background-position: center;
     background-size: cover;
     opacity: 0.6;
-    height: 100%;
+    height: 80%;
     width: 50vw;
     position: fixed;
-    bottom: 10%;
-    // top: 0;
+    // bottom: 10%;
+    top: 0;
     left: 0;
     -webkit-mask-image: -webkit-gradient(
       linear,
