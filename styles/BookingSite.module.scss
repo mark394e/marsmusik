@@ -11,11 +11,21 @@
 }
 
 .bodybody > h3 {
-  text-align: center;
-  padding-bottom: 4rem;
+text-align: center;
+  
   color: #510226;
+  // width: 45vw;
+  // align-self: center;
+  // padding-top: 1rem;
+  
 }
 
+.bodybody > h3:first-of-type{
+    width: 45vw;
+  align-self: center;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+} 
 .booking_bg {
   background-image: url("/booking.webp");
   background-size: cover;
@@ -37,7 +47,10 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .bodybody > h3 {
-    padding: 2rem;
+
+  .bodybody {   
+h1{
+    font-size: 3rem;
   }
-}
+
+}}

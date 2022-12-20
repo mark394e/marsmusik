@@ -5,12 +5,35 @@
   width: 100vw;
   // position: relative;
   background: rgb(251, 135, 49);
-  background: linear-gradient(0deg, rgba(251, 135, 49, 1) 0%, rgba(254, 249, 241, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 135, 49, 1) 0%,
+    rgba(254, 249, 241, 1) 100%
+  );
 
+  .arrow {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    position: absolute;
+    top: 85vh;
+    animation-name: pulse_kf;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes pulse_kf {
+    0%,
+    100% {
+      transform: translateY(0%);
+    }
+    50% {
+      transform: translateY(90%);
+    }
+  }
   .date_wrapper {
     width: 50px;
-    // top: 90vh;
-    // left: 0;
     height: 100vh;
     overflow: hidden;
     position: absolute;
@@ -73,6 +96,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
   .frontpage_picture {
     grid-column: 2;
     opacity: 0.5;

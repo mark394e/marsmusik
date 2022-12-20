@@ -1,17 +1,14 @@
 .basket {
   position: fixed;
   backdrop-filter: blur(15px);
-
   z-index: 1;
   top: 150px;
   right: 0px;
   min-width: 17vw;
-  background-color: transparent;
   border: 1px solid #510926;
   border-right: none;
   color: #510926;
   padding: 1rem;
-  // border-radius: 15px;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   line-height: 2rem;
@@ -26,10 +23,6 @@
   h4 {
     font-weight: bold;
     font-size: 0.9rem;
-   
-
-    // text-align: center;
-
   }
   ul {
     list-style: none;
@@ -40,11 +33,6 @@
            display: flex;
     
       }
-   
-  }
-
-  hr {
-    color: #510926;
   }
 
   p{
@@ -70,31 +58,42 @@
 .basketTimer {
     text-align: center;
   }
-   
- 
 
-@media (max-width: 850px) {
-  .basket {
-    z-index: 1;
-    backdrop-filter: blur(15px);
-    background-color: transparent;
-    border-top: 1px solid #510926;
-    border-bottom: none;
-    border-left: none;
-    color: #510926;
-    padding: 0 1rem;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+
+//desktop   
+@media (min-width: 900px){
+.basket{
+    h3:last-of-type{
+     border-top: 1px solid #510926;
+     padding-top: 1rem;
+    }}
+}
+
+//Mobil
+@media (max-width: 900px) {
+    .basket {
     line-height: 2rem;
     display: flex;
-    // flex-direction: row;
-    gap: 10px;
-    bottom: 0px;
-    top: 760px;
-    width: 100%;
+    border-bottom: none;
+    border-left: none;
+    backdrop-filter: blur(60px);
+    border-right: none;
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    height: 220px;
+
 
     h3 {
+      line-height: 0;
+      padding: 0;
       padding-top: 1rem;
+      font-size: 1rem;
+    }
+
+    h3:last-of-type{
+      font-size: 1.3rem;
+      padding: 0;
     }
     
   }
@@ -103,14 +102,11 @@
     display: flex;
     gap: 13px;
     justify-content: center;
+    border-bottom:1px solid #510926;
+    margin-bottom: 1rem;
   }
   .basketTimer {
     text-align: center;
   }
-}
 
-@media (max-width: 600px) {
-  .basket {
-    top: 550px;
-  }
 }

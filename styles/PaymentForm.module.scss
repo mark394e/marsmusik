@@ -52,6 +52,7 @@
       border-color: #59b062;
     }
 
+
     input:invalid:not(:placeholder-shown, :focus) {
       animation: shake 0.125s 2 backwards;
       border: 1px solid rgb(235, 82, 82);

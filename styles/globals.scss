@@ -25,6 +25,10 @@ $light-color: rgba(254, 240, 224);
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $light-color;
   background: linear-gradient(16deg, $orange-color 0%, $light-color 100%);
@@ -34,7 +38,9 @@ img {
   width: 100%;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   color: $darkred-color;
 }
 
@@ -57,10 +63,14 @@ a:hover {
   cursor: pointer;
 }
 
+input::placeholder {
+  color: #51092660;
+}
+
 .continueBtn {
   align-self: center;
   width: 150px;
-  background-color: #510927;
+  background-color: $darkred-color;
   color: #fae3cc;
   &:hover {
     transform: scale(1.05);

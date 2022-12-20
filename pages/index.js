@@ -66,7 +66,27 @@ export default function Home() {
             </span>
           </h1>
         </div>
+        <a href="#banner">
+          <div className="arrow">
+            <img
+              style={{ width: "70px", zIndex: "100000" }}
+              className="pil"
+              src="/pil.svg"
+            />
+          </div>
+        </a>
       </section>
+      {/*Når man klikker på pilen, havner man på dette "usynlige" banner*/}
+      <div
+        id="banner"
+        style={{
+          top: "88vh",
+          marginBottom: "40px",
+          height: "10px",
+          width: "100%",
+          position: "absolute",
+        }}
+      ></div>
       <div className="container">
         <section
           className="banner"
@@ -75,6 +95,7 @@ export default function Home() {
           }}
         >
           <p>Is there life on Mars? Yes! </p>
+          {/*&apos i steder for apostroffer */}
           <p>Arrive in your Rock &apos;n&apos; roll-rockets!</p>
           <p>Green beers on a red planet? Sounds great...</p>
           <p>Is there life on Mars? Yes! </p>
@@ -85,7 +106,7 @@ export default function Home() {
       <section className="links">
         <Anchor href="/booking">
           <article className="ticketsLink">
-            <h2>Tickets</h2>
+            <h2 style={{ color: "rgba(254, 240, 224)" }}>Tickets</h2>
           </article>
         </Anchor>
         <Anchor href="/schedule">

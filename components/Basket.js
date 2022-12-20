@@ -162,7 +162,7 @@ function Basket(props) {
           </ul>
         </div>
       </div>
-      <hr />
+      {/* <hr /> */}
       {/* Den totale udregnet pris adderes med prisen på ét enkelt campingspot (booking fee 99,-) */}
       <h3>Total {priceTotal + priceCampingspot},-</h3>
     </section>
