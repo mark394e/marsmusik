@@ -50,6 +50,10 @@ function Extras(props) {
         Extras - <span>optional</span>
       </h3>
       <div className="optionals">
+        <p>
+          Want to live greener and cleaner? Choose green camping for a garuanteed cleaning of your
+          campsite.
+        </p>
         <div className="extra-heading">
           <p>Green choices</p>
           <p>Price</p>

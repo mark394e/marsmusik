@@ -52,11 +52,7 @@ function Basket(props) {
     } else if (props.counterGreenCamp == 0) {
       setShowPrebuildThree(false);
     }
-  }, [
-    props.counterGreenCamp,
-    props.counterPrebuildThree,
-    props.counterPrebuildTwo,
-  ]);
+  }, [props.counterGreenCamp, props.counterPrebuildThree, props.counterPrebuildTwo]);
 
   // sætter prisen på campingspot til 99,- hvis der er valgt et campingspot
   useEffect(() => {
@@ -77,9 +73,9 @@ function Basket(props) {
       {/* Hvis showTimer er true vises Countdown (npm install). Udseendet på timeren er ændret vha. indbyggede custom props. */}
       {props.showTimer && (
         <Countdown
-          onComplete={() => props.setRefreshPage(true)}
           date={props.timer}
           renderer={renderer}
+          onComplete={() => props.setRefreshPage(true)}
         ></Countdown>
       )}
       <div className="mobileBasket">
@@ -93,9 +89,7 @@ function Basket(props) {
 
                 <span className="small">
                   <span> VIP </span>
-                  <span className="fat">
-                    {props.counterVIP * prices.priceVIP},-
-                  </span>
+                  <span className="fat">{props.counterVIP * prices.priceVIP},-</span>
                 </span>
               </li>
             )}
@@ -122,8 +116,7 @@ function Basket(props) {
                 "None"
               ) : (
                 <>
-                  <span>{props.pickedCamping}</span>{" "}
-                  <span className="fat"> 99,-</span>
+                  <span>{props.pickedCamping}</span> <span className="fat"> 99,-</span>
                 </>
               )}
             </span>
