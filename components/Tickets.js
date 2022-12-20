@@ -11,33 +11,39 @@ function Tickets(props) {
   // - det skal bla. bruges til at tjekke om der er nok ledige camping spots
   const ticketAmount = props.counterREG + props.counterVIP;
 
-  const ticketholdersREG = Array.from(
-    { length: props.counterREG },
-    (_, index) => {
-      return (
-        <TicketHolderREG
-          key={index}
-          ticketHolderArr={props.ticketHolderArr}
-          ticketHolders={props.ticketHolders}
-          setTicketHolders={props.setTicketHolders}
-        ></TicketHolderREG>
-      );
-    }
-  );
+  const ticketholdersREG = Array.from({ length: props.counterREG }, (_, index) => {
+    return (
+      <TicketHolderREG
+        key={index}
+        ticketHolderArr={props.ticketHolderArr}
+        ticketHolders={props.ticketHolders}
+        setTicketHolders={props.setTicketHolders}
+      ></TicketHolderREG>
+    );
+  });
 
-  const ticketholdersVIP = Array.from(
-    { length: props.counterVIP },
-    (_, index) => {
-      return (
-        <TicketHolderVIP
-          key={index}
-          ticketHolderArr={props.ticketHolderArr}
-          ticketHolders={props.ticketHolders}
-          setTicketHolders={props.setTicketHolders}
-        ></TicketHolderVIP>
-      );
-    }
-  );
+  const ticketholdersVIP = Array.from({ length: props.counterVIP }, (_, index) => {
+    return (
+      <TicketHolderVIP
+        key={index}
+        ticketHolderArr={props.ticketHolderArr}
+        ticketHolders={props.ticketHolders}
+        setTicketHolders={props.setTicketHolders}
+      ></TicketHolderVIP>
+    );
+  });
+
+  function sendExtras() {
+    console.log("does this run???");
+    props.setExtras([
+      {
+        greencamping: props.counterGreenCamp,
+        prebuildTwo: props.counterPrebuildTwo,
+        prebuildThree: props.counterPrebuildThree,
+      },
+    ]);
+    props.setShowTicketHolder(true);
+  }
 
   return (
     <>
@@ -54,10 +60,7 @@ function Tickets(props) {
           {/* showCamping state sættes til true for at få vist campingspots. 
           Knappen fjernes når statet ikke længere er false */}
           {!props.showCamping && (
-            <button
-              onClick={() => props.setShowCamping(true)}
-              className="continueBtn"
-            >
+            <button onClick={() => props.setShowCamping(true)} className="continueBtn">
               Continue
             </button>
           )}
@@ -107,7 +110,7 @@ function Tickets(props) {
           </div>
           {/* knap der får besked på at vise ticketholder når der trykkes på den */}
           {props.showCamping && !props.showTicketHolder && (
-            <button onClick={() => props.setShowTicketHolder(true)} className="continueBtn">
+            <button onClick={sendExtras} className="continueBtn">
               Continue
             </button>
           )}
@@ -119,10 +122,7 @@ function Tickets(props) {
             </>
           ) : null}
           {props.showTicketHolder && !props.showPaymentForm && (
-            <button
-              onClick={() => props.setShowPaymentForm(true)}
-              className="continueBtn"
-            >
+            <button onClick={() => props.setShowPaymentForm(true)} className="continueBtn">
               Continue
             </button>
           )}

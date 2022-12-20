@@ -2,18 +2,6 @@ import React from "react";
 import "../styles/Extras.module.scss";
 
 function Extras(props) {
-  function sendExtras() {
-    props.setExtras((current) => [
-      ...current,
-      {
-        greencamping: props.counterGreenCamp,
-        prebuildTwo: props.counterPrebuildTwo,
-        prebuildThree: props.counterPrebuildThree,
-      },
-    ]);
-    props.setShowPaymentForm(true);
-  }
-
   const increaseGreenCamp = () => {
     props.setCounterGreenCamp((count) => count + 1);
   };

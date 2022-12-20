@@ -19,7 +19,6 @@ function TicketHolderREG(props) {
       },
     ]);
     setSent(true);
-    // console.log(props.ticketHolders);
   }
 
   if (sent) {

@@ -121,24 +121,12 @@ function PaymentForm(props) {
 
             <label htmlFor="address">
               Address
-              <input
-                type="text"
-                id="address"
-                name="address"
-                required
-                placeholder="Address"
-              />
+              <input type="text" id="address" name="address" required placeholder="Address" />
             </label>
             <div className="flexit">
               <label htmlFor="city">
                 City
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  required
-                  placeholder="City"
-                />
+                <input type="text" id="city" name="city" required placeholder="City" />
               </label>
               <label htmlFor="zipcode">
                 Zip code
